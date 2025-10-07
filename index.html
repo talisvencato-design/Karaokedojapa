@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Karaokê do Japa</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root {
+      --panel: rgba(20, 20, 20, 0.85);
+      --accent: #ffcc00;
+      --muted: #666;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      color: #fff;
+      min-height: 100vh;
+      background: url('./9937771.jpg') no-repeat center center fixed;
+      background-size: cover;
+      animation: moveBackground 25s ease-in-out infinite alternate;
+      overflow-x: hidden;
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: center top; filter: brightness(0.6) saturate(1); }
+      50% { background-position: center bottom; filter: brightness(0.8) saturate(1.2); }
+      100% { background-position: center top; filter: brightness(0.6) saturate(1); }
+    }
+
+    header { text-align: center; padding: 20px; }
+    header img { max-width: 480px; width: 90%; animation: float 5s ease-in-out infinite alternate; filter: drop-shadow(0 0 10px rgba(255,255,255,0.4)); }
+    @keyframes float { from { transform: translateY(0px); } to { transform: translateY(10px); } }
+
+    .wrap { display: flex; gap: 30px; padding: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+    .left { width: 280px; text-align: center; }
+    .right { flex: 1; background: var(--panel); padding: 20px; border-radius: 12px; box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.2); text-align: center; min-height: 380px; max-width: 900px; animation: glowBorder 3s ease-in-out infinite alternate; }
+
+    @keyframes glowBorder {
+      0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); }
+      50% { box-shadow: 0 0 30px rgba(255, 255, 100, 0.6), 0 0 60px rgba(255, 204, 0, 0.4); }
+      100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); }
+    }
+
+    input#codigo { width: 220px; padding: 14px; font-size: 22px; border-radius: 8px; border: 0; text-align: center; box-shadow: 0 0 6px #333 inset; }
+
+    .keypad { display: grid; grid-template-columns: repeat(3, 90px); gap: 12px; margin-top: 18px; justify-content: center; }
+    .keypad button { padding: 16px; font-weight: 700; border-radius: 8px; border: 0; background: #333; color: #fff; cursor: pointer; transition: 0.2s; font-size: 20px; }
+    .keypad button:hover { background: #555; }
+    .keypad .enter { grid-column: span 3; background: #28a745; }
+    .keypad .enter:hover { background: #218838; }
+    .keypad .clear { background: #dc3545; }
+    .keypad .clear:hover { background: #c82333; }
+    .keypad .back { background: #ff8800; }
+    .keypad .back:hover { background: #e07b00; }
+
+    .thumbnails { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+    .thumbnails img { width: 240px; border-radius: 10px; border: 3px solid var(--muted); cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s; }
+    .thumbnails img:hover { transform: scale(1.08); border-color: var(--accent); box-shadow: 0 0 12px var(--accent); }
+
+    #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: #000000e6; align-items: center; justify-content: center; }
+    #overlay.open { display: flex; }
+    #overlay .playerWrap { position: relative; width: 100%; height: 100%; }
+    #overlay #overlayPlayer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    #overlay .closeBtn { position: absolute; right: 20px; top: 15px; z-index: 10000; background: #111; border: 2px solid #fff; color: #fff; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 16px; }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./logo.png" alt="Karaokê do Japa" />
+  </header>
+
+  <main class="wrap">
+    <section class="left">
+      <p>Digite o código da música:</p>
+      <input id="codigo" readonly placeholder="Ex: 6197" />
+      <div class="keypad">
+        <button onclick="digitar('1')">1</button>
+        <button onclick="digitar('2')">2</button>
+        <button onclick="digitar('3')">3</button>
+        <button onclick="digitar('4')">4</button>
+        <button onclick="digitar('5')">5</button>
+        <button onclick="digitar('6')">6</button>
+        <button onclick="digitar('7')">7</button>
+        <button onclick="digitar('8')">8</button>
+        <button onclick="digitar('9')">9</button>
+        <button class="back" onclick="backspace()">BACK</button>
+        <button onclick="digitar('0')">0</button>
+        <button class="clear" onclick="clearAll()">C</button>
+        <button class="enter" onclick="buscar()">✔ ENTER</button>
+      </div>
+    </section>
+
+    <section class="right" id="resultado">
+      <p>🔎 Digite um código para começar.</p>
+    </section>
+  </main>
+
+  <div id="overlay">
+    <div class="playerWrap">
+      <button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button>
+      <div id="overlayPlayer"></div>
+    </div>
+  </div>
+
+  <audio id="bgAudio" src="./ambiente.mp3" loop autoplay></audio>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
+    let musicas = [], player = null, pendingVideoId = null;
+    const bgAudio = document.getElementById("bgAudio");
+    try{ bgAudio.volume = 0.15; }catch(e){}
+
+    async function carregarMusicas() {
+      const res = await fetch("./karaoke.json");
+      musicas = await res.json();
+    }
+
+    function digitar(n){ codigo.value += n; }
+    function backspace(){ codigo.value = codigo.value.slice(0,-1); }
+    function clearAll(){ codigo.value = ''; }
+
+    async function buscar() {
+      const codigo = document.getElementById('codigo').value.trim();
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = "";
+      const item = musicas.find(m => Number(m.codigo) === Number(codigo));
+      if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
+      const query = `karaoke ${item.artista} ${item.musica}`;
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      if (data.error) { resultado.innerHTML = `<p>❌ Erro na API do YouTube: ${data.error.message}</p>`; return; }
+      const videos = data.items.filter(i => i.id?.videoId);
+      const preferidos = videos.filter(v => v.snippet.title.toLowerCase().includes("karaoke"));
+      const escolhidos = [...preferidos.slice(0,3), ...videos.filter(v => !preferidos.includes(v)).slice(0, 3 - preferidos.length)];
+      resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2>`;
+      const thumbs = document.createElement("div");
+      thumbs.className = "thumbnails";
+      escolhidos.forEach(v => {
+        const img = document.createElement("img");
+        img.src = v.snippet.thumbnails.medium.url;
+        img.alt = v.snippet.title;
+        img.onclick = () => abrirVideo(v.id.videoId);
+        thumbs.appendChild(img);
+      });
+      resultado.appendChild(thumbs);
+    }
+
+    function abrirVideo(videoId) {
+      document.getElementById('overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      bgAudio.pause();
+      document.getElementById('overlayPlayer').innerHTML = '';
+      if (window.YT && window.YT.Player) criarPlayer(videoId);
+      else pendingVideoId = videoId;
+    }
+
+    function criarPlayer(videoId) {
+      if (player && player.destroy) try { player.destroy(); } catch(e){}
+      player = new YT.Player('overlayPlayer', {
+        videoId,
+        playerVars: { autoplay: 1, controls: 1, modestbranding: 1, rel: 0, iv_load_policy: 3, fs: 0, cc_load_policy: 0, vq: 'large' },
+        events: { onStateChange: onPlayerStateChange }
+      });
+    }
+
+    function onYouTubeIframeAPIReady() { if (pendingVideoId) { criarPlayer(pendingVideoId); pendingVideoId = null; } }
+
+    function onPlayerStateChange(event) { if (event.data === YT.PlayerState.ENDED) mostrarPontuacao(); }
+
+    function fecharVideo() {
+      const tela = document.getElementById('telaPontuacao');
+      if (tela) tela.remove();
+      if (player && player.destroy) try { player.destroy(); } catch(e){}
+      document.getElementById('overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      document.getElementById('overlayPlayer').innerHTML = '';
+      bgAudio.play();
+      resetarTela();
+    }
+
+    function resetarTela() {
+      codigo.value = "";
+      resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
+    }
+
+    function mostrarPontuacao() {
+      const overlay = document.getElementById('overlay');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      const notaFinal = Math.floor(70 + Math.random() * 30);
+      const antiga = document.getElementById('telaPontuacao');
+      if (antiga) antiga.remove();
+      const tela = document.createElement('div');
+      tela.id = 'telaPontuacao';
+      tela.style = `position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;color:#fff;font-family:'Arial Black', sans-serif;animation:fadeIn 0.6s ease forwards;z-index:10000;`;
+      tela.innerHTML = `<canvas id="fireworks" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas><h2 id="notaLabel" style="font-size:180px;color:#ffcc00;margin-bottom:10px;text-shadow:0 0 20px #ffcc00;z-index:10;">Nota</h2><h1 id="notaNumero" style="font-size:140px;color:#fff;text-shadow:0 0 30px #ffcc00, 0 0 60px #ffcc00;z-index:10;">--</h1>`;
+      overlay.appendChild(tela);
+
+      try { if (window.currentAplausos && !window.currentAplausos.paused) { window.currentAplausos.pause(); window.currentAplausos.currentTime = 0; } } catch(e){}
+      window.currentAplausos = new Audio('https://cdn.jsdelivr.net/gh/naptha/talkdemo@master/sounds/applause.mp3');
+      window.currentAplausos.volume = 0.75;
+
+      const notaDisplay = tela.querySelector('#notaNumero');
+      let start = Date.now();
+      const interval = setInterval(() => {
+        notaDisplay.textContent = String(Math.floor(70 + Math.random() * 30));
+        if (Date.now() - start >= 3000) {
+          clearInterval(interval);
+          notaDisplay.textContent = String(notaFinal);
+          notaDisplay.classList.add('nota-pulse');
+          try { window.currentAplausos.play().catch(()=>{}); } catch(e){}
+        }
+      }, 80);
+
+      setTimeout(() => iniciarFogosFull(), 200);
+
+      function iniciarFogosFull() {
+        const canvas = document.getElementById('fireworks');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resize(); window.addEventListener('resize', resize);
+        const particles = []; const colors = ['#ffcc00','#ff4444','#44ff44','#4488ff','#ff66ff','#ffa500','#00ffff'];
+        function launchFirework() {
+          const cx = Math.random() * canvas.width; const cy = Math.random() * canvas.height * 0.5;
+          const color = colors[Math.floor(Math.random() * colors.length)]; const count = 60 + Math.floor(Math.random()*60);
+          for (let i = 0; i < count; i++) {
+            const angle = Math.random() * Math.PI * 2; const speed = Math.random() * 6 + 2;
+            particles.push({ x: cx, y: cy, vx: Math.cos(angle)*speed, vy: Math.sin(angle)*speed, life: 120 + Math.floor(Math.random()*60), color: color, size: 2 + Math.random()*3 });
+          }
+        }
+        function render() {
+          ctx.fillStyle = "rgba(0,0,0,0.2)"; ctx.fillRect(0,0,canvas.width,canvas.height);
+          for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i]; p.vy += 0.06; p.vx *= 0.995; p.vy *= 0.995; p.x += p.vx; p.y += p.vy; p.life--; ctx.beginPath(); ctx.fillStyle = p.color; ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill(); if (p.life <= 0) particles.splice(i,1); }
+          if (Math.random() < 0.3) launchFirework(); requestAnimationFrame(render);
+        }
+        render();
+      }
+
+      setTimeout(() => { tela.remove(); try { if (window.currentAplausos && !window.currentAplausos.paused) { window.currentAplausos.pause(); window.currentAplausos.currentTime = 0; } } catch(e){} fecharVideo(); }, 7000);
+    }
+
+    carregarMusicas();
+  </script>
+</body>
+</html>

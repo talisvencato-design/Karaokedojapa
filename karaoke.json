@@ -1,0 +1,6432 @@
+[
+  {
+    "artista": "14 Bis",
+    "codigo": 6197,
+    "musica": "TODO AZUL DO MAR"
+  },
+  {
+    "artista": "A Cor do Som",
+    "codigo": 1724,
+    "musica": "SEMENTE DO AMOR"
+  },
+  {
+    "artista": "A Turma Do Balão Mágico",
+    "codigo": 1543,
+    "musica": "BRUXINHA"
+  },
+  {
+    "artista": "A Turma do Mônica",
+    "codigo": 7548,
+    "musica": "SER CRIANÇA É BOM"
+  },
+  {
+    "artista": "Adriana Calcanhoto",
+    "codigo": 6822,
+    "musica": "FICO ASSIM SEM VOCÊ"
+  },
+  {
+    "artista": "Agnaldo Timóteo",
+    "codigo": 1688,
+    "musica": "MAMÃE ESTOU TÃO FELIZ"
+  },
+  {
+    "artista": "Alceu Valença",
+    "codigo": 3277,
+    "musica": "TROPICANA"
+  },
+  {
+    "artista": "Alcione",
+    "codigo": 1604,
+    "musica": "FAZ UMA LOUCURA POR MIM"
+  },
+  {
+    "artista": "Alcione",
+    "codigo": 1979,
+    "musica": "GAROTO MAROTO"
+  },
+  {
+    "artista": "Alcione",
+    "codigo": 6940,
+    "musica": "MEU ÉBANO"
+  },
+  {
+    "artista": "Alcione E Alexandre Pires",
+    "codigo": 4079,
+    "musica": "ESTRANHA LOUCURA"
+  },
+  {
+    "artista": "Alexandre Peixe",
+    "codigo": 1077,
+    "musica": "EU SOU MAIS VOCÊ"
+  },
+  {
+    "artista": "Alexandre Pires",
+    "codigo": 1210,
+    "musica": "CIGANO"
+  },
+  {
+    "artista": "Alexandre Pires",
+    "codigo": 1558,
+    "musica": "LEVE TUDO COM VOCÊ"
+  },
+  {
+    "artista": "Alexandre Pires",
+    "codigo": 1786,
+    "musica": "ERRO MEU"
+  },
+  {
+    "artista": "Alexandre Pires",
+    "codigo": 2877,
+    "musica": "SISSI"
+  },
+  {
+    "artista": "Alexandre Pires",
+    "codigo": 1073,
+    "musica": "DESSA VEZ EU ME RENDO"
+  },
+  {
+    "artista": "Alexandre Pires e Daniel",
+    "codigo": 1106,
+    "musica": "CHEGUEI TARDE DEMAIS"
+  },
+  {
+    "artista": "Aline Barros",
+    "codigo": 1878,
+    "musica": "SONDA-ME, USA-ME"
+  },
+  {
+    "artista": "Almir Rogério",
+    "codigo": 3877,
+    "musica": "FUSCÃO PRETO"
+  },
+  {
+    "artista": "Alok - MC Don Juan - DJ.",
+    "codigo": 17306,
+    "musica": "LIBERDADE (QUANDO"
+  },
+  {
+    "artista": "Amado Batista",
+    "codigo": 1921,
+    "musica": "NÃO QUERO FALAR COM ELA"
+  },
+  {
+    "artista": "Amado Batista",
+    "codigo": 3856,
+    "musica": "PRINCESA"
+  },
+  {
+    "artista": "Amado Batista",
+    "codigo": 6353,
+    "musica": "SECRETÁRIA (ASSÉDIO SEXUAL)"
+  },
+  {
+    "artista": "Amado Batista",
+    "codigo": 6941,
+    "musica": "MEU EX-AMOR"
+  },
+  {
+    "artista": "Ana Carolina",
+    "codigo": 7348,
+    "musica": "ELEVADOR (LIVRO DE"
+  },
+  {
+    "artista": "Ana Carolina",
+    "codigo": 9393,
+    "musica": "AQUI"
+  },
+  {
+    "artista": "Ana Carolina",
+    "codigo": 15701,
+    "musica": "LIBIDO"
+  },
+  {
+    "artista": "Ana Carolina",
+    "codigo": 4316,
+    "musica": "GARGANTA"
+  },
+  {
+    "artista": "Ana Carolina",
+    "codigo": 6694,
+    "musica": "ENCOSTAR NA TUA"
+  },
+  {
+    "artista": "Ana Vilela",
+    "codigo": 16157,
+    "musica": "TREM-BALA"
+  },
+  {
+    "artista": "Anavitória",
+    "codigo": 16836,
+    "musica": "PORQUE EU TE AMO"
+  },
+  {
+    "artista": "Anavitória",
+    "codigo": 16927,
+    "musica": "NÓS"
+  },
+  {
+    "artista": "Anavitória - Matheus e Kauan",
+    "codigo": 16206,
+    "musica": "FICA"
+  },
+  {
+    "artista": "Anavitória - Tiago Iorc",
+    "codigo": 16169,
+    "musica": "TREVO (TU)"
+  },
+  {
+    "artista": "Angélica",
+    "codigo": 1493,
+    "musica": "BLUE JEANS"
+  },
+  {
+    "artista": "Angélica",
+    "codigo": 1820,
+    "musica": "VOU DE TÁXI"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15192,
+    "musica": "SHOW DAS PODEROSAS"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15302,
+    "musica": "MENINA MÁ"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15307,
+    "musica": "NÃO PARA"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15320,
+    "musica": "ZEN"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15341,
+    "musica": "MEIGA E ABUSADA"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15603,
+    "musica": "BLÁ, BLÁ, BLÁ"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15707,
+    "musica": "NA BATIDA"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15748,
+    "musica": "RITMO PERFEITO"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15882,
+    "musica": "BANG"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 15883,
+    "musica": "DEIXA ELE SOFRER"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 16254,
+    "musica": "PARADINHA"
+  },
+  {
+    "artista": "Anitta",
+    "codigo": 16437,
+    "musica": "NÃO PERCO MEU TEMPO"
+  },
+  {
+    "artista": "Anitta - Jhama",
+    "codigo": 15923,
+    "musica": "ESSA MINA É LOUCA"
+  },
+  {
+    "artista": "Anitta - Lexa - Luisa Sonza - MC",
+    "codigo": 16673,
+    "musica": "COMBATCHY"
+  },
+  {
+    "artista": "Anitta - Ludmilla - Snoop Dogg -",
+    "codigo": 16618,
+    "musica": "ONDA DIFERENTE"
+  },
+  {
+    "artista": "Anitta - Maluma",
+    "codigo": 16114,
+    "musica": "SIM OU NÃO"
+  },
+  {
+    "artista": "Anitta - Marília Mendonça",
+    "codigo": 16649,
+    "musica": "SOME QUE ELE VEM ATRÁS"
+  },
+  {
+    "artista": "Anitta - MC Kevinho",
+    "codigo": 16480,
+    "musica": "TERREMOTO"
+  },
+  {
+    "artista": "Anitta - Pabllo Vittar - Major Lazer",
+    "codigo": 16250,
+    "musica": "SUA CARA"
+  },
+  {
+    "artista": "Anitta - Pedro Sampaio",
+    "codigo": 17345,
+    "musica": "NO CHÃO"
+  },
+  {
+    "artista": "Anitta - Projota",
+    "codigo": 15649,
+    "musica": "COBERTOR"
+  },
+  {
+    "artista": "Anitta - Psirico",
+    "codigo": 16742,
+    "musica": "JOGAÇÃO"
+  },
+  {
+    "artista": "Anitta-MC Zaac-Maejor-Tropkillaz-",
+    "codigo": 16728,
+    "musica": "VAI MALANDRA"
+  },
+  {
+    "artista": "Armandinho",
+    "codigo": 7365,
+    "musica": "FOLHA DE BANANEIRA"
+  },
+  {
+    "artista": "Arriba Saia",
+    "codigo": 6614,
+    "musica": "LIBERA O TÓIM"
+  },
+  {
+    "artista": "Art Popular",
+    "codigo": 6065,
+    "musica": "MANEIRAS"
+  },
+  {
+    "artista": "Art Popular",
+    "codigo": 3285,
+    "musica": "VALEU DEMAIS"
+  },
+  {
+    "artista": "Art Popular",
+    "codigo": 16464,
+    "musica": "SEM ABUSO"
+  },
+  {
+    "artista": "As Meninas",
+    "codigo": 4419,
+    "musica": "XIBOM BOMBOM"
+  },
+  {
+    "artista": "As Meninas",
+    "codigo": 4456,
+    "musica": "SAMBA DA NEGA MALUCA"
+  },
+  {
+    "artista": "Asa de Águia",
+    "codigo": 16285,
+    "musica": "XÔ SATANÁS"
+  },
+  {
+    "artista": "Atchim e Espirro",
+    "codigo": 7501,
+    "musica": "A BARATA DIZ QUE TEM"
+  },
+  {
+    "artista": "Atchim e Espirro",
+    "codigo": 7503,
+    "musica": "A CANOA VIROU"
+  },
+  {
+    "artista": "Atchim e Espirro",
+    "codigo": 7532,
+    "musica": "MARCHA SOLDADO"
+  },
+  {
+    "artista": "Atitude 67",
+    "codigo": 16346,
+    "musica": "CERVEJA DE GARRAFA (FUMAÇA"
+  },
+  {
+    "artista": "Avine Vinny - Matheus",
+    "codigo": 17303,
+    "musica": "CORAÇÃO CACHORRO"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 7979,
+    "musica": "INDECISÃO"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 9622,
+    "musica": "BEBER, CAIR E LEVANTAR"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 9643,
+    "musica": "CHUPA QUE É DE UVA"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 9589,
+    "musica": "ABRE O SOM"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 1354,
+    "musica": "BLÁ BLÁ BLÁ"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 2802,
+    "musica": "CORRENDO ATRÁS DE MIM"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 15884,
+    "musica": "NO TOQUE DO CELULAR"
+  },
+  {
+    "artista": "Aviões do Forró",
+    "codigo": 16411,
+    "musica": "INQUILINA"
+  },
+  {
+    "artista": "Axé Blond",
+    "codigo": 16743,
+    "musica": "PANCADÃO"
+  },
+  {
+    "artista": "B.Miguel-M.Ramos-P.Lopes",
+    "codigo": 7530,
+    "musica": "HAKUNA MATATA"
+  },
+  {
+    "artista": "Babado Novo",
+    "codigo": 9455,
+    "musica": "EXTRAVASA"
+  },
+  {
+    "artista": "Babado Novo",
+    "codigo": 6714,
+    "musica": "SAFADO, CACHORRO SEM"
+  },
+  {
+    "artista": "Babado Novo",
+    "codigo": 7073,
+    "musica": "BOLA DE SABÃO"
+  },
+  {
+    "artista": "Babado Novo - Bruno e Marrone",
+    "codigo": 15329,
+    "musica": "DOCE DESEJO"
+  },
+  {
+    "artista": "Balão Magico",
+    "codigo": 2823,
+    "musica": "AI MEU NARIZ! (TENGO UN GRANO"
+  },
+  {
+    "artista": "Banda Beijo",
+    "codigo": 4127,
+    "musica": "PERAÊ"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 9617,
+    "musica": "ARREPIOU"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 1207,
+    "musica": "CHÁ DE MARACUJÁ"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 1702,
+    "musica": "PERDOA"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 6531,
+    "musica": "CUMBIA DO AMOR"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 6843,
+    "musica": "A LUA ME TRAIU"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 6897,
+    "musica": "CHAMO POR VOCÊ"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 7158,
+    "musica": "ISSO É CALYPSO"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 7257,
+    "musica": "TIC-TAC"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 7223,
+    "musica": "PRA TE ESQUECER"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 7241,
+    "musica": "SE QUEBROU"
+  },
+  {
+    "artista": "Banda Calypso",
+    "codigo": 1012,
+    "musica": "MÁQUINA DO TEMPO"
+  },
+  {
+    "artista": "Banda Djavú",
+    "codigo": 1300,
+    "musica": "NÃO DESLIGA O TELEFONE"
+  },
+  {
+    "artista": "Banda Djavú",
+    "codigo": 1517,
+    "musica": "NAVE DO AMOR"
+  },
+  {
+    "artista": "Banda Djavú",
+    "codigo": 2757,
+    "musica": "SE NÃO VALORIZAR (UMBRELLA)"
+  },
+  {
+    "artista": "Banda Djavú",
+    "codigo": 1259,
+    "musica": "ME LIBERA"
+  },
+  {
+    "artista": "Banda Eva",
+    "codigo": 3948,
+    "musica": "ARERÊ"
+  },
+  {
+    "artista": "Banda Eva",
+    "codigo": 3371,
+    "musica": "ME ABRAÇA"
+  },
+  {
+    "artista": "Banda Rouge E Klb",
+    "codigo": 6467,
+    "musica": "NUNCA DEIXE DE SONHAR"
+  },
+  {
+    "artista": "Banda Uó",
+    "codigo": 15535,
+    "musica": "FAZ UÓ"
+  },
+  {
+    "artista": "Banda Vingadora",
+    "codigo": 15887,
+    "musica": "METRALHADORA"
+  },
+  {
+    "artista": "Barão Vermelho",
+    "codigo": 3511,
+    "musica": "BETE BALANÇO"
+  },
+  {
+    "artista": "Barão Vermelho",
+    "codigo": 4369,
+    "musica": "POR VOCÊ"
+  },
+  {
+    "artista": "Belo",
+    "codigo": 1685,
+    "musica": "DIREITO DE TE AMAR"
+  },
+  {
+    "artista": "Belo",
+    "codigo": 4499,
+    "musica": "TUA BOCA"
+  },
+  {
+    "artista": "Belo",
+    "codigo": 1023,
+    "musica": "PERFUME"
+  },
+  {
+    "artista": "Beth Carvalho",
+    "codigo": 6055,
+    "musica": "COISINHA DO PAI"
+  },
+  {
+    "artista": "Beth Carvalho",
+    "codigo": 6441,
+    "musica": "1800 COLINAS"
+  },
+  {
+    "artista": "Beto Barbosa",
+    "codigo": 7047,
+    "musica": "ADOCICA"
+  },
+  {
+    "artista": "Biquini Cavadão",
+    "codigo": 1724,
+    "musica": "NO MUNDO DA LUA"
+  },
+  {
+    "artista": "Blitz",
+    "codigo": 6041,
+    "musica": "A DOIS PASSOS DO PARAÍSO"
+  },
+  {
+    "artista": "Boka Loka",
+    "codigo": 16826,
+    "musica": "NÃO PEDI PRA ME APAIXONAR"
+  },
+  {
+    "artista": "Bonde Do Tigrão",
+    "codigo": 6053,
+    "musica": "CEROL NA MÃO"
+  },
+  {
+    "artista": "Bonde Do Tigrão",
+    "codigo": 6105,
+    "musica": "O BAILE TODO"
+  },
+  {
+    "artista": "Bozo",
+    "codigo": 15201,
+    "musica": "1, 2, 3...VAMOS LÁ"
+  },
+  {
+    "artista": "Braga Boys",
+    "codigo": 6036,
+    "musica": "UMA BOMBA"
+  },
+  {
+    "artista": "Brisa Star - Thiago",
+    "codigo": 17258,
+    "musica": "SE JOGA NO PASSINHO"
+  },
+  {
+    "artista": "Bruninho e Davi - Luan Santana",
+    "codigo": 16179,
+    "musica": "E ESSA BOCA AÍ"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 7634,
+    "musica": "MARIANNE"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 9848,
+    "musica": "NÃO FAZ MAIS ISSO COMIGO"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1436,
+    "musica": "PODE IR EMBORA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1650,
+    "musica": "CAI FORA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1663,
+    "musica": "BOM DEMAIS"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1675,
+    "musica": "HOJE AMOR, NÃO VAI DAR"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1682,
+    "musica": "AMIGA AMANTE E NAMORADA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 1718,
+    "musica": "TENTATIVAS EM VÃO"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 15935,
+    "musica": "DORMI NA PRAÇA (VERSÃO"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 4300,
+    "musica": "VIDA VAZIA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 4302,
+    "musica": "AGARRADA EM MIM"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6143,
+    "musica": "MEU JEITO DE SENTIR"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6173,
+    "musica": "DORMI NA PRAÇA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6247,
+    "musica": "AMOR DE CARNAVAL"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6431,
+    "musica": "PROGRAMA DE FIM DE SEMANA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6448,
+    "musica": "BIJUTERIA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6484,
+    "musica": "AGORA VAI"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6541,
+    "musica": "MENINA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6615,
+    "musica": "LIGAÇÃO URBANA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6678,
+    "musica": "VAI DAR NAMORO"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6689,
+    "musica": "DEIXA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6837,
+    "musica": "TE AMAR FOI ILUSÃO"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6844,
+    "musica": "APAZIGUAR"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6856,
+    "musica": "INEVITÁVEL"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6972,
+    "musica": "QUER CASAR COMIGO?"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 6899,
+    "musica": "CHORAM AS ROSAS"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 7229,
+    "musica": "QUE PESCAR QUE NADA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 17012,
+    "musica": "CORAÇÃO DE PEDRA"
+  },
+  {
+    "artista": "Bruno e Marrone",
+    "codigo": 17352,
+    "musica": "CORAÇÃO DE"
+  },
+  {
+    "artista": "Bruno e Marrone - Jorge e Mateus",
+    "codigo": 16579,
+    "musica": "SURTO DE AMOR"
+  },
+  {
+    "artista": "Bruno e Marrone - Wesley Safadão",
+    "codigo": 17120,
+    "musica": "ÚLTIMO BEIJO"
+  },
+  {
+    "artista": "Bruno e Marrone E Calypso",
+    "codigo": 6967,
+    "musica": "POR QUE CHORAS?"
+  },
+  {
+    "artista": "Bruno e Marrone-Edson e Hudson",
+    "codigo": 9387,
+    "musica": "AMOR DE PING PONG"
+  },
+  {
+    "artista": "Caetano Veloso",
+    "codigo": 3741,
+    "musica": "BELEZA PURA"
+  },
+  {
+    "artista": "Caetano Veloso",
+    "codigo": 4286,
+    "musica": "O LEÃOZINHO"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 1185,
+    "musica": "AMOR DIVIDIDO"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 1190,
+    "musica": "VOCÊ NÃO VALE NADA"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 1353,
+    "musica": "BEBO E CHORO"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 2845,
+    "musica": "CENA DE NOVELA"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 7214,
+    "musica": "POR AMOR"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 7245,
+    "musica": "SEU NAMORADO"
+  },
+  {
+    "artista": "Calcinha Preta",
+    "codigo": 17404,
+    "musica": "DOIS AMORES, DUAS PAIXOES"
+  },
+  {
+    "artista": "Calypso",
+    "codigo": 6490,
+    "musica": "DANÇANDO CALYPSO"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 1540,
+    "musica": "VIVENDO E APRENDENDO"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 1609,
+    "musica": "MIL VEZES"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 1647,
+    "musica": "AUTORIDADES"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 6069,
+    "musica": "NATASHA"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 6505,
+    "musica": "QUATRO VEZES VOCÊ"
+  },
+  {
+    "artista": "Capital Inicial",
+    "codigo": 6785,
+    "musica": "NÃO OLHE PRA TRÁS"
+  },
+  {
+    "artista": "Capital Inicial E Kiko Zambianchi",
+    "codigo": 6028,
+    "musica": "PRIMEIROS ERROS"
+  },
+  {
+    "artista": "Cássia Eller",
+    "codigo": 3623,
+    "musica": "MALANDRAGEM"
+  },
+  {
+    "artista": "Cássia Eller",
+    "codigo": 6708,
+    "musica": "PALAVRAS AO VENTO"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 1156,
+    "musica": "VAI À LUTA"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 1421,
+    "musica": "EU QUERIA TER UMA BOMBA"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 3099,
+    "musica": "FAZ PARTE DO MEU SHOW"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 3312,
+    "musica": "CODINOME BEIJA - FLOR"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 4390,
+    "musica": "BRASIL"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 3095,
+    "musica": "EXAGERADO"
+  },
+  {
+    "artista": "Cazuza",
+    "codigo": 3364,
+    "musica": "IDEOLOGIA"
+  },
+  {
+    "artista": "Celine Dion",
+    "codigo": 3924,
+    "musica": "MY HEART WILL GO ON"
+  },
+  {
+    "artista": "Cely Campello",
+    "codigo": 3085,
+    "musica": "ESTÚPIDO CUPIDO"
+  },
+  {
+    "artista": "Cesar Menotti e Fabiano",
+    "codigo": 1021,
+    "musica": "PARA DE CHORAR"
+  },
+  {
+    "artista": "César Menotti E Fabiano",
+    "codigo": 7624,
+    "musica": "LEILÃO"
+  },
+  {
+    "artista": "César Menotti e Fabiano",
+    "codigo": 9644,
+    "musica": "CIUMENTA"
+  },
+  {
+    "artista": "César Menotti e Fabiano",
+    "codigo": 1329,
+    "musica": "TARDE DEMAIS"
+  },
+  {
+    "artista": "César Menotti e Fabiano",
+    "codigo": 15305,
+    "musica": "NÃO ERA EU"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 7376,
+    "musica": "LUTAR PELO QUE É MEU"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 7591,
+    "musica": "ELA VAI VOLTAR"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 7698,
+    "musica": "SENHOR DO TEMPO"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 9515,
+    "musica": "PONTES INDESTRUTÍVEIS"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 1520,
+    "musica": "SÓ OS LOUCOS SABEM"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 2846,
+    "musica": "CÉU AZUL"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 15256,
+    "musica": "MEU NOVO MUNDO"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 15597,
+    "musica": "UM DIA A GENTE SE ENCONTRA"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 16277,
+    "musica": "TUDO QUE ELA GOSTA DE"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 16387,
+    "musica": "ME ENCONTRA"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 4291,
+    "musica": "PROIBIDA PRA MIM"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 4340,
+    "musica": "ZÓIO D LULA"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 6378,
+    "musica": "LUGAR AO SOL"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 7255,
+    "musica": "TE LEVAR"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "codigo": 16917,
+    "musica": "SÓ POR UMA NOITE"
+  },
+  {
+    "artista": "Chiclete com Banana",
+    "codigo": 1684,
+    "musica": "CHORAREI AMOR"
+  },
+  {
+    "artista": "Chico Buarque",
+    "codigo": 1617,
+    "musica": "OLÊ OLÁ"
+  },
+  {
+    "artista": "Chico Buarque",
+    "codigo": 1725,
+    "musica": "FUTUROS AMANTES"
+  },
+  {
+    "artista": "Chico César",
+    "codigo": 3624,
+    "musica": "MAMA ÁFRICA"
+  },
+  {
+    "artista": "Chimarruts",
+    "codigo": 9908,
+    "musica": "VERSOS SIMPLES"
+  },
+  {
+    "artista": "Chimarruts",
+    "codigo": 1667,
+    "musica": "DO LADO DE CÁ"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 15210,
+    "musica": "ATÉ DEZ"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 15277,
+    "musica": "TUDO TUDO"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 3811,
+    "musica": "REMEXE (RECHUFAS)"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 3864,
+    "musica": "BERLINDA (BERLIN)"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 16272,
+    "musica": "MENTIRINHAS (MENTIRITAS)"
+  },
+  {
+    "artista": "Chiquititas",
+    "codigo": 1043,
+    "musica": "CORAÇÃO COM BURAQUINHOS"
+  },
+  {
+    "artista": "Chitãozinho e Xororó",
+    "codigo": 1799,
+    "musica": "VÁ PRO INFERNO COM SEU AMOR"
+  },
+  {
+    "artista": "Chitãozinho E Xororó",
+    "codigo": 3551,
+    "musica": "60 DIAS APAIXONADO"
+  },
+  {
+    "artista": "Chitãozinho E Xororó",
+    "codigo": 3172,
+    "musica": "NO RANCHO FUNDO"
+  },
+  {
+    "artista": "Chitãozinho E Xororó",
+    "codigo": 3414,
+    "musica": "CORAÇÃO SERTANEJO"
+  },
+  {
+    "artista": "Chitãozinho E Xororó",
+    "codigo": 4345,
+    "musica": "ALÔ"
+  },
+  {
+    "artista": "Chitãozinho E Xororó",
+    "codigo": 3102,
+    "musica": "FIO DE CABELO"
+  },
+  {
+    "artista": "Chitãozinho e Xororó",
+    "codigo": 1724,
+    "musica": "SOMOS ASSIM"
+  },
+  {
+    "artista": "Chris Durán",
+    "codigo": 2436,
+    "musica": "ÚNICO CAMINHO"
+  },
+  {
+    "artista": "Cidade Negra",
+    "codigo": 3384,
+    "musica": "QUEREM MEU SANGUE"
+  },
+  {
+    "artista": "Cine",
+    "codigo": 1646,
+    "musica": "AS CORES"
+  },
+  {
+    "artista": "Clarice Falcão",
+    "codigo": 15328,
+    "musica": "DE TODOS OS LOUCOS DO"
+  },
+  {
+    "artista": "Claudia Leite",
+    "codigo": 1218,
+    "musica": "HORIZONTE"
+  },
+  {
+    "artista": "Claudia Leite",
+    "codigo": 1405,
+    "musica": "AS MÁSCARAS"
+  },
+  {
+    "artista": "Claudia Leite e Travis McCoy",
+    "codigo": 1586,
+    "musica": "FAMOSA (BILLIONAIRE)"
+  },
+  {
+    "artista": "Claudia Leitte",
+    "codigo": 1661,
+    "musica": "ÁGUA"
+  },
+  {
+    "artista": "Claudia Leitte",
+    "codigo": 2665,
+    "musica": "BEIJAR NA BOCA"
+  },
+  {
+    "artista": "Claudia Leitte",
+    "codigo": 16944,
+    "musica": "DESEMBAÇA"
+  },
+  {
+    "artista": "Claudia Leitte - MC Zaac",
+    "codigo": 16799,
+    "musica": "REBOLADA BRUTA"
+  },
+  {
+    "artista": "Claudia Leitte e Belo",
+    "codigo": 1668,
+    "musica": "DON JUAN"
+  },
+  {
+    "artista": "Claudinho e Buchecha",
+    "codigo": 16037,
+    "musica": "QUERO TE ENCONTRAR"
+  },
+  {
+    "artista": "Claudinho E Buchecha",
+    "codigo": 4133,
+    "musica": "SÓ LOVE"
+  },
+  {
+    "artista": "Cleber e Cauan",
+    "codigo": 16860,
+    "musica": "SONHO"
+  },
+  {
+    "artista": "Companhia Do Pagode",
+    "codigo": 3375,
+    "musica": "NA BOQUINHA NA GARRAFA"
+  },
+  {
+    "artista": "Conde do Forró",
+    "codigo": 17059,
+    "musica": "ROMANCE DESAPEGADO"
+  },
+  {
+    "artista": "CPM 22",
+    "codigo": 9903,
+    "musica": "UM MINUTO PARA O FIM DO"
+  },
+  {
+    "artista": "CPM 22",
+    "codigo": 1175,
+    "musica": "NOSSA MÚSICA"
+  },
+  {
+    "artista": "CPM 22",
+    "codigo": 15390,
+    "musica": "NÃO SEI VIVER SEM TER VOCÊ"
+  },
+  {
+    "artista": "Cpm 22",
+    "codigo": 6566,
+    "musica": "DIAS ATRÁS"
+  },
+  {
+    "artista": "Cpm 22",
+    "codigo": 7157,
+    "musica": "IRREVERSÍVEL"
+  },
+  {
+    "artista": "Cravo E Canela",
+    "codigo": 3122,
+    "musica": "LÁ VEM O NEGÃO"
+  },
+  {
+    "artista": "Cristiano Araújo",
+    "codigo": 2795,
+    "musica": "FAZENDO BARÁ BERÊ"
+  },
+  {
+    "artista": "Cristiano Araújo",
+    "codigo": 15180,
+    "musica": "MENTE PRA MIM"
+  },
+  {
+    "artista": "Cristiano Araújo",
+    "codigo": 15280,
+    "musica": "VOCÊ MUDOU"
+  },
+  {
+    "artista": "Cristiano Araújo",
+    "codigo": 15286,
+    "musica": "CASO INDEFINIDO"
+  },
+  {
+    "artista": "Cristiano Araújo",
+    "codigo": 17035,
+    "musica": "HOJE EU SOU SEU MEU BEM"
+  },
+  {
+    "artista": "Dallas Company",
+    "codigo": 6451,
+    "musica": "CLIMA DE RODEIO"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 1151,
+    "musica": "PRA SEMPRE TE AMAR"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 1785,
+    "musica": "DO OUTRO LADO DO RÁDIO"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 4152,
+    "musica": "DENGO"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 6029,
+    "musica": "QUANDO O CORAÇÃO SE"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 6242,
+    "musica": "A JIRIPOCA VAI PIAR"
+  },
+  {
+    "artista": "Daniel",
+    "codigo": 6960,
+    "musica": "PEÃO APAIXONADO"
+  },
+  {
+    "artista": "Daniela Mercury",
+    "codigo": 3187,
+    "musica": "O CANTO DA CIDADE"
+  },
+  {
+    "artista": "Daniela Mercury",
+    "codigo": 3635,
+    "musica": "RAPUNZEL"
+  },
+  {
+    "artista": "Day e Lara - Maiara e Maraísa",
+    "codigo": 16325,
+    "musica": "ATÉ EX DUVIDA"
+  },
+  {
+    "artista": "D'Black",
+    "codigo": 9876,
+    "musica": "SEM AR"
+  },
+  {
+    "artista": "Deborah Blando",
+    "codigo": 6650,
+    "musica": "CHOCOLATE COM PIMENTA"
+  },
+  {
+    "artista": "Demônios Da Garoa",
+    "codigo": 1629,
+    "musica": "SAMBA ITALIANO"
+  },
+  {
+    "artista": "Demônios Da Garoa",
+    "codigo": 3273,
+    "musica": "TREM DAS ONZE"
+  },
+  {
+    "artista": "Detonautas",
+    "codigo": 1306,
+    "musica": "OLHOS CERTOS"
+  },
+  {
+    "artista": "Detonautas Roque Clube",
+    "codigo": 6587,
+    "musica": "QUANDO O SOL SE FOR"
+  },
+  {
+    "artista": "Di Paullo e Paulino - Marília",
+    "codigo": 16906,
+    "musica": "ESTRELINHA"
+  },
+  {
+    "artista": "Diana",
+    "codigo": 7294,
+    "musica": "AINDA QUEIMA A ESPERANÇA"
+  },
+  {
+    "artista": "Diego e Victor Hugo",
+    "codigo": 16584,
+    "musica": "INFARTO"
+  },
+  {
+    "artista": "Diego e Victor Hugo",
+    "codigo": 17323,
+    "musica": "DESBLOQUEADO"
+  },
+  {
+    "artista": "Diego e Victor Hugo - Bruno e",
+    "codigo": 17073,
+    "musica": "FACAS"
+  },
+  {
+    "artista": "Dilsinho",
+    "codigo": 16424,
+    "musica": "REFÉM"
+  },
+  {
+    "artista": "Dilsinho",
+    "codigo": 16474,
+    "musica": "PÉSSIMO NEGÓCIO"
+  },
+  {
+    "artista": "Dilsinho",
+    "codigo": 16773,
+    "musica": "DEIXA PRA AMANHÃ"
+  },
+  {
+    "artista": "Dilsinho - Henrique e Juliano",
+    "codigo": 16889,
+    "musica": "SOGRA"
+  },
+  {
+    "artista": "Dilsinho - Luisa Sonza",
+    "codigo": 16846,
+    "musica": "NÃO VAI EMBORA"
+  },
+  {
+    "artista": "Disney - Aladdin",
+    "codigo": 15440,
+    "musica": "UM MUNDO IDEAL (A WHOLE NEW"
+  },
+  {
+    "artista": "Disney - Toy Story",
+    "codigo": 15402,
+    "musica": "AMIGO ESTOU AQUI"
+  },
+  {
+    "artista": "Disney Aladdin - Márcio Simões",
+    "codigo": 16556,
+    "musica": "NUNCA TEVE UM AMIGO ASSIM"
+  },
+  {
+    "artista": "Disney Enrolados - Sylvia Salustti -",
+    "codigo": 15919,
+    "musica": "VEJO ENFIM A LUZ BRILHAR"
+  },
+  {
+    "artista": "Disney Frozen -",
+    "codigo": 15835,
+    "musica": "QUER BRINCAR NA NEVE?"
+  },
+  {
+    "artista": "Disney Frozen - Gabi Porto - Olavo",
+    "codigo": 15880,
+    "musica": "VEJO UMA PORTA ABRIR"
+  },
+  {
+    "artista": "Disney Frozen - Taryn Szpilman",
+    "codigo": 15829,
+    "musica": "LIVRE ESTOU"
+  },
+  {
+    "artista": "Disney Moana - Saulo",
+    "codigo": 16683,
+    "musica": "DE NADA"
+  },
+  {
+    "artista": "Disney Mulan - Sandy",
+    "codigo": 16997,
+    "musica": "LEALDADE CORAGEM VERDADE"
+  },
+  {
+    "artista": "Disney Rei Leão - Graça Cunha",
+    "codigo": 16552,
+    "musica": "CICLO SEM FIM"
+  },
+  {
+    "artista": "Disney Viva a Vida é uma Festa -",
+    "codigo": 16967,
+    "musica": "LEMBRE DE MIM"
+  },
+  {
+    "artista": "Dom Vittor e Gustavo - Marília",
+    "codigo": 17343,
+    "musica": "CALCULISTA"
+  },
+  {
+    "artista": "Dominó",
+    "codigo": 1689,
+    "musica": "MANEQUIM"
+  },
+  {
+    "artista": "Dominó",
+    "codigo": 1722,
+    "musica": "COMPANHEIRO"
+  },
+  {
+    "artista": "Donizete",
+    "codigo": 4273,
+    "musica": "GALOPEIRA (GALOPERA)"
+  },
+  {
+    "artista": "Douglas e Vinícius - MC Bruninho",
+    "codigo": 17134,
+    "musica": "FIGURINHA"
+  },
+  {
+    "artista": "Dudu Nobre",
+    "codigo": 6677,
+    "musica": "TEMPO DE DON DON"
+  },
+  {
+    "artista": "Dudu Nobre",
+    "codigo": 6699,
+    "musica": "GOIABADA CASCÃO"
+  },
+  {
+    "artista": "Dudu Nobre",
+    "codigo": 7043,
+    "musica": "A GRANDE FAMÍLIA"
+  },
+  {
+    "artista": "É O Tchan",
+    "codigo": 3691,
+    "musica": "A LOURINHA"
+  },
+  {
+    "artista": "É O Tchan",
+    "codigo": 3827,
+    "musica": "BAMBOLÊ"
+  },
+  {
+    "artista": "É O Tchan",
+    "codigo": 3912,
+    "musica": "ESTÁTUA"
+  },
+  {
+    "artista": "É O Tchan",
+    "codigo": 4061,
+    "musica": "A NOVA LOIRA DO TCHAN"
+  },
+  {
+    "artista": "Ed Motta - Disney Tarzan",
+    "codigo": 15545,
+    "musica": "NO MEU CORAÇÃO VOCÊ VAI"
+  },
+  {
+    "artista": "Ed Wilson",
+    "codigo": 3032,
+    "musica": "BIQUÍNI DE BOLINHA AMARELINHO"
+  },
+  {
+    "artista": "Edson e Hudson",
+    "codigo": 1127,
+    "musica": "CIÚME EXAGERADO"
+  },
+  {
+    "artista": "Edson e Hudson",
+    "codigo": 1728,
+    "musica": "POR QUE CHORA A TARDE"
+  },
+  {
+    "artista": "Edson e Hudson",
+    "codigo": 15374,
+    "musica": "É AMOR DEMAIS"
+  },
+  {
+    "artista": "Edson E Hudson",
+    "codigo": 6485,
+    "musica": "AZUL"
+  },
+  {
+    "artista": "Edson E Hudson",
+    "codigo": 6710,
+    "musica": "PORTA RETRATO"
+  },
+  {
+    "artista": "Edson E Hudson",
+    "codigo": 6866,
+    "musica": "O BICHO VAI PEGAR"
+  },
+  {
+    "artista": "Edson e Hudson",
+    "codigo": 16924,
+    "musica": "GALERA CORAÇÃO"
+  },
+  {
+    "artista": "Edson e Hudson e Bruno e",
+    "codigo": 1011,
+    "musica": "IMPREVISÍVEL"
+  },
+  {
+    "artista": "Edu Ribeiro",
+    "codigo": 7382,
+    "musica": "ME NAMORA"
+  },
+  {
+    "artista": "Edu Ribeiro",
+    "codigo": 9431,
+    "musica": "DE MAIS NINGUÉM"
+  },
+  {
+    "artista": "Eduardo Costa",
+    "codigo": 7999,
+    "musica": "ME APAIXONEI"
+  },
+  {
+    "artista": "Eduardo Costa",
+    "codigo": 9675,
+    "musica": "EU DUVIDO"
+  },
+  {
+    "artista": "Eduardo Costa",
+    "codigo": 1356,
+    "musica": "CANSEI DE SER PALHAÇO"
+  },
+  {
+    "artista": "Eduardo Costa",
+    "codigo": 15890,
+    "musica": "SAPEQUINHA"
+  },
+  {
+    "artista": "Eduardo Costa",
+    "codigo": 16801,
+    "musica": "AINDA TÔ AÍ"
+  },
+  {
+    "artista": "Eduardo Costa e Amado Batista",
+    "codigo": 1005,
+    "musica": "AMIGO"
+  },
+  {
+    "artista": "Eduardo Costa e Bruno e Marrone",
+    "codigo": 1102,
+    "musica": "VOCÊ FOI ATRIZ"
+  },
+  {
+    "artista": "Elba Ramalho",
+    "codigo": 3027,
+    "musica": "BATE CORAÇÃO"
+  },
+  {
+    "artista": "Eliana",
+    "codigo": 7543,
+    "musica": "PERNA E PÉ"
+  },
+  {
+    "artista": "Eliana",
+    "codigo": 1045,
+    "musica": "DEDINHOS (REMIX)"
+  },
+  {
+    "artista": "Elis Regina",
+    "codigo": 1845,
+    "musica": "BALA COM BALA"
+  },
+  {
+    "artista": "Elis Regina",
+    "codigo": 1887,
+    "musica": "CORRIDA DE JANGADA"
+  },
+  {
+    "artista": "Elis Regina",
+    "codigo": 4063,
+    "musica": "ALÔ ALÔ MARCIANO"
+  },
+  {
+    "artista": "Empreguetes",
+    "codigo": 2778,
+    "musica": "VIDA DE EMPREGUETE"
+  },
+  {
+    "artista": "Engenheiros do",
+    "codigo": 1724,
+    "musica": "MUROS E GRADES"
+  },
+  {
+    "artista": "Engenheiros do Hawaii",
+    "codigo": 16155,
+    "musica": "TERRA DE GIGANTES"
+  },
+  {
+    "artista": "Enzo Rabelo",
+    "codigo": 16857,
+    "musica": "PERFEITINHA"
+  },
+  {
+    "artista": "Enzo Rabelo - Zé Felipe",
+    "codigo": 16509,
+    "musica": "TIJOLINHO POR TIJOLINHO"
+  },
+  {
+    "artista": "Erasmo Carlos",
+    "codigo": 4451,
+    "musica": "PEGA NA MENTIRA"
+  },
+  {
+    "artista": "Erasmo Carlos",
+    "codigo": 3286,
+    "musica": "VEM QUENTE QUE EU ESTOU"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 1578,
+    "musica": "TÁ VENDO AQUELA LUA"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 15224,
+    "musica": "É NO PAGODE"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 16021,
+    "musica": "TCHAU E BENÇA"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 3641,
+    "musica": "TELEGRAMA"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 4122,
+    "musica": "ME APAIXONEI PELA PESSOA"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 7989,
+    "musica": "LIVRE PRA VOAR"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 1080,
+    "musica": "JOGO DE SEDUÇÃO"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 1691,
+    "musica": "MINHA RAZÃO"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 1762,
+    "musica": "A GENTE FAZ A FESTA"
+  },
+  {
+    "artista": "Exaltasamba",
+    "codigo": 1724,
+    "musica": "AMOR E AMIZADE"
+  },
+  {
+    "artista": "Fábio Júnior",
+    "codigo": 3011,
+    "musica": "ALMA GÊMEA"
+  },
+  {
+    "artista": "Fábio Júnior",
+    "codigo": 1872,
+    "musica": "CHICO XAVIER"
+  },
+  {
+    "artista": "Falamansa",
+    "codigo": 6040,
+    "musica": "XOTE DOS MILAGRES"
+  },
+  {
+    "artista": "Falamansa",
+    "codigo": 6113,
+    "musica": "RINDO À TOA"
+  },
+  {
+    "artista": "Falamansa",
+    "codigo": 6240,
+    "musica": "XOTE DA ALEGRIA"
+  },
+  {
+    "artista": "Falamansa",
+    "codigo": 6502,
+    "musica": "OH CHUVA"
+  },
+  {
+    "artista": "Fama Coral",
+    "codigo": 6457,
+    "musica": "ESPERANÇA"
+  },
+  {
+    "artista": "Fat Family",
+    "codigo": 4083,
+    "musica": "JEITO SEXY"
+  },
+  {
+    "artista": "Fat Family",
+    "codigo": 4311,
+    "musica": "EU NÃO VOU"
+  },
+  {
+    "artista": "Fat Family",
+    "codigo": 4450,
+    "musica": "OH HAPPY DAY"
+  },
+  {
+    "artista": "Felipe Araujo",
+    "codigo": 16675,
+    "musica": "MENTIRA"
+  },
+  {
+    "artista": "Felipe Araújo",
+    "codigo": 16286,
+    "musica": "AMOR DA SUA CAMA"
+  },
+  {
+    "artista": "Felipe Araújo",
+    "codigo": 16595,
+    "musica": "ESPAÇOSA DEMAIS"
+  },
+  {
+    "artista": "Felipe Araújo - Ferrugem",
+    "codigo": 16392,
+    "musica": "ATRASADINHA"
+  },
+  {
+    "artista": "Felipe Araújo - Gusttavo Lima",
+    "codigo": 17211,
+    "musica": "AMANDO"
+  },
+  {
+    "artista": "Felipe Araújo - Henrique e Juliano",
+    "codigo": 16161,
+    "musica": "A MALA É FALSA"
+  },
+  {
+    "artista": "Felipe Araújo - Marília Mendonça",
+    "codigo": 16985,
+    "musica": "AMANTE FIEL"
+  },
+  {
+    "artista": "Felipe Dillon",
+    "codigo": 6703,
+    "musica": "MUSA DO VERÃO"
+  },
+  {
+    "artista": "Fernanda Brum",
+    "codigo": 2411,
+    "musica": "CANTAREI AO SENHOR"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1200,
+    "musica": "PAGA PAU"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1371,
+    "musica": "A CASA CAIU"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1495,
+    "musica": "MADRI"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1546,
+    "musica": "DA COR DO PECADO"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1568,
+    "musica": "QUE RAIVA QUE DÁ"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 1659,
+    "musica": "TÔ PASSANDO MAL"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 2843,
+    "musica": "AS MINA PIRA"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 2848,
+    "musica": "É TENSO"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 15027,
+    "musica": "ATÉ O FINAL"
+  },
+  {
+    "artista": "Fernando e Sorocaba",
+    "codigo": 15906,
+    "musica": "MÁRMORE"
+  },
+  {
+    "artista": "Fernando e Sorocaba - Maiara e",
+    "codigo": 16621,
+    "musica": "ALÔ SOM"
+  },
+  {
+    "artista": "Fernando e Sorocaba-Luan",
+    "codigo": 2833,
+    "musica": "EVEREST"
+  },
+  {
+    "artista": "Ferrugem",
+    "codigo": 16354,
+    "musica": "PIRATA E TESOURO"
+  },
+  {
+    "artista": "Ferrugem",
+    "codigo": 16698,
+    "musica": "PRA VOCÊ ACREDITAR"
+  },
+  {
+    "artista": "Ferrugem",
+    "codigo": 17353,
+    "musica": "É DOR QUE"
+  },
+  {
+    "artista": "Ferrugem",
+    "codigo": 17458,
+    "musica": "SINTO SUA FALTA"
+  },
+  {
+    "artista": "Filhos de Jorge",
+    "codigo": 15160,
+    "musica": "ZIRIGUIDUM"
+  },
+  {
+    "artista": "Filosofia Reggae",
+    "codigo": 2769,
+    "musica": "SENTIMENTO BOM"
+  },
+  {
+    "artista": "Folclore",
+    "codigo": 1064,
+    "musica": "SAMBA LELÊ"
+  },
+  {
+    "artista": "Fresno",
+    "codigo": 1214,
+    "musica": "DESDE QUANDO VOCÊ SE FOI"
+  },
+  {
+    "artista": "Fresno",
+    "codigo": 1004,
+    "musica": "ALGUÉM QUE TE FAZ SORRIR"
+  },
+  {
+    "artista": "Fundo de Quintal",
+    "codigo": 15672,
+    "musica": "O SHOW TEM QUE CONTINUAR"
+  },
+  {
+    "artista": "Fundo de Quintal",
+    "codigo": 16240,
+    "musica": "VAI LÁ, VAI LÁ"
+  },
+  {
+    "artista": "Funk Como Le Gusta",
+    "codigo": 2781,
+    "musica": "16 TONELADAS"
+  },
+  {
+    "artista": "Gabi Martins - Tierry",
+    "codigo": 17067,
+    "musica": "PRINTS"
+  },
+  {
+    "artista": "Gabriel Diniz",
+    "codigo": 16426,
+    "musica": "JENIFER"
+  },
+  {
+    "artista": "Gabriel Valim",
+    "codigo": 15186,
+    "musica": "PIRADINHA"
+  },
+  {
+    "artista": "Gaby Amarantos",
+    "codigo": 2742,
+    "musica": "EX MY LOVE (EX MAI LOVE)"
+  },
+  {
+    "artista": "Gaby Amarantos",
+    "codigo": 15212,
+    "musica": "BEBA DOIDA"
+  },
+  {
+    "artista": "Gaby Amarantos",
+    "codigo": 15661,
+    "musica": "GABY OSTENTAÇÃO"
+  },
+  {
+    "artista": "Gal Costa",
+    "codigo": 3016,
+    "musica": "AQUARELA DO BRASIL"
+  },
+  {
+    "artista": "Galinha Pintadinha",
+    "codigo": 15013,
+    "musica": "GALINHA PINTADINHA"
+  },
+  {
+    "artista": "Genghis Khan",
+    "codigo": 1562,
+    "musica": "COMER, COMER"
+  },
+  {
+    "artista": "George Henrique e",
+    "codigo": 17309,
+    "musica": "VAI LÁ EM CASA HOJE"
+  },
+  {
+    "artista": "Gera Samba",
+    "codigo": 3552,
+    "musica": "A DANÇA DA CORDINHA"
+  },
+  {
+    "artista": "Gera Samba",
+    "codigo": 3150,
+    "musica": "MELÔ DO TCHAN"
+  },
+  {
+    "artista": "Gera Samba",
+    "codigo": 3381,
+    "musica": "PAQUEREI"
+  },
+  {
+    "artista": "Gilberto Gil",
+    "codigo": 7549,
+    "musica": "SÍTIO DO PICA-PAU AMARELO"
+  },
+  {
+    "artista": "Gino E Geno",
+    "codigo": 6412,
+    "musica": "ELA CHOROU DE AMOR"
+  },
+  {
+    "artista": "Gloria Groove",
+    "codigo": 16986,
+    "musica": "APAGA A LUZ"
+  },
+  {
+    "artista": "Gloria Groove",
+    "codigo": 17141,
+    "musica": "A TUA VOZ"
+  },
+  {
+    "artista": "Gloria Groove",
+    "codigo": 17302,
+    "musica": "A QUEDA"
+  },
+  {
+    "artista": "Gloria Groove",
+    "codigo": 17385,
+    "musica": "LEILAO"
+  },
+  {
+    "artista": "Glória Groove",
+    "codigo": 16492,
+    "musica": "COISA BOA"
+  },
+  {
+    "artista": "Glória Groove",
+    "codigo": 16705,
+    "musica": "BUMBUM DE OURO"
+  },
+  {
+    "artista": "Glória Groove - Léo Santana",
+    "codigo": 16391,
+    "musica": "ARRASTA"
+  },
+  {
+    "artista": "Grande Coral",
+    "codigo": 6924,
+    "musica": "FIM DE ANO"
+  },
+  {
+    "artista": "Gretchen",
+    "codigo": 4429,
+    "musica": "CONGA CONGA CONGA"
+  },
+  {
+    "artista": "Gretchen",
+    "codigo": 16586,
+    "musica": "MELÔ PIRIPIPI"
+  },
+  {
+    "artista": "Grupo Bom Gosto",
+    "codigo": 15146,
+    "musica": "PATRICINHA DO OLHO AZUL"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 9907,
+    "musica": "VELOCIDADE DA LUZ"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 2907,
+    "musica": "DEIXA ACONTECER"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 15249,
+    "musica": "FALA BAIXINHO"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 15580,
+    "musica": "MULHER TRAíDA"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 16153,
+    "musica": "TÁ ESCRITO"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 6488,
+    "musica": "CORAÇÃO RADIANTE"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 6547,
+    "musica": "PRECISO TE AMAR"
+  },
+  {
+    "artista": "Grupo Revelação",
+    "codigo": 17132,
+    "musica": "COMPASSO DO AMOR"
+  },
+  {
+    "artista": "Grupo Tradição",
+    "codigo": 7305,
+    "musica": "BARQUINHO"
+  },
+  {
+    "artista": "Guilherme e Benuto",
+    "codigo": 16901,
+    "musica": "3 BATIDAS"
+  },
+  {
+    "artista": "Guilherme e Benuto",
+    "codigo": 17197,
+    "musica": "PULEI NA"
+  },
+  {
+    "artista": "Guilherme e Santiago",
+    "codigo": 1730,
+    "musica": "SAFADA, CACHORRA, BANDIDA"
+  },
+  {
+    "artista": "Guilherme e Santiago",
+    "codigo": 1969,
+    "musica": "BOLO DOIDO"
+  },
+  {
+    "artista": "Guilherme e Santiago",
+    "codigo": 16879,
+    "musica": "SOLTEIRO SIM, SOZINHO NUNCA"
+  },
+  {
+    "artista": "Guilherme Santiago",
+    "codigo": 1709,
+    "musica": "QUE DÁ VONTADE DÁ"
+  },
+  {
+    "artista": "Gustavo Mioto",
+    "codigo": 16271,
+    "musica": "IMPRESSIONANDO OS ANJOS"
+  },
+  {
+    "artista": "Gustavo Mioto",
+    "codigo": 16488,
+    "musica": "SOLTEIRO NÃO TRAI"
+  },
+  {
+    "artista": "Gustavo Mioto",
+    "codigo": 16853,
+    "musica": "COM OU SEM MIM"
+  },
+  {
+    "artista": "Gustavo Mioto",
+    "codigo": 17375,
+    "musica": "NAO PAREI DE SOFRER"
+  },
+  {
+    "artista": "Gustavo Mioto - Jorge e Mateus",
+    "codigo": 16287,
+    "musica": "ANTIAMOR"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 1835,
+    "musica": "CABELO COR DE OURO"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 1897,
+    "musica": "BALADA BOA"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 15014,
+    "musica": "GATINHA ASSANHADA"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 15297,
+    "musica": "FUI FIEL"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 15398,
+    "musica": "SÓ TEM EU"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 15645,
+    "musica": "AS MINA PIRA NA BALADA"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16132,
+    "musica": "HOMEM DE FAMÍLIA"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16323,
+    "musica": "APELIDO CARINHOSO"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16491,
+    "musica": "CEM MIL"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16587,
+    "musica": "MILU"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16619,
+    "musica": "QUE PENA QUE ACABOU"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16702,
+    "musica": "A GENTE FEZ AMOR"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16943,
+    "musica": "DE MENINA PRA MULHER"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 16963,
+    "musica": "CAFÉ E AMOR"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17160,
+    "musica": "SUPER EX"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17202,
+    "musica": "ESPETINHO"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17225,
+    "musica": "FICHA LIMPA"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17286,
+    "musica": "NOTA DE REPÚDIO"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17432,
+    "musica": "BLOQUEADO"
+  },
+  {
+    "artista": "Gusttavo Lima",
+    "codigo": 17459,
+    "musica": "TERMINA COMIGO ANTES"
+  },
+  {
+    "artista": "Gusttavo Lima-Jorge e Mateus",
+    "codigo": 1686,
+    "musica": "INVENTOR DOS AMORES"
+  },
+  {
+    "artista": "Harmonia do Samba",
+    "codigo": 17222,
+    "musica": "DESAFIO"
+  },
+  {
+    "artista": "Harmonia do Samba",
+    "codigo": 17288,
+    "musica": "VEM NENÉM"
+  },
+  {
+    "artista": "Hélio Ziskind",
+    "codigo": 7514,
+    "musica": "CASTELO RÁ-TIM-BUM"
+  },
+  {
+    "artista": "Hélio Ziskind",
+    "codigo": 7518,
+    "musica": "COCORICÓ"
+  },
+  {
+    "artista": "Hélio Ziskind",
+    "codigo": 7541,
+    "musica": "PASSARINHO QUE SOM É ESSE"
+  },
+  {
+    "artista": "Hélio Ziskind",
+    "codigo": 7547,
+    "musica": "RATINHO ESCOVANDO OS DENTES"
+  },
+  {
+    "artista": "Henrique e Diego - Dennis DJ",
+    "codigo": 16187,
+    "musica": "MALBEC"
+  },
+  {
+    "artista": "Henrique e Diego - MC Guimê",
+    "codigo": 15875,
+    "musica": "SUITE 14"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 15695,
+    "musica": "GORDINHO SALIENTE"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 15813,
+    "musica": "CUIDA BEM DELA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 15852,
+    "musica": "MUDANDO DE ASSUNTO"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 15909,
+    "musica": "NA HORA DA RAIVA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16210,
+    "musica": "VIDINHA DE BALADA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16362,
+    "musica": "AQUELA PESSOA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16414,
+    "musica": "QUEM PEGOU PEGOU"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16663,
+    "musica": "CIDADE VIZINHA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16693,
+    "musica": "LIBERDADE PROVISÓRIA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16729,
+    "musica": "VOLTA POR BAIXO"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16874,
+    "musica": "DEIXA ELA SABER"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 16921,
+    "musica": "BRIGA FEIA"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 17311,
+    "musica": "ARRANHÃO"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 17361,
+    "musica": "A MAIOR SAUDADE"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 17409,
+    "musica": "TERMINEI MAL TERMINADO"
+  },
+  {
+    "artista": "Henrique e Juliano",
+    "codigo": 17473,
+    "musica": "ACORDO"
+  },
+  {
+    "artista": "Henrique e Juliano - Marília",
+    "codigo": 16001,
+    "musica": "FLOR E O BEIJA-FLOR"
+  },
+  {
+    "artista": "Henrique e Juliano - Simone e",
+    "codigo": 16255,
+    "musica": "RASPÃO"
+  },
+  {
+    "artista": "Hino Do Corinthians",
+    "codigo": 3113,
+    "musica": "HINO DO CORINTHIANS"
+  },
+  {
+    "artista": "Hino Do Flamengo",
+    "codigo": 6063,
+    "musica": "HINO DO FLAMENGO"
+  },
+  {
+    "artista": "Hino Do Palmeiras",
+    "codigo": 3427,
+    "musica": "HINO DO PALMEIRAS"
+  },
+  {
+    "artista": "Hino Do Santos",
+    "codigo": 3126,
+    "musica": "HINO DO SANTOS"
+  },
+  {
+    "artista": "Hino Do São Paulo",
+    "codigo": 3248,
+    "musica": "HINO DO SÃO PAULO"
+  },
+  {
+    "artista": "Hino Do Vasco Da Gama",
+    "codigo": 6101,
+    "musica": "HINO DO VASCO DA GAMA"
+  },
+  {
+    "artista": "Hino Nacional Brasileiro",
+    "codigo": 4353,
+    "musica": "HINO NACIONAL BRASILEIRO"
+  },
+  {
+    "artista": "Hugo e Guilherme - Marilia",
+    "codigo": 17393,
+    "musica": "MAL FEITO"
+  },
+  {
+    "artista": "Humberto e Ronaldo - Jerry Smith",
+    "codigo": 16412,
+    "musica": "NÃO FALA NÃO PRA MIM"
+  },
+  {
+    "artista": "Inimigos da HP",
+    "codigo": 1084,
+    "musica": "MIL PALAVRAS"
+  },
+  {
+    "artista": "Ira!",
+    "codigo": 6056,
+    "musica": "ENVELHEÇO NA CIDADE"
+  },
+  {
+    "artista": "Israel e Rodolffo",
+    "codigo": 17112,
+    "musica": "BATOM DE CEREJA"
+  },
+  {
+    "artista": "Israel e Rodolffo -",
+    "codigo": 17183,
+    "musica": "FAZ AMOR COMIGO"
+  },
+  {
+    "artista": "Israel e Rodolffo - Matheuzinho",
+    "codigo": 17230,
+    "musica": "SÓ DE SACANAGEM"
+  },
+  {
+    "artista": "Israel Novaes",
+    "codigo": 15319,
+    "musica": "VÓ, TÔ ESTOURADO!"
+  },
+  {
+    "artista": "Israel Novaes",
+    "codigo": 15856,
+    "musica": "Ô SOFRÊNCIA"
+  },
+  {
+    "artista": "Israel Novaes - Wesley Safadão",
+    "codigo": 15998,
+    "musica": "VOCÊ MERECE CACHÊ"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 1142,
+    "musica": "AGORA EU JÁ SEI"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 1642,
+    "musica": "ACELERA AÊ"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 1665,
+    "musica": "DESEJO DE AMAR"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 4457,
+    "musica": "SE EU NÃO TE AMASSE TANTO"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 6073,
+    "musica": "PERERÊ"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 6081,
+    "musica": "A LUA Q EU T DEI"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 6169,
+    "musica": "BUG BUG BYE BYE"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 6256,
+    "musica": "FESTA"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 6697,
+    "musica": "FLOR DO REGGAE"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 7227,
+    "musica": "QUANDO A CHUVA PASSAR"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 7046,
+    "musica": "ABALOU"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 9290,
+    "musica": "NÃO PRECISA MUDAR"
+  },
+  {
+    "artista": "Ivete Sangalo",
+    "codigo": 1006,
+    "musica": "CADÊ DALILA?"
+  },
+  {
+    "artista": "Ivete Sangalo - Shakira",
+    "codigo": 15031,
+    "musica": "DANÇANDO"
+  },
+  {
+    "artista": "Ivete Sangalo - Whindersson",
+    "codigo": 16813,
+    "musica": "COISA LINDA"
+  },
+  {
+    "artista": "Iza",
+    "codigo": 16467,
+    "musica": "DONA DE MIM"
+  },
+  {
+    "artista": "Iza",
+    "codigo": 16522,
+    "musica": "BRISA"
+  },
+  {
+    "artista": "Iza",
+    "codigo": 16616,
+    "musica": "MEU TALISMÃ"
+  },
+  {
+    "artista": "Iza",
+    "codigo": 17193,
+    "musica": "GUETO"
+  },
+  {
+    "artista": "Iza - Marcelo Falcão",
+    "codigo": 16248,
+    "musica": "PESADÃO"
+  },
+  {
+    "artista": "Iza - Rincon Sapiência",
+    "codigo": 16417,
+    "musica": "GINGA"
+  },
+  {
+    "artista": "Jair Rodrigues",
+    "codigo": 3330,
+    "musica": "MAJESTADE O SABIÁ"
+  },
+  {
+    "artista": "Jammil e Uma Noites",
+    "codigo": 1560,
+    "musica": "TÁ ESPERANDO O QUE?"
+  },
+  {
+    "artista": "Jammil e Uma Noites",
+    "codigo": 1662,
+    "musica": "ATMOSFERA"
+  },
+  {
+    "artista": "Jammil e Uma Noites",
+    "codigo": 1025,
+    "musica": "SAUDADE DÓI"
+  },
+  {
+    "artista": "Jana Bianchi",
+    "codigo": 1067,
+    "musica": "TEMA DE POKÉMON"
+  },
+  {
+    "artista": "Jão",
+    "codigo": 16989,
+    "musica": "IMATURO"
+  },
+  {
+    "artista": "Jaspion",
+    "codigo": 16460,
+    "musica": "JASPION"
+  },
+  {
+    "artista": "Jeito Moleque",
+    "codigo": 17256,
+    "musica": "MEU JEITO MOLEQUE"
+  },
+  {
+    "artista": "Jerry Smith - Simone e Simaria",
+    "codigo": 16828,
+    "musica": "OS BOYS AMAM, O EX CHORA"
+  },
+  {
+    "artista": "Jerry Smith - Wesley Safadão",
+    "codigo": 16486,
+    "musica": "QUEM TEM O DOM"
+  },
+  {
+    "artista": "João Bosco e Vinícius",
+    "codigo": 1126,
+    "musica": "CHORA, ME LIGA"
+  },
+  {
+    "artista": "João Bosco e Vinícius - Matheus",
+    "codigo": 16719,
+    "musica": "SEGUNDA TAÇA"
+  },
+  {
+    "artista": "João Gomes",
+    "codigo": 17273,
+    "musica": "MEU PEDAÇO DE"
+  },
+  {
+    "artista": "João Gomes",
+    "codigo": 17412,
+    "musica": "AQUELAS COISAS"
+  },
+  {
+    "artista": "João Lucas & Marcelo",
+    "codigo": 2722,
+    "musica": "EU QUERO TCHU, EU QUERO"
+  },
+  {
+    "artista": "João Lucas e Marcelo",
+    "codigo": 15700,
+    "musica": "JOGA O COPO PRO ALTO (VAMOS"
+  },
+  {
+    "artista": "João Neto e Frederico",
+    "codigo": 9861,
+    "musica": "PEGA FOGO CABARÉ"
+  },
+  {
+    "artista": "João Neto e Frederico",
+    "codigo": 1550,
+    "musica": "É PRA VALER"
+  },
+  {
+    "artista": "João Neto e Frederico",
+    "codigo": 1694,
+    "musica": "NÃO VOU MAIS CHORAR"
+  },
+  {
+    "artista": "João Neto e Frederico",
+    "codigo": 1848,
+    "musica": "MEU CORAÇÃO PEDE CARONA"
+  },
+  {
+    "artista": "João Neto e Frederico",
+    "codigo": 2808,
+    "musica": "LÊ LÊ LÊ"
+  },
+  {
+    "artista": "João Neto e Frederico - MC",
+    "codigo": 16481,
+    "musica": "CÊ ACREDITA"
+  },
+  {
+    "artista": "João Neto e Frederico - Simone e",
+    "codigo": 16355,
+    "musica": "RAPARIGA NÃO"
+  },
+  {
+    "artista": "João Paulo E Daniel",
+    "codigo": 3793,
+    "musica": "EU ME AMARREI"
+  },
+  {
+    "artista": "Joaquim E Manuel",
+    "codigo": 6326,
+    "musica": "BOATE AZUL"
+  },
+  {
+    "artista": "Joelma",
+    "codigo": 16390,
+    "musica": "VOANDO PRO PARÁ"
+  },
+  {
+    "artista": "Jojo Maronttinni",
+    "codigo": 16302,
+    "musica": "QUE TIRO FOI ESSE"
+  },
+  {
+    "artista": "Jonas Esticado",
+    "codigo": 16996,
+    "musica": "INVESTE EM MIM"
+  },
+  {
+    "artista": "Jorge Aragão",
+    "codigo": 1885,
+    "musica": "CONSELHO"
+  },
+  {
+    "artista": "Jorge Benjor",
+    "codigo": 7280,
+    "musica": "XICA DA SILVA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 9892,
+    "musica": "TEM NADA A VER"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 9863,
+    "musica": "PODE CHORAR"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1330,
+    "musica": "VOA BEIJA FLOR"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1512,
+    "musica": "AMO NOITE E DIA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1597,
+    "musica": "MEU BEM QUERER"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1633,
+    "musica": "TE CUIDA CORAÇÃO"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1645,
+    "musica": "AÍ JÁ ERA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1651,
+    "musica": "CHOVE, CHOVE"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1715,
+    "musica": "SE EU PEDIR CÊ VOLTA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1758,
+    "musica": "TEMPO AO TEMPO"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 15010,
+    "musica": "DUAS METADES"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 15162,
+    "musica": "A HORA É AGORA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 15594,
+    "musica": "SEU ASTRAL"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 15832,
+    "musica": "OS ANJOS CANTAM"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 15965,
+    "musica": "SOSSEGUEI"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16100,
+    "musica": "LOUCA DE SAUDADE"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16143,
+    "musica": "PAREDES"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16305,
+    "musica": "CONTRATO"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1260,
+    "musica": "MISTÉRIOS"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 1761,
+    "musica": "200 POR HORA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16560,
+    "musica": "TIJOLÃO"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16567,
+    "musica": "OU SOME OU SOMA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16642,
+    "musica": "CHEIROSA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 16939,
+    "musica": "TRINCADINHO"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 17027,
+    "musica": "LANCE INDIVIDUAL"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 17279,
+    "musica": "TROCA"
+  },
+  {
+    "artista": "Jorge e Mateus",
+    "codigo": 17479,
+    "musica": "TODO SEU"
+  },
+  {
+    "artista": "Jorge e Mateus-Cristiano",
+    "codigo": 1817,
+    "musica": "EFEITOS"
+  },
+  {
+    "artista": "Jorge Vercillo",
+    "codigo": 1724,
+    "musica": "O REINO DAS ÁGUAS"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 1213,
+    "musica": "DE VOLTA AO PLANETA DOS"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 16202,
+    "musica": "ENCONTRAR ALGUÉM"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 16405,
+    "musica": "MAIS UMA VEZ"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 4213,
+    "musica": "SEMPRE ASSIM"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 6423,
+    "musica": "NA MORAL"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 6509,
+    "musica": "SÓ HOJE"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 6603,
+    "musica": "AMOR MAIOR"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 7200,
+    "musica": "O SOL"
+  },
+  {
+    "artista": "Jota Quest",
+    "codigo": 1029,
+    "musica": "VEM ANDAR COMIGO"
+  },
+  {
+    "artista": "Jovem Dionísio",
+    "codigo": 17472,
+    "musica": "ACORDA PEDRINHO"
+  },
+  {
+    "artista": "Juan Luis Guerra",
+    "codigo": 3239,
+    "musica": "ROMANCE ROSA"
+  },
+  {
+    "artista": "Karol Conká - Tropkillaz",
+    "codigo": 17079,
+    "musica": "TOMBEI"
+  },
+  {
+    "artista": "Katinguelê",
+    "codigo": 4236,
+    "musica": "INARAÍ"
+  },
+  {
+    "artista": "Kell Smith",
+    "codigo": 16204,
+    "musica": "ERA UMA VEZ"
+  },
+  {
+    "artista": "Kelly Key",
+    "codigo": 7666,
+    "musica": "PEGUE E PUXE"
+  },
+  {
+    "artista": "Kelly Key",
+    "codigo": 6403,
+    "musica": "ANJO"
+  },
+  {
+    "artista": "Kelly Key",
+    "codigo": 6486,
+    "musica": "CACHORRINHO"
+  },
+  {
+    "artista": "Kelly Key",
+    "codigo": 7068,
+    "musica": "BARBIE GIRL"
+  },
+  {
+    "artista": "Kid Abelha",
+    "codigo": 6498,
+    "musica": "NADA SEI (APNÉIA)"
+  },
+  {
+    "artista": "Kid Abelha",
+    "codigo": 3216,
+    "musica": "PINTURA ÍNTIMA"
+  },
+  {
+    "artista": "Kid Abelha",
+    "codigo": 3478,
+    "musica": "NA RUA, NA CHUVA, NA FAZENDA"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 4461,
+    "musica": "A DOR DESSE AMOR"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 6014,
+    "musica": "ELA NÃO ESTÁ AQUI"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 6191,
+    "musica": "POR QUE TEM QUE SER ASSIM?"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 6224,
+    "musica": "MINHA TIMIDEZ"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 6481,
+    "musica": "A CADA DEZ PALAVRAS"
+  },
+  {
+    "artista": "Klb",
+    "codigo": 6995,
+    "musica": "UM ANJO"
+  },
+  {
+    "artista": "Lairton E Seus Teclados",
+    "codigo": 4400,
+    "musica": "MORANGO DO NORDESTE"
+  },
+  {
+    "artista": "Larissa Manoela",
+    "codigo": 15063,
+    "musica": "BEIJO, BEIJINHO, BEIJÃO"
+  },
+  {
+    "artista": "Larissa Manoela - João Guilherme",
+    "codigo": 16092,
+    "musica": "CÚMPLICES DE UM RESGATE"
+  },
+  {
+    "artista": "Latino",
+    "codigo": 6777,
+    "musica": "FESTA NO APÊ"
+  },
+  {
+    "artista": "Latino",
+    "codigo": 6977,
+    "musica": "RENATA"
+  },
+  {
+    "artista": "Latino",
+    "codigo": 3144,
+    "musica": "ME LEVA"
+  },
+  {
+    "artista": "Latino e Perlla",
+    "codigo": 1631,
+    "musica": "SELINHO NA BOCA"
+  },
+  {
+    "artista": "Lauana Prado",
+    "codigo": 16870,
+    "musica": "VIVA VOZ"
+  },
+  {
+    "artista": "Lauana Prado",
+    "codigo": 17439,
+    "musica": "PRIMEIRO EU"
+  },
+  {
+    "artista": "Lauana Prado - Dilsinho",
+    "codigo": 17466,
+    "musica": "INJUSTO DEMAIS"
+  },
+  {
+    "artista": "Lauana Prado - Maiara e Maraísa",
+    "codigo": 16503,
+    "musica": "COBAIA"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3522,
+    "musica": "FESTA DE RODEIO"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3168,
+    "musica": "NÃO APRENDI DIZER ADEUS"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3420,
+    "musica": "ENTRE TAPAS E BEIJOS"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3441,
+    "musica": "PENSE EM MIM"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3786,
+    "musica": "CERVEJA"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 4030,
+    "musica": "CUMADE E CUMPADE"
+  },
+  {
+    "artista": "Leandro E Leonardo",
+    "codigo": 3062,
+    "musica": "DESCULPE, MAS EU VOU CHORAR"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3112,
+    "musica": "HÁ TEMPOS"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3569,
+    "musica": "ÍNDIOS"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3228,
+    "musica": "QUANDO O SOL BATER NA JANELA"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3230,
+    "musica": "QUE PAÍS É ESSE"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3267,
+    "musica": "TEMPO PERDIDO"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3090,
+    "musica": "EU SEI"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 3254,
+    "musica": "SERÁ"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 1831,
+    "musica": "ACRILIC ON CANVAS"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 1838,
+    "musica": "O MUNDO ANDA TÃO COMPLICADO"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 1843,
+    "musica": "AS FLORES DO MAL"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 1881,
+    "musica": "1965 (DUAS TRIBOS)"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 1911,
+    "musica": "A DANÇA"
+  },
+  {
+    "artista": "Legião Urbana",
+    "codigo": 6062,
+    "musica": "GERAÇÃO COCA-COLA"
+  },
+  {
+    "artista": "Léo Magalhães",
+    "codigo": 16389,
+    "musica": "OI"
+  },
+  {
+    "artista": "Leo Rodrigues - MC Bola",
+    "codigo": 15172,
+    "musica": "ELA É TOP"
+  },
+  {
+    "artista": "Léo Santana - Anitta",
+    "codigo": 16604,
+    "musica": "CONTATINHO"
+  },
+  {
+    "artista": "Leo Santana - MC Don Juan - Mari",
+    "codigo": 17443,
+    "musica": "ÁUDIO QUE TE ENTREGA"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 7331,
+    "musica": "DE LATINHA NA MÃO"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 9649,
+    "musica": "CORAÇÃO BANDIDO"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 1134,
+    "musica": "MENTIROSA"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 1672,
+    "musica": "EU E A LUA"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 1674,
+    "musica": "HOJE"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 1712,
+    "musica": "QUERO TE AMAR (É O SEU AMOR)"
+  },
+  {
+    "artista": "Leonardo",
+    "codigo": 6732,
+    "musica": "FANTASIAS"
+  },
+  {
+    "artista": "Leoni",
+    "codigo": 1606,
+    "musica": "GAROTOS"
+  },
+  {
+    "artista": "Leva Nóiz",
+    "codigo": 1677,
+    "musica": "LIGA DA JUSTIÇA"
+  },
+  {
+    "artista": "Lexa",
+    "codigo": 15929,
+    "musica": "PIOR QUE SINTO FALTA"
+  },
+  {
+    "artista": "Lexa",
+    "codigo": 16745,
+    "musica": "SÓ DEPOIS DO CARNAVAL"
+  },
+  {
+    "artista": "Lilian",
+    "codigo": 6376,
+    "musica": "LACINHOS COR-DE-ROSA (PINK"
+  },
+  {
+    "artista": "Lindomar Castilho",
+    "codigo": 6600,
+    "musica": "VOCÊ É DOIDA DEMAIS"
+  },
+  {
+    "artista": "Los Hermanos",
+    "codigo": 2894,
+    "musica": "QUEM SABE"
+  },
+  {
+    "artista": "Los Hermanos",
+    "codigo": 4346,
+    "musica": "ANNA JÚLIA"
+  },
+  {
+    "artista": "Los Hermanos",
+    "codigo": 4408,
+    "musica": "PRIMAVERA"
+  },
+  {
+    "artista": "Ls Jack",
+    "codigo": 6407,
+    "musica": "CARLA"
+  },
+  {
+    "artista": "Luan E Vanessa",
+    "codigo": 6432,
+    "musica": "QUATRO SEMANAS DE AMOR"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1338,
+    "musica": "METEORO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1350,
+    "musica": "VOCÊ NÃO SABE O QUE É AMOR"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1403,
+    "musica": "A LOUCA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1438,
+    "musica": "SINAIS"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1572,
+    "musica": "SEMPRE COM VOCÊ"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1643,
+    "musica": "ADRENALINA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1706,
+    "musica": "PRA VOCÊ LEMBRAR DE MIM"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1748,
+    "musica": "SUPER AMOR"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1832,
+    "musica": "AMAR NÃO É PECADO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 1968,
+    "musica": "AS LEMBRANÇAS VÃO NA MALA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 2837,
+    "musica": "NÊGA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 15155,
+    "musica": "TE VIVO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 15273,
+    "musica": "TE ESPERANDO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 15605,
+    "musica": "CÊ TOPA?"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 15819,
+    "musica": "ESCREVE AÍ"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 15921,
+    "musica": "CHUVA DE ARROZ"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 16163,
+    "musica": "DIA, LUGAR E HORA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 16173,
+    "musica": "ACORDANDO O PRÉDIO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 16377,
+    "musica": "MC LENÇOL E DJ TRAVESSEIRO"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 16631,
+    "musica": "ÁGUA COM AÇUCAR"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 17036,
+    "musica": "INCONDICIONAL"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 17218,
+    "musica": "MORENA"
+  },
+  {
+    "artista": "Luan Santana",
+    "codigo": 17401,
+    "musica": "ABALO EMOCIONAL"
+  },
+  {
+    "artista": "Luan Santana - Enrique Iglesias",
+    "codigo": 15684,
+    "musica": "BAILANDO"
+  },
+  {
+    "artista": "Luan Santana - MC Kekel",
+    "codigo": 16465,
+    "musica": "VINGANÇA"
+  },
+  {
+    "artista": "Luan Santana e Ivete Sangalo",
+    "codigo": 1713,
+    "musica": "QUÍMICA DO AMOR"
+  },
+  {
+    "artista": "Lucas Lucco",
+    "codigo": 15395,
+    "musica": "PRINCESINHA"
+  },
+  {
+    "artista": "Lucas Lucco",
+    "codigo": 15472,
+    "musica": "MOZÃO"
+  },
+  {
+    "artista": "Lucas Lucco",
+    "codigo": 15838,
+    "musica": "VAI VENDO"
+  },
+  {
+    "artista": "Lucas Lucco - Anitta",
+    "codigo": 15726,
+    "musica": "BEIJAR À QUEIMA-ROUPA"
+  },
+  {
+    "artista": "Lucas Lucco - Pikeno e Menor",
+    "codigo": 15511,
+    "musica": "TODA TODA"
+  },
+  {
+    "artista": "Luciana Mello",
+    "codigo": 6688,
+    "musica": "DA COR DO PECADO"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 15697,
+    "musica": "HOJE"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 15881,
+    "musica": "24 HORAS POR DIA"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 15930,
+    "musica": "SEM QUERER"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16044,
+    "musica": "FALA MAL DE MIM"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16088,
+    "musica": "BOM"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16152,
+    "musica": "SOU EU"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16172,
+    "musica": "CHEGUEI"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16812,
+    "musica": "AMOR DIFÍCIL"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 16998,
+    "musica": "RAINHA DA FAVELA"
+  },
+  {
+    "artista": "Ludmilla",
+    "codigo": 17088,
+    "musica": "ELA NÃO"
+  },
+  {
+    "artista": "Ludmilla - Anitta",
+    "codigo": 16482,
+    "musica": "FAVELA CHEGOU"
+  },
+  {
+    "artista": "Ludmilla - Claudia Leitte",
+    "codigo": 15877,
+    "musica": "TE ENSINEI CERTIN"
+  },
+  {
+    "artista": "Ludmilla - DJ. Will 22",
+    "codigo": 16882,
+    "musica": "COBRA VENENOSA"
+  },
+  {
+    "artista": "Ludmilla - Jão",
+    "codigo": 16531,
+    "musica": "A BOBA FUI EU"
+  },
+  {
+    "artista": "Ludmilla - Leo Santana",
+    "codigo": 16655,
+    "musica": "INVOCADA"
+  },
+  {
+    "artista": "Ludmilla - MC Pupio - MC",
+    "codigo": 16348,
+    "musica": "DIN DIN DIN"
+  },
+  {
+    "artista": "Ludmilla - Thiaguinho",
+    "codigo": 16319,
+    "musica": "SÓ VEM!"
+  },
+  {
+    "artista": "Luisa Sonza - Anitta - Pabllo Vittar",
+    "codigo": 17049,
+    "musica": "MODO TURBO"
+  },
+  {
+    "artista": "Luisa Sonza - Marília",
+    "codigo": 17285,
+    "musica": "MELHOR SOZINHA"
+  },
+  {
+    "artista": "Luisa Sonza - Thiaguinho",
+    "codigo": 17103,
+    "musica": "CANSAR VOCÊ"
+  },
+  {
+    "artista": "Luiz Gonzaga",
+    "codigo": 3019,
+    "musica": "ASA BRANCA"
+  },
+  {
+    "artista": "Luiza e Maurilio",
+    "codigo": 17368,
+    "musica": "PODE SUMIR"
+  },
+  {
+    "artista": "Luíza e Maurílio - Dilsinho",
+    "codigo": 17195,
+    "musica": "PARA EM MIM"
+  },
+  {
+    "artista": "Luiza e Maurílio - Zé Neto e",
+    "codigo": 16909,
+    "musica": "S DE SAUDADE"
+  },
+  {
+    "artista": "Luka",
+    "codigo": 6637,
+    "musica": "TÔ NEM AÍ"
+  },
+  {
+    "artista": "Lulu Santos",
+    "codigo": 3052,
+    "musica": "COMO UMA ONDA"
+  },
+  {
+    "artista": "Lulu Santos",
+    "codigo": 1805,
+    "musica": "BRIGAS (MEU BENZINHO)"
+  },
+  {
+    "artista": "Lulu Santos",
+    "codigo": 1824,
+    "musica": "AREIAS ESCALDANTES"
+  },
+  {
+    "artista": "Lulu Santos",
+    "codigo": 1880,
+    "musica": "TUDO AZUL"
+  },
+  {
+    "artista": "Lulu Santos",
+    "codigo": 3057,
+    "musica": "DE REPENTE CALIFÓRNIA"
+  },
+  {
+    "artista": "M.Cecilia e Rodolfo-Exaltasamba",
+    "codigo": 1699,
+    "musica": "O TROCO"
+  },
+  {
+    "artista": "Maiara e Maraisa",
+    "codigo": 16047,
+    "musica": "MEDO BOBO"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 15966,
+    "musica": 0.1
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16200,
+    "musica": "VOCÊ FAZ FALTA AQUI"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16236,
+    "musica": "SORTE QUE CÊ BEIJA BEM"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16453,
+    "musica": "QUEM ENSINOU FUI EU"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16632,
+    "musica": "AÍ EU BEBO"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16695,
+    "musica": "NEM TCHUM"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 16948,
+    "musica": "QUASE UM CASAL"
+  },
+  {
+    "artista": "Maiara e Maraísa",
+    "codigo": 17033,
+    "musica": "BENGALA E CROCHÊ"
+  },
+  {
+    "artista": "Maiara e Maraísa -",
+    "codigo": 17263,
+    "musica": "FALA A VERDADE"
+  },
+  {
+    "artista": "Maiara e Maraísa - Cristiano Araújo",
+    "codigo": 16076,
+    "musica": "SE OLHA NO ESPELHO"
+  },
+  {
+    "artista": "Maiara e Maraísa - Dilsinho",
+    "codigo": 16805,
+    "musica": "LIBERA ELA"
+  },
+  {
+    "artista": "Maiara e Maraisa - Marilia",
+    "codigo": 16651,
+    "musica": "BEBACA"
+  },
+  {
+    "artista": "Maiara e Maraísa - Marília",
+    "codigo": 16897,
+    "musica": "MOTEL"
+  },
+  {
+    "artista": "Maiara e Maraísa - Zé Neto e",
+    "codigo": 16530,
+    "musica": "TRAÍ SIM"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3243,
+    "musica": "SABÃO CRÁ CRÁ"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3123,
+    "musica": "LÁ VEM O ALEMÃO"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3289,
+    "musica": "VIRA - VIRA"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3304,
+    "musica": "BOIS DON'T CRY"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3047,
+    "musica": "CHOPIS CENTIS"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 1896,
+    "musica": "MUNDO ANIMAL"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 1939,
+    "musica": "SÁBADO DE SOL"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 2784,
+    "musica": "CABEÇA DE BAGRE II"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 2807,
+    "musica": "JUMENTO CELESTINO"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 2820,
+    "musica": "UMA ARLINDA MULHER"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 2821,
+    "musica": 1406
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3210,
+    "musica": "PELADOS EM SANTOS"
+  },
+  {
+    "artista": "Mamonas Assassinas",
+    "codigo": 3238,
+    "musica": "ROBOCOP GAY"
+  },
+  {
+    "artista": "Mano Walter",
+    "codigo": 16388,
+    "musica": "NÃO DEIXO NÃO"
+  },
+  {
+    "artista": "Mano Walter",
+    "codigo": 16451,
+    "musica": "JURAMENTO DO DEDINHO"
+  },
+  {
+    "artista": "Mano Walter",
+    "codigo": 16855,
+    "musica": "MATUTO DE VERDADE"
+  },
+  {
+    "artista": "Manoel Gomes",
+    "codigo": 16629,
+    "musica": "CANETA AZUL"
+  },
+  {
+    "artista": "Manu Gavassi",
+    "codigo": 1937,
+    "musica": "PLANOS IMPOSSÍVEIS"
+  },
+  {
+    "artista": "Manu Gavassi",
+    "codigo": 2688,
+    "musica": "GAROTO ERRADO"
+  },
+  {
+    "artista": "Manu Gavassi",
+    "codigo": 15047,
+    "musica": "CONTO DE FADAS"
+  },
+  {
+    "artista": "Manu Gavassi - Gloria Groove",
+    "codigo": 17002,
+    "musica": "DEVE SER HORRÍVEL DORMIR"
+  },
+  {
+    "artista": "Mara Maravilha",
+    "codigo": 1509,
+    "musica": "NÃO FAZ MAL"
+  },
+  {
+    "artista": "Marcelo D2",
+    "codigo": 6747,
+    "musica": "QUAL É?"
+  },
+  {
+    "artista": "Marcia Fellipe - Jerry Smith",
+    "codigo": 16428,
+    "musica": "QUEM ME DERA"
+  },
+  {
+    "artista": "Márcia Ferreira",
+    "codigo": 6605,
+    "musica": "CHORANDO SE FOI"
+  },
+  {
+    "artista": "Marcos e Bellutti",
+    "codigo": 1970,
+    "musica": "BORA SE ACABAR"
+  },
+  {
+    "artista": "Marcos e Belutti",
+    "codigo": 15123,
+    "musica": "I LOVE YOU"
+  },
+  {
+    "artista": "Marcos e Belutti",
+    "codigo": 15657,
+    "musica": "DOMINGO DE MANHÃ"
+  },
+  {
+    "artista": "Marcos e Belutti -",
+    "codigo": 17282,
+    "musica": "ESTADO FRÁGIL"
+  },
+  {
+    "artista": "Marcos e Belutti - Wesley Safadão",
+    "codigo": 15842,
+    "musica": "AQUELE 1%"
+  },
+  {
+    "artista": "Marcus Viana",
+    "codigo": 17416,
+    "musica": "PANTANAL"
+  },
+  {
+    "artista": "Maria Bethânia",
+    "codigo": 3391,
+    "musica": "SONHO MEU"
+  },
+  {
+    "artista": "Maria Cecília e Rodolfo",
+    "codigo": 1157,
+    "musica": "VOCÊ DE VOLTA"
+  },
+  {
+    "artista": "Maria Cecília e Rodolfo",
+    "codigo": 1366,
+    "musica": "QUEM AMA CUIDA"
+  },
+  {
+    "artista": "Maria Cecília e Rodolfo",
+    "codigo": 1755,
+    "musica": "TCHAU TCHAU"
+  },
+  {
+    "artista": "Maria Cecília e Rodolfo",
+    "codigo": 1245,
+    "musica": "COISAS ESOTÉRICAS"
+  },
+  {
+    "artista": "Maria Creusa",
+    "codigo": 4191,
+    "musica": "EU SEI QUE VOU TE AMAR"
+  },
+  {
+    "artista": "Maria Gadú",
+    "codigo": 1314,
+    "musica": "SHIMBALAIÊ"
+  },
+  {
+    "artista": "Maria Gadú",
+    "codigo": 1557,
+    "musica": "LARANJA"
+  },
+  {
+    "artista": "Maria Gadú",
+    "codigo": 1687,
+    "musica": "LINDA ROSA"
+  },
+  {
+    "artista": "Maria Gadú",
+    "codigo": 1846,
+    "musica": "BELA FLOR"
+  },
+  {
+    "artista": "Maria Gadú - Luiz Kiari",
+    "codigo": 15713,
+    "musica": "QUANDO FUI CHUVA"
+  },
+  {
+    "artista": "Maria Gadú e Caetano Veloso",
+    "codigo": 1729,
+    "musica": "RAPTE-ME CAMALEOA"
+  },
+  {
+    "artista": "Marilia Mendoca - Maiara e",
+    "codigo": 17387,
+    "musica": "MOTEL AFRODITE"
+  },
+  {
+    "artista": "Marilia Mendonça",
+    "codigo": 16243,
+    "musica": "DE QUEM É A CULPA"
+  },
+  {
+    "artista": "Marilia Mendonça",
+    "codigo": 16590,
+    "musica": "SEM SAL"
+  },
+  {
+    "artista": "Marilia Mendonça",
+    "codigo": 16780,
+    "musica": "SUPERA"
+  },
+  {
+    "artista": "Marilia Mendonça",
+    "codigo": 16769,
+    "musica": "TENTATIVAS"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 15971,
+    "musica": "INFIEL"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16041,
+    "musica": "ALÔ PORTEIRO"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16056,
+    "musica": "COMO FAZ COM ELA"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16129,
+    "musica": "EU SEI DE COR"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16136,
+    "musica": "MEU CUPIDO É GARI"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16165,
+    "musica": "FOLGADO"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16246,
+    "musica": "AMANTE NÃO TEM LAR"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16313,
+    "musica": "ENTRE QUATRO PAREDES"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16375,
+    "musica": "AUSÊNCIA"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16404,
+    "musica": "ESTRANHO"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16502,
+    "musica": "CIUMEIRA"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16521,
+    "musica": "BEM PIOR QUE EU"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16550,
+    "musica": "TODO MUNDO VAI SOFRER"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16602,
+    "musica": "BEBI LIGUEI"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16647,
+    "musica": "PASSA MAL"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16723,
+    "musica": "GRAVETO"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16752,
+    "musica": "ABANDONO DE INCAPAZ"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16839,
+    "musica": "VIRA HOMEM"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 16946,
+    "musica": "O QUE FALTA EM VOCÊ SOU EU"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 17025,
+    "musica": "DEPRÊ"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 17108,
+    "musica": "TROCA DE CALÇADA"
+  },
+  {
+    "artista": "Marília Mendonça",
+    "codigo": 17179,
+    "musica": "ROSA EMBRIAGADA"
+  },
+  {
+    "artista": "Marília Mendonça -",
+    "codigo": 17329,
+    "musica": "TODO MUNDO"
+  },
+  {
+    "artista": "Marília Mendonça - Gaab",
+    "codigo": 16822,
+    "musica": "INTENÇÃO"
+  },
+  {
+    "artista": "Marília Mendonça - Henrique e",
+    "codigo": 16098,
+    "musica": "IMPASSE"
+  },
+  {
+    "artista": "Marília Mendonça - Léo Santana -",
+    "codigo": 16691,
+    "musica": "APAIXONADINHA"
+  },
+  {
+    "artista": "Marília Mendonça - Maiara",
+    "codigo": 17294,
+    "musica": "ESQUEÇA-ME SE"
+  },
+  {
+    "artista": "Marilia Mendonca - Maiara e",
+    "codigo": 17418,
+    "musica": "PRESEPADA"
+  },
+  {
+    "artista": "Marília Mendonça - Maiara e",
+    "codigo": 17427,
+    "musica": "NÃO SEI O QUE LÁ"
+  },
+  {
+    "artista": "Marília Mendonça - Maiara e",
+    "codigo": 17009,
+    "musica": "QUERO VOCÊ DO JEITO QUE"
+  },
+  {
+    "artista": "Marisa Monte",
+    "codigo": 1863,
+    "musica": "AINDA BEM"
+  },
+  {
+    "artista": "Marjori Estiano",
+    "codigo": 6839,
+    "musica": "VOCÊ SEMPRE SERÁ"
+  },
+  {
+    "artista": "Martinho da Vila",
+    "codigo": 1628,
+    "musica": "SAMBA DA CABROCHA BAMBA"
+  },
+  {
+    "artista": "Martinho Da Vila",
+    "codigo": 3409,
+    "musica": "CANTA, CANTA MINHA GENTE"
+  },
+  {
+    "artista": "Martinho Da Vila",
+    "codigo": 3560,
+    "musica": "DEVAGAR, DEVAGARINHO"
+  },
+  {
+    "artista": "Martinho Da Vila",
+    "codigo": 6052,
+    "musica": "CASA DE BAMBA"
+  },
+  {
+    "artista": "Martinho Da Vila",
+    "codigo": 3332,
+    "musica": "MULHERES"
+  },
+  {
+    "artista": "Maskavo",
+    "codigo": 9350,
+    "musica": "UM ANJO DO CÉU"
+  },
+  {
+    "artista": "Maskavo",
+    "codigo": 15555,
+    "musica": "QUANDO O SOL NASCER"
+  },
+  {
+    "artista": "Matanza",
+    "codigo": 15248,
+    "musica": "ELA ROUBOU MEU CAMINHÃO"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 15953,
+    "musica": "QUE SORTE A NOSSA"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16019,
+    "musica": "O NOSSO SANTO BATEU"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16178,
+    "musica": "DECIDE AÍ"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16238,
+    "musica": "TE ASSUMI PRO BRASIL"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16294,
+    "musica": "TÔ COM MORAL NO CÉU"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16885,
+    "musica": "NEM DOEU"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 16995,
+    "musica": "É PROBLEMA"
+  },
+  {
+    "artista": "Matheus e Kauan",
+    "codigo": 17283,
+    "musica": "EXPECTATIVA X"
+  },
+  {
+    "artista": "Matheus e Kauan - Anitta",
+    "codigo": 16337,
+    "musica": "AO VIVO E A CORES"
+  },
+  {
+    "artista": "Matheus e Kauan - Jorge e Mateus",
+    "codigo": 16818,
+    "musica": "QUARTA CADEIRA"
+  },
+  {
+    "artista": "Matheus e Kauan - Marília",
+    "codigo": 16760,
+    "musica": "VOU TER QUE SUPERAR"
+  },
+  {
+    "artista": "Matheus e Kauan - MC Kevinho",
+    "codigo": 16306,
+    "musica": "DEIXA ELA BEIJAR"
+  },
+  {
+    "artista": "Matheus Fernandes -",
+    "codigo": 17212,
+    "musica": "BABY ME"
+  },
+  {
+    "artista": "Matheus Fernandes - Xand Avião",
+    "codigo": 17413,
+    "musica": "BALANCO DA REDE"
+  },
+  {
+    "artista": "Matheuzinho - MC Kevinho -",
+    "codigo": 17194,
+    "musica": "NÃO ME TIRA"
+  },
+  {
+    "artista": "Matheuzinho - Menor Nico",
+    "codigo": 17158,
+    "musica": "O GOLPE TÁ AÍ"
+  },
+  {
+    "artista": "Matogrosso E Matias",
+    "codigo": 6717,
+    "musica": "TENTEI TE ESQUECER"
+  },
+  {
+    "artista": "Mauro Celso",
+    "codigo": 9403,
+    "musica": "BILU TETÉIA"
+  },
+  {
+    "artista": "MC Gui",
+    "codigo": 15582,
+    "musica": "O BONDE PASSOU"
+  },
+  {
+    "artista": "MC Guimê - Emicida",
+    "codigo": 15551,
+    "musica": "PAÍS DO FUTEBOL"
+  },
+  {
+    "artista": "MC Kekel - Mumuzinho - Maiara e",
+    "codigo": 16988,
+    "musica": "ELA TÁ PODENDO"
+  },
+  {
+    "artista": "MC Kevin O Chris",
+    "codigo": 17349,
+    "musica": "TIPO GIN (E"
+  },
+  {
+    "artista": "MC Kevinho",
+    "codigo": 16838,
+    "musica": "TE GUSTA"
+  },
+  {
+    "artista": "MC Kevinho",
+    "codigo": 17274,
+    "musica": "O GRAVE BATER"
+  },
+  {
+    "artista": "MC Kevinho - MC Kekel",
+    "codigo": 16427,
+    "musica": "O BEBÊ"
+  },
+  {
+    "artista": "MC Kevinho - Simone e Simaria",
+    "codigo": 16359,
+    "musica": "TA TUM TUM"
+  },
+  {
+    "artista": "MC Kevinho - Tierry",
+    "codigo": 17044,
+    "musica": "BRUNINHA"
+  },
+  {
+    "artista": "Mc Leozinho",
+    "codigo": 7239,
+    "musica": "SE ELA DANÇA EU DANÇO"
+  },
+  {
+    "artista": "MC Marcinho",
+    "codigo": 16686,
+    "musica": "GLAMOUROSA (RAP GLAMUROSA)"
+  },
+  {
+    "artista": "Mc Perlla",
+    "codigo": 7469,
+    "musica": "TREMENDO VACILÃO"
+  },
+  {
+    "artista": "MC Sapão",
+    "codigo": 15439,
+    "musica": "TÔ TRANQUILÃO"
+  },
+  {
+    "artista": "MC Sapão",
+    "codigo": 16040,
+    "musica": "VOU DESAFIAR VOCÊ"
+  },
+  {
+    "artista": "Melim",
+    "codigo": 16328,
+    "musica": "MEU ABRIGO"
+  },
+  {
+    "artista": "Melim",
+    "codigo": 16395,
+    "musica": "OUVI DIZER"
+  },
+  {
+    "artista": "Menos é Mais -",
+    "codigo": 17261,
+    "musica": "AMOR FALSIFICADO"
+  },
+  {
+    "artista": "Menudo",
+    "codigo": 4404,
+    "musica": "NÃO SE REPRIMA"
+  },
+  {
+    "artista": "Michel Teló",
+    "codigo": 1566,
+    "musica": "EXPLODIU"
+  },
+  {
+    "artista": "Michel Teló",
+    "codigo": 1605,
+    "musica": "FUGIDINHA"
+  },
+  {
+    "artista": "Michel Teló",
+    "codigo": 1861,
+    "musica": "AI SE EU TE PEGO"
+  },
+  {
+    "artista": "Michel Teló e João Bosco e",
+    "codigo": 1251,
+    "musica": "EI, PSIU, BEIJO, ME LIGA"
+  },
+  {
+    "artista": "Mila - Menor Nico - Petter Ferraz",
+    "codigo": 17031,
+    "musica": "AMOR OU O LITRÃO"
+  },
+  {
+    "artista": "Milionário E José Rico",
+    "codigo": 4110,
+    "musica": "ESTRADA DA VIDA"
+  },
+  {
+    "artista": "Milionário E José Rico",
+    "codigo": 6761,
+    "musica": "A DAMA DE VERMELHO"
+  },
+  {
+    "artista": "Miriam Peracchi - Disney A Bela e",
+    "codigo": 15443,
+    "musica": "A BELA E A FERA"
+  },
+  {
+    "artista": "Miúcha E Tom Jobim",
+    "codigo": 6545,
+    "musica": "PELA LUZ DOS OLHOS TEUS"
+  },
+  {
+    "artista": "Moacyr Franco",
+    "codigo": 3946,
+    "musica": "AINDA ONTEM CHOREI DE"
+  },
+  {
+    "artista": "Mogli",
+    "codigo": 7550,
+    "musica": "SOMENTE O NECESSÁRIO"
+  },
+  {
+    "artista": "Molejo",
+    "codigo": 3637,
+    "musica": "SAMBA DIFERENTE"
+  },
+  {
+    "artista": "Molejo",
+    "codigo": 3821,
+    "musica": "A DANÇA DA VASSOURA"
+  },
+  {
+    "artista": "Mpb4",
+    "codigo": 1055,
+    "musica": "O PATO"
+  },
+  {
+    "artista": "Mumuzinho",
+    "codigo": 17159,
+    "musica": "PLAYLIST"
+  },
+  {
+    "artista": "Mundo Bita",
+    "codigo": 16393,
+    "musica": "FAZENDINHA"
+  },
+  {
+    "artista": "Munhoz e Mariano",
+    "codigo": 2844,
+    "musica": "CAMARO AMARELO"
+  },
+  {
+    "artista": "Munhoz e Mariano",
+    "codigo": 2910,
+    "musica": "EU VOU PEGAR VOCÊ E TÃE"
+  },
+  {
+    "artista": "Munhoz e Mariano",
+    "codigo": 15312,
+    "musica": "PANTERA COR-DE-ROSA"
+  },
+  {
+    "artista": "Munhoz e Mariano - João Neto e",
+    "codigo": 15211,
+    "musica": "BALADA LOUCA"
+  },
+  {
+    "artista": "Murilo Huff - Marília Mendonça",
+    "codigo": 16958,
+    "musica": "DOIS ENGANADOS"
+  },
+  {
+    "artista": "Música Junina",
+    "codigo": 3225,
+    "musica": "PULA A FOGUEIRA"
+  },
+  {
+    "artista": "Naiara Azevedo",
+    "codigo": 2884,
+    "musica": "COITADO (RESPOSTA \"SOU FODA\")"
+  },
+  {
+    "artista": "Naiara Azevedo",
+    "codigo": 16699,
+    "musica": "RAPARIGA DIGITAL"
+  },
+  {
+    "artista": "Naiara Azevedo",
+    "codigo": 16848,
+    "musica": "PEGADA QUE DESGRAMA"
+  },
+  {
+    "artista": "Naiara Azevedo - Maiara e Maraísa",
+    "codigo": 16008,
+    "musica": "50 REAIS"
+  },
+  {
+    "artista": "Naldo Benny (Naldo)",
+    "codigo": 15005,
+    "musica": "AMOR DE CHOCOLATE"
+  },
+  {
+    "artista": "Naldo Benny (Naldo)",
+    "codigo": 15115,
+    "musica": "MEU CORPO QUER VOCÊ"
+  },
+  {
+    "artista": "Naldo Benny (Naldo)",
+    "codigo": 15985,
+    "musica": "EXAGERADO"
+  },
+  {
+    "artista": "Naldo Benny (Naldo) - Fat Joe",
+    "codigo": 15316,
+    "musica": "SE JOGA"
+  },
+  {
+    "artista": "Natiritus",
+    "codigo": 4406,
+    "musica": "O CARCARÁ E A ROSA"
+  },
+  {
+    "artista": "Natiruts",
+    "codigo": 1112,
+    "musica": "NATICONGO"
+  },
+  {
+    "artista": "Natiruts",
+    "codigo": 9330,
+    "musica": "REGGAE POWER"
+  },
+  {
+    "artista": "Nego do Borel",
+    "codigo": 16138,
+    "musica": "NÃO ME DEIXE SOZINHO"
+  },
+  {
+    "artista": "Nego do Borel - Anitta - Wesley",
+    "codigo": 16170,
+    "musica": "VOCÊ PARTIU MEU CORAÇÃO"
+  },
+  {
+    "artista": "Nego do Borel - Luan Santana",
+    "codigo": 16326,
+    "musica": "CONTATINHO"
+  },
+  {
+    "artista": "Nego do Borel - Maiara e Maraísa",
+    "codigo": 16205,
+    "musica": "ESQUECI COMO NAMORA"
+  },
+  {
+    "artista": "Negritude Júnior",
+    "codigo": 3116,
+    "musica": "INDIFERENÇA"
+  },
+  {
+    "artista": "Negritude Júnior",
+    "codigo": 3029,
+    "musica": "BEIJO GELADINHO"
+  },
+  {
+    "artista": "Negritude Júnior",
+    "codigo": 3411,
+    "musica": "COHAB CITY - VEM PRA CÁ"
+  },
+  {
+    "artista": "Negritude Júnior",
+    "codigo": 3545,
+    "musica": "TIC-TAC"
+  },
+  {
+    "artista": "Negritude Júnior",
+    "codigo": 3640,
+    "musica": "TANAJURA"
+  },
+  {
+    "artista": "Ney Matogrosso",
+    "codigo": 3114,
+    "musica": "HOMEM COM H"
+  },
+  {
+    "artista": "Now United",
+    "codigo": 16925,
+    "musica": "LENDAS"
+  },
+  {
+    "artista": "NX Zero",
+    "codigo": 9511,
+    "musica": "PELA ÚLTIMA VEZ"
+  },
+  {
+    "artista": "NX Zero",
+    "codigo": 9635,
+    "musica": "CEDO OU TARDE"
+  },
+  {
+    "artista": "NX Zero",
+    "codigo": 1380,
+    "musica": "ESPERO A MINHA VEZ"
+  },
+  {
+    "artista": "NX Zero",
+    "codigo": 9329,
+    "musica": "RAZÕES E EMOÇÕES"
+  },
+  {
+    "artista": "NX Zero e Freddy Gibbs",
+    "codigo": 2924,
+    "musica": "ONDE ESTIVER"
+  },
+  {
+    "artista": "O Rappa",
+    "codigo": 15484,
+    "musica": "ANJOS (PRA QUEM TEM FÉ)"
+  },
+  {
+    "artista": "O Rappa",
+    "codigo": 6231,
+    "musica": "PESCADOR DE ILUSÕES"
+  },
+  {
+    "artista": "O Rappa",
+    "codigo": 1095,
+    "musica": "MEU MUNDO É O BARRO"
+  },
+  {
+    "artista": "O Som dos Baixinhos",
+    "codigo": 7512,
+    "musica": "BORBOLETINHA"
+  },
+  {
+    "artista": "O Som dos Baixinhos",
+    "codigo": 7525,
+    "musica": "DONA ARANHA"
+  },
+  {
+    "artista": "Onze:20",
+    "codigo": 15143,
+    "musica": "MEU LUGAR"
+  },
+  {
+    "artista": "Onze:20",
+    "codigo": 15587,
+    "musica": "PRA VOCÊ"
+  },
+  {
+    "artista": "Orquestra Da Terra",
+    "codigo": 3489,
+    "musica": "REI DO GADO"
+  },
+  {
+    "artista": "Os Barões da Pisadinha",
+    "codigo": 16945,
+    "musica": "JÁ QUE ME ENSINOU A BEBER"
+  },
+  {
+    "artista": "Os Barões da Pisadinha",
+    "codigo": 16977,
+    "musica": "TÁ ROCHEDA"
+  },
+  {
+    "artista": "Os Barões da Pisadinha",
+    "codigo": 17010,
+    "musica": "RECAIREI"
+  },
+  {
+    "artista": "Os Barões da Pisadinha",
+    "codigo": 17114,
+    "musica": "ESQUEMA PREFERIDO"
+  },
+  {
+    "artista": "Os Barões da Pisadinha",
+    "codigo": 17305,
+    "musica": "GALERA DO INTERIOR"
+  },
+  {
+    "artista": "Os Barões da Pisadinha -",
+    "codigo": 17198,
+    "musica": "QUERO VER É"
+  },
+  {
+    "artista": "Os Barões da Pisadinha -",
+    "codigo": 17220,
+    "musica": "ZERO SAUDADE"
+  },
+  {
+    "artista": "Os Barões da Pisadinha - Xand",
+    "codigo": 17043,
+    "musica": "BASTA VOCÊ ME LIGAR"
+  },
+  {
+    "artista": "Os Incríveis",
+    "codigo": 7475,
+    "musica": "VENDEDOR DE BANANAS"
+  },
+  {
+    "artista": "Os Magníficos",
+    "codigo": 3712,
+    "musica": "ME USA"
+  },
+  {
+    "artista": "Os Morenos",
+    "codigo": 3140,
+    "musica": "MARROM BOM BOM"
+  },
+  {
+    "artista": "Os Originais do Samba",
+    "codigo": 1553,
+    "musica": "FALADOR PASSA MAL"
+  },
+  {
+    "artista": "Os Travessos",
+    "codigo": 4414,
+    "musica": "TÔ TE FILMANDO"
+  },
+  {
+    "artista": "Ovelha",
+    "codigo": 9878,
+    "musica": "SEM VOCÊ NÃO VIVEREI"
+  },
+  {
+    "artista": "P.O.Box",
+    "codigo": 4368,
+    "musica": "PAPO DE JACARÉ"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 16247,
+    "musica": "K.O."
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 16397,
+    "musica": "PROBLEMA SEU"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 16612,
+    "musica": "DISK ME"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 16672,
+    "musica": "AMOR DE QUE"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 17127,
+    "musica": "SEU CRIME"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 17171,
+    "musica": "AMA SOFRE CHORA"
+  },
+  {
+    "artista": "Pabllo Vittar",
+    "codigo": 17290,
+    "musica": "ZAP ZUM"
+  },
+  {
+    "artista": "Pabllo Vittar - Ivete Sangalo",
+    "codigo": 16795,
+    "musica": "LOVEZINHO"
+  },
+  {
+    "artista": "Pabllo Vittar - Jerry Smith",
+    "codigo": 16772,
+    "musica": "CLIMA QUENTE"
+  },
+  {
+    "artista": "Pabllo Vittar - Matheus Carrilho",
+    "codigo": 16301,
+    "musica": "CORPO SENSUAL"
+  },
+  {
+    "artista": "Pabllo Vittar - Pocah",
+    "codigo": 17022,
+    "musica": "BANDIDA"
+  },
+  {
+    "artista": "Pabllo Vittar - Psirico",
+    "codigo": 16646,
+    "musica": "PARABÉNS"
+  },
+  {
+    "artista": "Pablo",
+    "codigo": 15674,
+    "musica": "PORQUE HOMEM NÃO CHORA"
+  },
+  {
+    "artista": "Pacheco - Marília",
+    "codigo": 1724,
+    "musica": "MOLEQUE"
+  },
+  {
+    "artista": "Padre Fábio de Mello",
+    "codigo": 1139,
+    "musica": "VIDA"
+  },
+  {
+    "artista": "Padre Marcelo Rossi",
+    "codigo": 1873,
+    "musica": "NOITE FELIZ"
+  },
+  {
+    "artista": "Papas da Língua",
+    "codigo": 1144,
+    "musica": "DISCO ROCK"
+  },
+  {
+    "artista": "Parabéns A Você",
+    "codigo": 3205,
+    "musica": "PARABÉNS A VOCÊ"
+  },
+  {
+    "artista": "Paralamas Do Sucesso",
+    "codigo": 3281,
+    "musica": "UMA BRASILEIRA"
+  },
+  {
+    "artista": "Paralamas Do Sucesso",
+    "codigo": 3526,
+    "musica": "LANTERNA DOS AFOGADOS"
+  },
+  {
+    "artista": "Paralamas Do Sucesso",
+    "codigo": 6046,
+    "musica": "AONDE QUER QUE EU VÁ"
+  },
+  {
+    "artista": "Paralamas Do Sucesso",
+    "codigo": 3155,
+    "musica": "MEU ERRO"
+  },
+  {
+    "artista": "Parangolé",
+    "codigo": 1398,
+    "musica": "REBOLATION"
+  },
+  {
+    "artista": "Parangolé",
+    "codigo": 1756,
+    "musica": "TCHUBIRABIROM"
+  },
+  {
+    "artista": "Patati Patatá",
+    "codigo": 2768,
+    "musica": "SE VOCÊ QUER SORRIR"
+  },
+  {
+    "artista": "Paula Fernandes",
+    "codigo": 1435,
+    "musica": "PÁSSARO DE FOGO"
+  },
+  {
+    "artista": "Paula Fernandes",
+    "codigo": 1573,
+    "musica": "SÓ PENSO EM NÓS"
+  },
+  {
+    "artista": "Paula Fernandes-Víctor e Léo",
+    "codigo": 1837,
+    "musica": "NÃO PRECISA"
+  },
+  {
+    "artista": "Paula Hunter",
+    "codigo": 7172,
+    "musica": "MAS QUEM DIRIA"
+  },
+  {
+    "artista": "Pedagógica",
+    "codigo": 1049,
+    "musica": "FUI MORAR NUMA CASINHA"
+  },
+  {
+    "artista": "Pedagógica",
+    "codigo": 1051,
+    "musica": "MEU LANCHINHO"
+  },
+  {
+    "artista": "Pedagógica",
+    "codigo": 1052,
+    "musica": "MEU PINTINHO AMARELINHO"
+  },
+  {
+    "artista": "Pedagógica",
+    "codigo": 1056,
+    "musica": "O SAPO NÃO LAVA O PÉ"
+  },
+  {
+    "artista": "Pedro Henrique e Fernando -",
+    "codigo": 15480,
+    "musica": "VARINHA MÁGICA"
+  },
+  {
+    "artista": "Pepê E Nenêm",
+    "codigo": 4121,
+    "musica": "MANIA DE VOCÊ"
+  },
+  {
+    "artista": "Pequena Sereia - Sebastião",
+    "codigo": 7509,
+    "musica": "AQUI NO MAR"
+  },
+  {
+    "artista": "Péricles",
+    "codigo": 15474,
+    "musica": "SE EU LARGAR O FREIO"
+  },
+  {
+    "artista": "Péricles",
+    "codigo": 16459,
+    "musica": "DANÇA DO BOLE, BOLE"
+  },
+  {
+    "artista": "Péricles",
+    "codigo": 16873,
+    "musica": "ATÉ QUE DUROU"
+  },
+  {
+    "artista": "Péricles",
+    "codigo": 16937,
+    "musica": "MELHOR EU IR"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 1985,
+    "musica": "ADMIRÁVEL CHIP NOVO"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 2676,
+    "musica": "FRACASSO"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 2709,
+    "musica": "ME ADORA"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 2715,
+    "musica": "NA SUA ESTANTE"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 2835,
+    "musica": "MEMÓRIAS"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 15438,
+    "musica": "TETO DE VIDRO"
+  },
+  {
+    "artista": "Pitty",
+    "codigo": 6695,
+    "musica": "EQUALIZE"
+  },
+  {
+    "artista": "Pixote",
+    "codigo": 9688,
+    "musica": "INSEGURANÇA"
+  },
+  {
+    "artista": "Pixote",
+    "codigo": 9698,
+    "musica": "MEU AMOR"
+  },
+  {
+    "artista": "Pixote",
+    "codigo": 16707,
+    "musica": "NEM DE GRAÇA"
+  },
+  {
+    "artista": "Polegar",
+    "codigo": 1825,
+    "musica": "DÁ PRA MIM"
+  },
+  {
+    "artista": "Pollo-Ivo Mozart",
+    "codigo": 15198,
+    "musica": "VAGALUMES"
+  },
+  {
+    "artista": "Priscilla Alcantara - Whindersson",
+    "codigo": 17094,
+    "musica": "GIRASSOL"
+  },
+  {
+    "artista": "Priscilla e Yudi",
+    "codigo": 2827,
+    "musica": "CARRO-CÉU"
+  },
+  {
+    "artista": "Projota",
+    "codigo": 16058,
+    "musica": "ELA SÓ QUER PAZ"
+  },
+  {
+    "artista": "Projota",
+    "codigo": 17006,
+    "musica": "MULEQUE DE VILA"
+  },
+  {
+    "artista": "Projota - Negra Li",
+    "codigo": 15854,
+    "musica": "O HOMEM QUE NÃO TINHA NADA"
+  },
+  {
+    "artista": "Psirico",
+    "codigo": 15467,
+    "musica": "LEPO LEPO"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 1332,
+    "musica": "BOA SORTE"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3072,
+    "musica": "É TARDE DEMAIS"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3231,
+    "musica": "QUE PENA"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3137,
+    "musica": "MARAVILHA"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3046,
+    "musica": "CHEIA DE MANIAS"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 15425,
+    "musica": "QUANDO TE ENCONTREI"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3463,
+    "musica": "CIGANA"
+  },
+  {
+    "artista": "Raça Negra",
+    "codigo": 3495,
+    "musica": "TE QUERO COMIGO"
+  },
+  {
+    "artista": "Rádio Táxi",
+    "codigo": 3425,
+    "musica": "EVA"
+  },
+  {
+    "artista": "Raimundos",
+    "codigo": 4283,
+    "musica": "MULHER DE FASES"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1676,
+    "musica": "LET ME SING, LET ME SING"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 3133,
+    "musica": "MALUCO BELEZA"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1841,
+    "musica": "A VERDADE SOBRE A NOSTALGIA"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1858,
+    "musica": "MAS I LOVE YOU"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1875,
+    "musica": "ROCK DO DIABO"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1879,
+    "musica": "TU ÉS O MDC DA MINHA VIDA"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 1901,
+    "musica": "BABILINA"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 3760,
+    "musica": "METAMORFOSE AMBULANTE"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 4029,
+    "musica": "COWBOY FORA DA LEI"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 6033,
+    "musica": "TENTE OUTRA VEZ"
+  },
+  {
+    "artista": "Raul Seixas",
+    "codigo": 6512,
+    "musica": "SOCIEDADE ALTERNATIVA"
+  },
+  {
+    "artista": "Rebelde",
+    "codigo": 7395,
+    "musica": "NOSSO AMOR"
+  },
+  {
+    "artista": "Rebelde",
+    "codigo": 7594,
+    "musica": "ENSINA-ME"
+  },
+  {
+    "artista": "Rebelde",
+    "codigo": 7143,
+    "musica": "FIQUE EM SILÊNCIO"
+  },
+  {
+    "artista": "Rebelde",
+    "codigo": 17060,
+    "musica": "SALVA-ME"
+  },
+  {
+    "artista": "Rebeldes",
+    "codigo": 2753,
+    "musica": "REBELDE PARA SEMPRE"
+  },
+  {
+    "artista": "Rebeldes",
+    "codigo": 2927,
+    "musica": "QUANDO ESTOU DO SEU LADO"
+  },
+  {
+    "artista": "Reginaldo Rossi",
+    "codigo": 4114,
+    "musica": "GARÇOM"
+  },
+  {
+    "artista": "Restart",
+    "codigo": 1510,
+    "musica": "RECOMEÇAR"
+  },
+  {
+    "artista": "Restart",
+    "codigo": 1593,
+    "musica": "LEVO COMIGO"
+  },
+  {
+    "artista": "Restart",
+    "codigo": 2892,
+    "musica": "MENINA ESTRANHA"
+  },
+  {
+    "artista": "Revelação",
+    "codigo": 6418,
+    "musica": "GRADES DO CORAÇÃO"
+  },
+  {
+    "artista": "Rick E Renner",
+    "codigo": 4076,
+    "musica": "ELA É DEMAIS"
+  },
+  {
+    "artista": "Rick E Renner",
+    "codigo": 4266,
+    "musica": "CARA DE PAU"
+  },
+  {
+    "artista": "Rionegro e Solimões",
+    "codigo": 9303,
+    "musica": "O GRITO DA GALERA"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 4261,
+    "musica": "A GENTE SE ENTREGA"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 4389,
+    "musica": "BATE O PÉ"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 6024,
+    "musica": "ORVALHO DA SAUDADE"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 6437,
+    "musica": "TÔ POR AÍ"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 6620,
+    "musica": "NA SOLA DA BOTA"
+  },
+  {
+    "artista": "Rionegro E Solimões",
+    "codigo": 6728,
+    "musica": "DE BEM COM A VIDA"
+  },
+  {
+    "artista": "Rita Lee",
+    "codigo": 3124,
+    "musica": "LANÇA PERFUME"
+  },
+  {
+    "artista": "Rita Lee",
+    "codigo": 1862,
+    "musica": "AMBIÇÃO"
+  },
+  {
+    "artista": "Rita Lee",
+    "codigo": 6647,
+    "musica": "AMOR E SEXO"
+  },
+  {
+    "artista": "Roberta Miranda",
+    "codigo": 3396,
+    "musica": "VÁ COM DEUS"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 3403,
+    "musica": "AMIGOS DO PEITO"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1823,
+    "musica": "AQUELE BEIJO QUE TE DEI"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1836,
+    "musica": "FOLHAS DE OUTONO"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1850,
+    "musica": "PAREI, OLHEI"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1852,
+    "musica": "É TEMPO DE AMAR"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1859,
+    "musica": "MEU QUERIDO, MEU VELHO, MEU"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1877,
+    "musica": "SÓ VOU GOSTAR DE QUEM GOSTA"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1883,
+    "musica": "BRUCUTU"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1904,
+    "musica": "HISTÓRIA DE UM HOMEM MAU"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 1922,
+    "musica": "NOITE DE TERROR"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 3700,
+    "musica": "COMO VAI VOCÊ ?"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 6023,
+    "musica": "O CALHAMBEQUE"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 7130,
+    "musica": "EU SOU TERRÍVEL"
+  },
+  {
+    "artista": "Roberto Carlos",
+    "codigo": 3314,
+    "musica": "COMO É GRANDE O MEU AMOR"
+  },
+  {
+    "artista": "Roberto Leal",
+    "codigo": 1091,
+    "musica": "BATE O PÉ"
+  },
+  {
+    "artista": "Roberto Leal",
+    "codigo": 1099,
+    "musica": "VERDE VINHO"
+  },
+  {
+    "artista": "Rodriguinho e Thiaguinho",
+    "codigo": 1078,
+    "musica": "FATALMENTE"
+  },
+  {
+    "artista": "Rouge",
+    "codigo": 6499,
+    "musica": "NÃO DÁ PRA RESISTIR"
+  },
+  {
+    "artista": "Rouge",
+    "codigo": 6507,
+    "musica": "RAGATANGA (ASEREJÉ)"
+  },
+  {
+    "artista": "Rouge",
+    "codigo": 6527,
+    "musica": "BEIJO MOLHADO"
+  },
+  {
+    "artista": "Rouge",
+    "codigo": 6639,
+    "musica": "UM ANJO VEIO ME FALAR"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 1221,
+    "musica": "NATAL TODO DIA"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 1567,
+    "musica": "ME FAÇA UM FAVOR"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 1700,
+    "musica": "OS CORAÇÕES NÃO SÃO IGUAIS"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 3253,
+    "musica": "SEGUINDO NO TREM AZUL"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 3300,
+    "musica": "WHISKY A GO-GO"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 3405,
+    "musica": "ANJO"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 3313,
+    "musica": "COMEÇO, MEIO E FIM"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 6067,
+    "musica": "MEU UNIVERSO É VOCÊ"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 6273,
+    "musica": "SAPATO VELHO"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 6634,
+    "musica": "SHOW DE ROCK'N ROLL"
+  },
+  {
+    "artista": "Roupa Nova",
+    "codigo": 3068,
+    "musica": "DONA"
+  },
+  {
+    "artista": "Roupa Nova e Ivete Sangalo",
+    "codigo": 1616,
+    "musica": "O SAL DA TERRA"
+  },
+  {
+    "artista": "Rpm",
+    "codigo": 4334,
+    "musica": "RÁDIO PIRATA"
+  },
+  {
+    "artista": "Rpm",
+    "codigo": 6440,
+    "musica": "VIDA REAL"
+  },
+  {
+    "artista": "Rpm",
+    "codigo": 3197,
+    "musica": "OLHAR 43"
+  },
+  {
+    "artista": "Sampa Crew",
+    "codigo": 1995,
+    "musica": "ETERNO AMOR"
+  },
+  {
+    "artista": "Sandro E Gustavo",
+    "codigo": 4381,
+    "musica": "A GARAGEM DA VIZINHA"
+  },
+  {
+    "artista": "Sandy",
+    "codigo": 15044,
+    "musica": "AQUELA DOS 30"
+  },
+  {
+    "artista": "Sandy - Tiago Iorc",
+    "codigo": 16011,
+    "musica": "ME ESPERA"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 4156,
+    "musica": "ETC E TAL"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 4317,
+    "musica": "IMORTAL (IMMORTALITY)"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 4347,
+    "musica": "AS QUATRO ESTAÇÕES"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 4488,
+    "musica": "OLHA O QUE O AMOR ME FAZ"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6002,
+    "musica": "A LENDA"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6059,
+    "musica": "EU ACHO QUE PIREI"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6124,
+    "musica": "COM VOCÊ"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6228,
+    "musica": "O AMOR FAZ"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6345,
+    "musica": "QUANDO VOCÊ"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 6398,
+    "musica": "VAMO PULÁ"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 3370,
+    "musica": "MARIA CHIQUINHA"
+  },
+  {
+    "artista": "Sandy e Júnior",
+    "codigo": 7508,
+    "musica": "ABRE A PORTA MARIQUINHA"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 1047,
+    "musica": "DIG-DIG-JOY"
+  },
+  {
+    "artista": "Sandy E Júnior",
+    "codigo": 1070,
+    "musica": "VAI TER QUE REBOLAR"
+  },
+  {
+    "artista": "Sandy E Toquinho",
+    "codigo": 4077,
+    "musica": "ERA UMA VEZ"
+  },
+  {
+    "artista": "Secos E Molhados",
+    "codigo": 3193,
+    "musica": "O VIRA"
+  },
+  {
+    "artista": "Sérgio Reis",
+    "codigo": 1603,
+    "musica": "CABOCLA TEREZA"
+  },
+  {
+    "artista": "Sérgio Reis",
+    "codigo": 3589,
+    "musica": "PANELA VELHA"
+  },
+  {
+    "artista": "Sérgio Reis",
+    "codigo": 3632,
+    "musica": "O MENINO DA PORTEIRA"
+  },
+  {
+    "artista": "Sérgio Reis",
+    "codigo": 4477,
+    "musica": "FILHO ADOTIVO"
+  },
+  {
+    "artista": "Seu Jorge",
+    "codigo": 9624,
+    "musica": "BURGUESINHA"
+  },
+  {
+    "artista": "Seu Jorge",
+    "codigo": 2842,
+    "musica": "AMIGA DA MINHA MULHER"
+  },
+  {
+    "artista": "Shakira",
+    "codigo": 3662,
+    "musica": "ESTOY AQUI"
+  },
+  {
+    "artista": "Sidney Magal",
+    "codigo": 15990,
+    "musica": "MEU SANGUE FERVE POR VOCÊ"
+  },
+  {
+    "artista": "Sidney Magal",
+    "codigo": 4295,
+    "musica": "SANDRA ROSA MADALENA"
+  },
+  {
+    "artista": "Silva - Ludmilla",
+    "codigo": 16720,
+    "musica": "UM PÔR DO SOL NA PRAIA"
+  },
+  {
+    "artista": "Silvinha",
+    "codigo": 6195,
+    "musica": "SPLISH SPLASH"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 15908,
+    "musica": "MEU VIOLÃO E O NOSSO"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 16171,
+    "musica": "126 CABIDES"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 16249,
+    "musica": "REGIME FECHADO"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 16403,
+    "musica": "DUVIDO VOCÊ NÃO TOMAR UMA"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 16555,
+    "musica": "MENTIRA ESTAMPADA NA CARA"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 16753,
+    "musica": "AMORECO"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 17015,
+    "musica": "FOI PÁ PUM"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 17396,
+    "musica": "RAPARIGA"
+  },
+  {
+    "artista": "Simone e Simaria",
+    "codigo": 17461,
+    "musica": "AMIGA"
+  },
+  {
+    "artista": "Simone e Simaria - Anitta",
+    "codigo": 16166,
+    "musica": "LOKA"
+  },
+  {
+    "artista": "Simone e Simaria - Dilsinho",
+    "codigo": 17041,
+    "musica": "AÍ LASCOU"
+  },
+  {
+    "artista": "Simone e Simaria - Ludmilla",
+    "codigo": 16462,
+    "musica": "QUALIDADE DE VIDA"
+  },
+  {
+    "artista": "Simone e Simaria - Ze Felipe",
+    "codigo": 17390,
+    "musica": "VONTADE DE MORDER"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 1149,
+    "musica": "NOITES DE UM VERÃO QUALQUER"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 1235,
+    "musica": "SUTILMENTE"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 1656,
+    "musica": "FOTOS NA ESTANTE"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 3658,
+    "musica": "É PROIBIDO FUMAR"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 3659,
+    "musica": "É UMA PARTIDA DE FUTEBOL"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 6202,
+    "musica": "ACIMA DO SOL"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 6680,
+    "musica": "VOU DEIXAR"
+  },
+  {
+    "artista": "Skank",
+    "codigo": 3393,
+    "musica": "TE VER"
+  },
+  {
+    "artista": "Só Pra Contrariar",
+    "codigo": 3081,
+    "musica": "ESSA TAL LIBERDADE"
+  },
+  {
+    "artista": "Só Pra Contrariar",
+    "codigo": 3749,
+    "musica": "DEPOIS DO PRAZER"
+  },
+  {
+    "artista": "Só Pra Contrariar",
+    "codigo": 3806,
+    "musica": "MINEIRINHO"
+  },
+  {
+    "artista": "Só Pra Contrariar",
+    "codigo": 4174,
+    "musica": "SAI DA MINHA ABA"
+  },
+  {
+    "artista": "Só Pra Contrariar",
+    "codigo": 6039,
+    "musica": "VOCÊ VIROU SAUDADE"
+  },
+  {
+    "artista": "Sophia Valverde e Coro Poliana",
+    "codigo": 16423,
+    "musica": "O MEU NOME É POLIANA"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 1660,
+    "musica": "TOPO DO MUNDO"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 1692,
+    "musica": "NA CAMA"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 1704,
+    "musica": "PRA MIM NÃO É"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 2783,
+    "musica": "ASSIM VOCÊ MATA O PAPAI"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 16214,
+    "musica": "AINDA GOSTO DE VOCÊ"
+  },
+  {
+    "artista": "Sorriso Maroto",
+    "codigo": 1098,
+    "musica": "TARDE DEMAIS"
+  },
+  {
+    "artista": "Sorriso Maroto - Dilsinho",
+    "codigo": 17386,
+    "musica": "MENSAGEM APAGADA"
+  },
+  {
+    "artista": "Strike",
+    "codigo": 15111,
+    "musica": "FLUXO PERFEITO"
+  },
+  {
+    "artista": "Strike",
+    "codigo": 1089,
+    "musica": "O JOGO VIROU"
+  },
+  {
+    "artista": "Supla",
+    "codigo": 6295,
+    "musica": "GREEN HAIR (JAPA GIRL)"
+  },
+  {
+    "artista": "Supla",
+    "codigo": 6333,
+    "musica": "GAROTA DE BERLIM"
+  },
+  {
+    "artista": "Tarcisio do Acordeon - Marcynho",
+    "codigo": 17369,
+    "musica": "ROLE (VAI BEBER, VAI CHORAR"
+  },
+  {
+    "artista": "Tchacabum",
+    "codigo": 6213,
+    "musica": "DANÇA DA ONDA"
+  },
+  {
+    "artista": "Tchakabum",
+    "codigo": 15291,
+    "musica": "DANÇA DA MÃOZINHA"
+  },
+  {
+    "artista": "Teodoro e Sampaio",
+    "codigo": 1615,
+    "musica": "O BEIJO DO ADEUS"
+  },
+  {
+    "artista": "Teodoro e Sampaio",
+    "codigo": 1738,
+    "musica": "PAIXÃO PROIBIDA"
+  },
+  {
+    "artista": "Teodoro E Sampaio",
+    "codigo": 6702,
+    "musica": "MULHER CHORONA"
+  },
+  {
+    "artista": "Teodoro E Sampaio",
+    "codigo": 6773,
+    "musica": "É MENTIRA DELA"
+  },
+  {
+    "artista": "Terrasamba",
+    "codigo": 4003,
+    "musica": "LIBERAR GERAL"
+  },
+  {
+    "artista": "Terrasamba",
+    "codigo": 4027,
+    "musica": "CARRINHO DE MÃO"
+  },
+  {
+    "artista": "Thaeme e Thiago",
+    "codigo": 15003,
+    "musica": "AI QUE DÓ"
+  },
+  {
+    "artista": "Thaeme e Thiago",
+    "codigo": 15220,
+    "musica": "DESERTO"
+  },
+  {
+    "artista": "Thiago Brava",
+    "codigo": 16256,
+    "musica": "DONA MARIA"
+  },
+  {
+    "artista": "Thiaguinho",
+    "codigo": 15558,
+    "musica": "SOU O CARA PRA VOCÊ"
+  },
+  {
+    "artista": "Thiaguinho",
+    "codigo": 15604,
+    "musica": "CARACA, MULEKE!"
+  },
+  {
+    "artista": "Thiaguinho",
+    "codigo": 16438,
+    "musica": "PONTO FRACO"
+  },
+  {
+    "artista": "Thiaguinho",
+    "codigo": 17435,
+    "musica": "FALTA VOCÊ"
+  },
+  {
+    "artista": "Thiaguinho MT - Mila - JS o Mão",
+    "codigo": 16770,
+    "musica": "TUDO OK"
+  },
+  {
+    "artista": "Tiago Iorc",
+    "codigo": 15961,
+    "musica": "AMEI TE VER"
+  },
+  {
+    "artista": "Tierry",
+    "codigo": 16999,
+    "musica": "RITA"
+  },
+  {
+    "artista": "Tierry",
+    "codigo": 17312,
+    "musica": "CABEÇA BRANCA"
+  },
+  {
+    "artista": "Tierry - Marília Mendonça",
+    "codigo": 17005,
+    "musica": "HACKEARAM-ME"
+  },
+  {
+    "artista": "Tihuana",
+    "codigo": 9348,
+    "musica": "TROPA DE ELITE"
+  },
+  {
+    "artista": "Tihuana",
+    "codigo": 15261,
+    "musica": "MULHERES SÃO DE VÊNUS,"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 3110,
+    "musica": "GOSTAVA TANTO DE VOCÊ"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 15638,
+    "musica": "VOCÊ"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 3649,
+    "musica": "AZUL DA COR DO MAR"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 3680,
+    "musica": "PRIMAVERA"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 4137,
+    "musica": "VALE TUDO"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 6548,
+    "musica": "PRIMAVERA"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 6769,
+    "musica": "CHOCOLATE"
+  },
+  {
+    "artista": "Tim Maia",
+    "codigo": 3170,
+    "musica": "NÃO QUERO DINHEIRO, SÓ QUERO"
+  },
+  {
+    "artista": "Tiririca",
+    "codigo": 3523,
+    "musica": "FLORENTINA"
+  },
+  {
+    "artista": "Tiririca",
+    "codigo": 3423,
+    "musica": "EU SOU CHIFRUDO"
+  },
+  {
+    "artista": "Titãs",
+    "codigo": 1723,
+    "musica": "EU NÃO VOU DIZER NADA"
+  },
+  {
+    "artista": "Titãs",
+    "codigo": 6654,
+    "musica": "ENQUANTO HOUVER SOL"
+  },
+  {
+    "artista": "Toquinho",
+    "codigo": 3406,
+    "musica": "AQUARELA"
+  },
+  {
+    "artista": "Trem Da Alegria",
+    "codigo": 3283,
+    "musica": "UNI,DUNI,TÊ"
+  },
+  {
+    "artista": "Trem da alegria",
+    "codigo": 2689,
+    "musica": "HE-MAN"
+  },
+  {
+    "artista": "Trem da Alegria",
+    "codigo": 7544,
+    "musica": "PIUÍ ABACAXI"
+  },
+  {
+    "artista": "Tribalistas",
+    "codigo": 6495,
+    "musica": "JÁ SEI NAMORAR"
+  },
+  {
+    "artista": "Tribalistas",
+    "codigo": 6558,
+    "musica": "VELHA INFÂNCIA"
+  },
+  {
+    "artista": "Trio Parada Dura",
+    "codigo": 9891,
+    "musica": "TELEFONE MUDO"
+  },
+  {
+    "artista": "Trio Parada Dura",
+    "codigo": 15725,
+    "musica": "AS ANDORINHAS"
+  },
+  {
+    "artista": "Trio Parada Dura",
+    "codigo": 6441,
+    "musica": "BARCO DE PAPEL"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 3454,
+    "musica": "AMIGOS DO PEITO"
+  },
+  {
+    "artista": "Turma do Balão Mágico",
+    "codigo": 7505,
+    "musica": "A GALINHA MAGRICELA"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1036,
+    "musica": "ATIREI O PAU NO GATO"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1037,
+    "musica": "BAILE DOS PASSARINHOS"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1046,
+    "musica": "DIA DOS PAIS"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1066,
+    "musica": "SUPERFANTÁSTICO"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1068,
+    "musica": "UM, DOIS, TRÊS INDIOZINHOS"
+  },
+  {
+    "artista": "Turma Do Balão Mágico",
+    "codigo": 1069,
+    "musica": "URSINHO PIMPÃO (MI OSITO"
+  },
+  {
+    "artista": "Turma do Pagode",
+    "codigo": 15097,
+    "musica": "TOMA JEITO CORAÇÃO"
+  },
+  {
+    "artista": "Turma do Pagode",
+    "codigo": 16534,
+    "musica": "CAMISA 10"
+  },
+  {
+    "artista": "Turma do Pagode",
+    "codigo": 17465,
+    "musica": "FORA DOS STORIES"
+  },
+  {
+    "artista": "Ultraje a Rigor",
+    "codigo": 1903,
+    "musica": "EU GOSTO DE MULHER"
+  },
+  {
+    "artista": "Ultraje a Rigor",
+    "codigo": 1977,
+    "musica": "EU ME AMO"
+  },
+  {
+    "artista": "Ultraje A Rigor",
+    "codigo": 3175,
+    "musica": "NÓS VAMOS INVADIR SUA PRAIA"
+  },
+  {
+    "artista": "Ultraje A Rigor",
+    "codigo": 3474,
+    "musica": "MARYLOU"
+  },
+  {
+    "artista": "Valesca Popozuda",
+    "codigo": 15823,
+    "musica": "EU SOU A DIVA QUE VOCÊ QUER"
+  },
+  {
+    "artista": "Vanessa Da Mata",
+    "codigo": 7647,
+    "musica": "NÃO ME DEIXE SÓ"
+  },
+  {
+    "artista": "Verônica Sabino",
+    "codigo": 1724,
+    "musica": "EU PRECISO DE VOCÊ"
+  },
+  {
+    "artista": "Victor e Léo",
+    "codigo": 1612,
+    "musica": "NÃO MAIS"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 9479,
+    "musica": "MEU EU EM VOCÊ"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 9456,
+    "musica": "FADA"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 9561,
+    "musica": "VIDA BOA"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 9623,
+    "musica": "BORBOLETAS"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 9893,
+    "musica": "TEM QUE SER VOCÊ"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 1129,
+    "musica": "DEUS E EU NO SERTÃO"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 1649,
+    "musica": "BOA SORTE PRA VOCÊ"
+  },
+  {
+    "artista": "Víctor e Léo",
+    "codigo": 1714,
+    "musica": "RIOS DE AMOR"
+  },
+  {
+    "artista": "Vitor Fernandes",
+    "codigo": 17221,
+    "musica": "ACASO"
+  },
+  {
+    "artista": "Vitor Fernandes",
+    "codigo": 1725,
+    "musica": "VOU FALAR QUE NÃO"
+  },
+  {
+    "artista": "Vitor Kley",
+    "codigo": 16344,
+    "musica": "O SOL"
+  },
+  {
+    "artista": "Vitor Kley",
+    "codigo": 1724,
+    "musica": "MENINA LINDA"
+  },
+  {
+    "artista": "Vitor Kley - Bruno Martini",
+    "codigo": 16436,
+    "musica": "MORENA"
+  },
+  {
+    "artista": "Waldick Soriano",
+    "codigo": 6131,
+    "musica": "EU NÃO SOU CACHORRO NÃO"
+  },
+  {
+    "artista": "Wanessa Camargo",
+    "codigo": 6070,
+    "musica": "O AMOR NÃO DEIXA"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 15808,
+    "musica": "CAMAROTE"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 16282,
+    "musica": "SONHEI QUE TAVA ME CASANDO"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 16324,
+    "musica": "AR CONDICIONADO NO 15"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 16583,
+    "musica": "IGUAL ELA SÓ UMA"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 16922,
+    "musica": "DOIS LADOS"
+  },
+  {
+    "artista": "Wesley Safadão",
+    "codigo": 16978,
+    "musica": "TIM TIM"
+  },
+  {
+    "artista": "Wesley Safadão - Aldair Playboy -",
+    "codigo": 16361,
+    "musica": "AMOR FALSO"
+  },
+  {
+    "artista": "Wesley Safadão - Anitta",
+    "codigo": 16358,
+    "musica": "ROMANCE COM SAFADEZA"
+  },
+  {
+    "artista": "Wesley Safadão - Marília",
+    "codigo": 16230,
+    "musica": "NINGUÉM É DE FERRO"
+  },
+  {
+    "artista": "Wesley Safadão - MC Kevinho",
+    "codigo": 16296,
+    "musica": "OLHA A EXPLOSÃO"
+  },
+  {
+    "artista": "Wesley Safadão - Os Barões da",
+    "codigo": 17004,
+    "musica": "ELE É ELE, EU SOU EU"
+  },
+  {
+    "artista": "Wesley Safadão - Ronaldinho",
+    "codigo": 16196,
+    "musica": "SOLTEIRO DE NOVO (TÔ)"
+  },
+  {
+    "artista": "Wesley Safadão - Zé Neto e",
+    "codigo": 16627,
+    "musica": "NA CAMA QUE EU PAGUEI"
+  },
+  {
+    "artista": "Whadi Gama",
+    "codigo": 16485,
+    "musica": "PISCININHA AMOR"
+  },
+  {
+    "artista": "Xand Avião",
+    "codigo": 16593,
+    "musica": "CASAL RAIZ"
+  },
+  {
+    "artista": "Xand Avião - Gusttavo Lima",
+    "codigo": 16851,
+    "musica": "ALGO MAIS"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 3319,
+    "musica": "DANÇA DA XUXA"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 3269,
+    "musica": "TINDOLELÊ"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 3034,
+    "musica": "BRINCAR DE ÍNDIO"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 1984,
+    "musica": "ABECEDÁRIO DA XUXA"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 15009,
+    "musica": "DOCE MEL"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 7515,
+    "musica": "CINCO PATINHOS"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 7517,
+    "musica": "CIRCO"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 7521,
+    "musica": "DANÇANDO COM O TXUTXUCÃO"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 7524,
+    "musica": "DOIS PEIXINHOS"
+  },
+  {
+    "artista": "Xuxa",
+    "codigo": 1060,
+    "musica": "PARABÉNS DA XUXA"
+  },
+  {
+    "artista": "Yasmin Santos",
+    "codigo": 16478,
+    "musica": "SAUDADE NÍVEL HARD"
+  },
+  {
+    "artista": "Yasmin Santos - Marília Mendonça",
+    "codigo": 17057,
+    "musica": "PARA, PENSA E VOLTA"
+  },
+  {
+    "artista": "Yasmin Santos - Wesley Safadão",
+    "codigo": 16869,
+    "musica": "SAUDADE EM GOTAS"
+  },
+  {
+    "artista": "Zé Felipe - Gusttavo Lima",
+    "codigo": 17090,
+    "musica": "ESQUECE DE ME ESQUECER"
+  },
+  {
+    "artista": "Zé Felipe - Marcynho",
+    "codigo": 17298,
+    "musica": "REVOADA NO"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 15996,
+    "musica": "SEU POLÍCIA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16349,
+    "musica": "LARGADO ÀS TRAÇAS"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16415,
+    "musica": "STATUS QUE EU NÃO QUERIA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16452,
+    "musica": "NOTIFICAÇÃO PREFERIDA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16504,
+    "musica": "DERRETER A ALIANÇA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16603,
+    "musica": "BEBIDA NA FERIDA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16681,
+    "musica": "BEBI MINHA BICICLETA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 16904,
+    "musica": "BARZINHO ALEATÓRIO"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 17042,
+    "musica": "ALÔ AMBEV (SEGUE SUA VIDA)"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 1724,
+    "musica": "VOCÊ BEBERIA OU"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 17304,
+    "musica": "ELA E ELA"
+  },
+  {
+    "artista": "Zé Neto e Cristiano",
+    "codigo": 17467,
+    "musica": "MELHOR SER UMA SAUDADE"
+  },
+  {
+    "artista": "Zé Vaqueiro",
+    "codigo": 17048,
+    "musica": "LETÍCIA"
+  },
+  {
+    "artista": "Zé Vaqueiro",
+    "codigo": 17065,
+    "musica": "MEIA NOITE"
+  },
+  {
+    "artista": "Zé Vaqueiro",
+    "codigo": 17130,
+    "musica": "VOLTA COMIGO BB"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 16260,
+    "musica": "BRINCADEIRA TEM HORA"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 6064,
+    "musica": "JURA"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 6367,
+    "musica": "DEIXA A VIDA ME LEVAR"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 6404,
+    "musica": "BAGAÇO DA LARANJA"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 6528,
+    "musica": "CAVIAR"
+  },
+  {
+    "artista": "Zeca Pagodinho",
+    "codigo": 16789,
+    "musica": "QUANDO EU CONTAR (IÁIÁ)"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 1658,
+    "musica": "MENTES TÃO BEM"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 1752,
+    "musica": "TÃO LINDA E TÃO LOUCA"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 1753,
+    "musica": "TARDE DEMAIS"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3056,
+    "musica": "CORAÇÃO ESTÁ EM PEDAÇOS"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3819,
+    "musica": "TOMA JUÍZO"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3851,
+    "musica": "NO DIA EM QUE EU SAÍ DE CASA"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 4186,
+    "musica": "DOIS CORAÇÕES E UMA HISTÓRIA"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 4289,
+    "musica": "PARE"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 4443,
+    "musica": "MEXE QUE É BOM"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 6442,
+    "musica": "A FERRO E FOGO"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 6671,
+    "musica": "PRA MUDAR MINHA VIDA"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 6705,
+    "musica": "NOSSO AMOR É OURO"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 6800,
+    "musica": "TRISTEZA DO JECA"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3071,
+    "musica": "É O AMOR"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3098,
+    "musica": "FAZ MAIS UMA VEZ COMIGO"
+  },
+  {
+    "artista": "Zezé Di Camargo e Luciano",
+    "codigo": 3162,
+    "musica": "MUDA DE VIDA"
+  }
+]
