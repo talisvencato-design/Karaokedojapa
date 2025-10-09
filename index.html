@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Karaokê do Japa</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { --panel: rgba(20,20,20,0.85); --accent:#ffcc00; --muted:#666; }
+    body{ font-family: Arial, Helvetica, sans-serif; margin:0; color:#fff; min-height:100vh;
+      background: url('./9937771.jpg') no-repeat center center fixed; background-size:cover;
+      overflow-x:hidden;
+    }
+    header{ text-align:center; padding:20px; }
+    header img{ max-width:480px; width:90%; height:auto; }
+    .wrap{ display:flex; gap:30px; padding:20px; flex-wrap:wrap; justify-content:center; align-items:flex-start; }
+    .left{ width:280px; text-align:center; }
+    .right{ flex:1; background:var(--panel); padding:20px; border-radius:12px; min-height:380px; max-width:900px; text-align:center; }
+    input#codigo{ width:220px; padding:14px; font-size:22px; border-radius:8px; border:0; text-align:center; }
+    .keypad{ display:grid; grid-template-columns:repeat(3,90px); gap:12px; margin-top:18px; justify-content:center; }
+    .keypad button{ padding:16px; font-weight:700; border-radius:8px; border:0; background:#333; color:#fff; cursor:pointer; font-size:20px; }
+    .keypad .enter{ grid-column: span 3; background:#28a745; }
+    .thumbnails{ display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px; }
+    .thumbnails img{ width:240px; border-radius:10px; border:3px solid var(--muted); cursor:pointer; transition:transform .15s, border-color .15s, box-shadow .15s; }
+    .thumbnails img:hover{ transform:scale(1.08); border-color:var(--accent); box-shadow:0 0 12px var(--accent); }
+
+    /* PLAYER OVERLAY */
+    #overlay{ display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:99999; background:#000; align-items:center; justify-content:center; }
+    #overlay.open{ display:flex; }
+    .playerWrap{ width:100vw; height:100vh; position:fixed; top:0; left:0; display:flex; align-items:center; justify-content:center; }
+    #overlayPlayer{ width:100%; height:100%; position:relative; }
+    #overlayPlayer iframe{ width:100%; height:100%; border:0; display:block; }
+    .closeBtn{ position:absolute; top:10px; right:20px; background:rgba(0,0,0,0.5); color:#fff; font-size:28px; border:0; border-radius:8px; cursor:pointer; z-index:10; padding:6px 10px; }
+
+    /* NOTA FINAL (overlay acima do player) */
+    #notaFinal{
+      position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92);
+      display:none; flex-direction:column; align-items:center; justify-content:center; color:#fff; z-index:100000; text-align:center;
+    }
+    #notaFinal .notaBox{
+      padding:20px 30px; border-radius:12px; background:rgba(0,0,0,0.45); backdrop-filter: blur(4px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.6); max-width:900px;
+    }
+    #textoNota{ font-size:64px; font-weight:800; line-height:1.1; margin-bottom:10px; }
+    #subFrase{ font-size:22px; margin-top:6px; color:#fffb; }
+    #fogos canvas{ position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:100001; }
+  </style>
+</head>
+<body>
+  <header><img src="./logo.png" alt="Karaokê do Japa" /></header>
+
+  <main class="wrap">
+    <section class="left">
+      <p>Digite o código da música:</p>
+      <input id="codigo" placeholder="Ex: 6197" />
+      <div class="keypad">
+        <button onclick="digitar('1')">1</button><button onclick="digitar('2')">2</button><button onclick="digitar('3')">3</button>
+        <button onclick="digitar('4')">4</button><button onclick="digitar('5')">5</button><button onclick="digitar('6')">6</button>
+        <button onclick="digitar('7')">7</button><button onclick="digitar('8')">8</button><button onclick="digitar('9')">9</button>
+        <button class="back" onclick="backspace()">BACK</button><button onclick="digitar('0')">0</button><button class="clear" onclick="clearAll()">C</button>
+        <button class="enter" onclick="buscar()">✔ ENTER</button>
+      </div>
+    </section>
+
+    <section class="right" id="resultado"><p>🔎 Digite um código para começar.</p></section>
+  </main>
+
+  <div id="overlay">
+    <div class="playerWrap">
+      <button class="closeBtn" onclick="fecharVideo(true)">✕ Fechar</button>
+      <div id="overlayPlayer"></div>
+    </div>
+  </div>
+
+  <div id="notaFinal" aria-hidden="true">
+    <div id="fogos"><canvas id="fireworks"></canvas></div>
+    <div class="notaBox">
+      <div id="textoNota">Nota …</div>
+      <div id="subFrase"></div>
+    </div>
+    <audio id="somAplausos" src="./aplausos.mp3" preload="auto"></audio>
+  </div>
+
+  <audio id="bgAudio" src="./ambiente.mp3" loop autoplay></audio>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+  // --- Config / estado global ---
+  const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
+  let musicas = [], player = null, pendingVideoId = null;
+  let suppressNota = false; // evita mostrar nota se usuário fechou manualmente
+  let fireworksController = null;
+  const bgAudio = document.getElementById('bgAudio');
+  try{ bgAudio.volume = 0.15; }catch(e){}
+
+  // carregamento do JSON (se existir)
+  async function carregarMusicas(){
+    try { const res = await fetch('./karaoke.json'); musicas = await res.json(); }
+    catch(err){ console.warn('Não foi possível carregar karaoke.json', err); musicas = []; }
+  }
+
+  // input keypad
+  const codigo = document.getElementById('codigo');
+  function digitar(n){ codigo.value += n; }
+  function backspace(){ codigo.value = codigo.value.slice(0,-1); }
+  function clearAll(){ codigo.value = ''; }
+
+  // busca YouTube (mesmo comportamento anterior)
+  async function buscar(){
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+    const code = codigo.value.trim();
+    if(!code){ resultado.innerHTML = '<p>❌ Digite um código.</p>'; return; }
+    const item = musicas.find(m => String(m.codigo) === String(code));
+    if(!item){ resultado.innerHTML = '<p>❌ Código não encontrado.</p>'; return; }
+
+    const query = `karaoke ${item.artista} ${item.musica}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      if(data.error){ resultado.innerHTML = `<p>❌ Erro YouTube API: ${data.error.message}</p>`; return; }
+      const items = Array.isArray(data.items) ? data.items : [];
+      const videos = items.filter(i => i.id && i.id.videoId);
+      if(videos.length === 0){ resultado.innerHTML = '<p>❌ Nenhum vídeo encontrado.</p>'; return; }
+
+      const preferidos = videos.filter(v => v.snippet && v.snippet.title && v.snippet.title.toLowerCase().includes('karaoke'));
+      const restantes = videos.filter(v => !preferidos.includes(v));
+      const escolhidos = [...preferidos.slice(0,3), ...restantes.slice(0, Math.max(0, 3 - Math.min(preferidos.length,3)))];
+
+      resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2>`;
+      const thumbs = document.createElement('div'); thumbs.className = 'thumbnails';
+      escolhidos.forEach(v=>{
+        const img = document.createElement('img');
+        img.src = v.snippet.thumbnails?.medium?.url || '';
+        img.alt = v.snippet.title || 'video';
+        img.onclick = ()=> abrirVideo(v.id.videoId);
+        thumbs.appendChild(img);
+      });
+      resultado.appendChild(thumbs);
+    } catch(err){
+      resultado.innerHTML = `<p>❌ Erro na busca: ${err.message}</p>`;
+    }
+  }
+
+  // abrir video
+  function abrirVideo(videoId){
+    console.log('abrirVideo', videoId);
+    suppressNota = false; // usuário abriu — permitir nota no final
+    const overlay = document.getElementById('overlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    try { bgAudio.pause(); } catch(e){}
+    const overlayPlayer = document.getElementById('overlayPlayer'); overlayPlayer.innerHTML = '';
+    if(window.YT && window.YT.Player) criarPlayer(videoId);
+    else pendingVideoId = videoId;
+  }
+
+  function criarPlayer(videoId){
+    try { if(player && player.destroy) player.destroy(); } catch(e){}
+    player = new YT.Player('overlayPlayer', {
+      videoId,
+      playerVars: { autoplay: 1, controls: 1, modestbranding: 1, rel:0, iv_load_policy:3, fs:1 },
+      events: {
+        onReady: e => {
+          try { e.target.playVideo(); } catch(e){ console.warn('playVideo falhou', e); }
+        },
+        onStateChange: onPlayerStateChange
+      }
+    });
+  }
+
+  // API ready
+  function onYouTubeIframeAPIReady(){ if(pendingVideoId){ criarPlayer(pendingVideoId); pendingVideoId = null; } }
+  // (declarada globalmente pro script do YouTube)
+
+  // estado do player
+  function onPlayerStateChange(event){
+    // console.log('YT state', event.data);
+    try {
+      if(event.data === YT.PlayerState.ENDED){
+        console.log('Vídeo terminou — verificar suppressNota:', suppressNota);
+        if(!suppressNota) mostrarNota();
+        else console.log('Nota suprimida (usuário fechou manualmente).');
+      } else if(event.data === YT.PlayerState.BUFFERING){
+        try { event.target.playVideo(); } catch(e){}
+      }
+    } catch(e){ console.warn('onPlayerStateChange erro', e); }
+  }
+
+  // mostrar nota — animação de 2s trocando números, depois fixa + fogos + som por 5s
+  let notaTimeouts = [];
+  async function mostrarNota(){
+    if(suppressNota){ console.log('mostrarNota abortado por suppressNota'); return; }
+    console.log('mostrarNota() iniciado');
+    // esconder/pausar player visualmente? apenas mostra overlay de nota que fica acima
+    const notaDiv = document.getElementById('notaFinal');
+    const texto = document.getElementById('textoNota');
+    const sub = document.getElementById('subFrase');
+    const aplausos = document.getElementById('somAplausos');
+
+    notaDiv.style.display = 'flex';
+    notaDiv.setAttribute('aria-hidden','false');
+    texto.innerHTML = 'Nota ...';
+    sub.innerHTML = '';
+    // animação de números por 2s (100ms)
+    const start = Date.now();
+    const animate = setInterval(()=>{
+      if(suppressNota){ clearInterval(animate); notaDiv.style.display='none'; return; }
+      const r = Math.floor(70 + Math.random()*31);
+      texto.innerHTML = `Nota ${r}`;
+      if(Date.now() - start >= 2000) { clearInterval(animate); finalizarNota(); }
+    }, 100);
+    notaTimeouts.push(animate);
+
+    function finalizarNota(){
+      if(suppressNota){ notaDiv.style.display='none'; return; }
+      const notaReal = Math.floor(70 + Math.random()*31);
+      texto.innerHTML = `Nota ${notaReal}`;
+      let frase = '';
+      if(notaReal < 75) frase = '😅 Ops… pode melhorar, mas a coragem é o que conta!';
+      else if(notaReal < 80) frase = '😅 Tá no caminho — treino amanhã!';
+      else if(notaReal < 90) frase = '👏 Muito bom! Mandou bem!';
+      else frase = '🌟 Sensacional! Palmas!!';
+
+      sub.innerHTML = frase;
+
+      // tocar aplausos (tratando promise)
+      try {
+        aplausos.currentTime = 0;
+        const p = aplausos.play();
+        if(p && p.catch) p.catch(err => console.warn('aplausos.play() bloqueado:', err));
+      } catch(err){ console.warn('erro ao tocar aplausos', err); }
+
+      // iniciar fogos
+      try { fireworksController = iniciarFogos(); } catch(e){ console.warn('fogos erro', e); }
+
+      // depois de 5s esconder tudo e fechar player
+      const t = setTimeout(()=>{
+        pararFogos();
+        notaDiv.style.display = 'none';
+        notaDiv.setAttribute('aria-hidden','true');
+        // fechar player / overlay
+        fecharVideo(false);
+      }, 5000);
+      notaTimeouts.push(t);
+    }
+  }
+
+  // fechar vídeo: se manual=true, suprime a nota se ainda não apareceu
+  function fecharVideo(manual=false){
+    console.log('fecharVideo manual=', manual);
+    if(manual) suppressNota = true;
+
+    // limpar timers/intervals de nota (caso).
+    while(notaTimeouts.length){
+      const v = notaTimeouts.pop();
+      try{ clearInterval(v); clearTimeout(v); } catch(e){}
+    }
+
+    try { if(player && player.destroy) player.destroy(); } catch(e){ console.warn('destroy player erro', e); }
+    player = null;
+    const overlay = document.getElementById('overlay');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    document.getElementById('overlayPlayer').innerHTML = '';
+    // parar fogos e som
+    pararFogos();
+    try { const apl = document.getElementById('somAplausos'); apl.pause(); apl.currentTime = 0; } catch(e){}
+    try { bgAudio.play(); } catch(e){ console.warn('bgAudio play:', e); }
+    resetarTela();
+  }
+
+  function resetarTela(){
+    try{ codigo.value = ''; } catch(e){}
+    try{ document.getElementById('resultado').innerHTML = '<p>🔎 Digite um código para começar.</p>'; } catch(e){}
+  }
+
+  // ---- Fogos: controlador que retorna objeto com stop()
+  function iniciarFogos(){
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    const particles = [];
+    let rafId = null;
+    let burstInterval = null;
+
+    function resize(){ w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+
+    function spawnBurst(){
+      const cx = Math.random()*(w*0.8)+w*0.1;
+      const cy = Math.random()*(h*0.5)+h*0.1;
+      const count = Math.floor(24 + Math.random()*40);
+      for(let i=0;i<count;i++){
+        const speed = 2 + Math.random()*6;
+        const angle = Math.random()*Math.PI*2;
+        particles.push({
+          x: cx, y: cy,
+          vx: Math.cos(angle)*speed,
+          vy: Math.sin(angle)*speed,
+          life: 40 + Math.random()*60,
+          size: 2 + Math.random()*3,
+          color: `hsl(${Math.floor(Math.random()*360)}, 100%, 60%)`
+        });
+      }
+    }
+
+    function loop(){
+      ctx.fillStyle = 'rgba(0,0,0,0.18)';
+      ctx.fillRect(0,0,w,h);
+      for(let i=particles.length-1;i>=0;i--){
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.08; // gravity
+        p.vx *= 0.995;
+        p.life--;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+        ctx.fill();
+        if(p.life <= 0){
+          particles.splice(i,1);
+        }
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    // iniciar
+    spawnBurst();
+    burstInterval = setInterval(spawnBurst, 300 + Math.random()*500);
+    loop();
+
+    return {
+      stop(){
+        if(rafId) cancelAnimationFrame(rafId);
+        if(burstInterval) clearInterval(burstInterval);
+        window.removeEventListener('resize', resize);
+        // limpar canvas
+        ctx.clearRect(0,0,w,h);
+      }
+    };
+  }
+
+  function pararFogos(){
+    try {
+      if(fireworksController){
+        fireworksController.stop();
+        fireworksController = null;
+      }
+      const canvas = document.getElementById('fireworks');
+      const ctx = canvas.getContext('2d');
+      ctx && ctx.clearRect(0,0,canvas.width, canvas.height);
+    } catch(e){ console.warn('pararFogos', e); }
+  }
+
+  // inicial
+  carregarMusicas();
+  </script>
+</body>
+</html>
