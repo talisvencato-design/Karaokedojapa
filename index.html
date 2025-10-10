@@ -379,6 +379,126 @@ body,html { height: 100%; width: 100%; margin:0; padding:0; }
   }
 
   carregarMusicas();
+  // === Sistema de nota radônica ===
+function mostrarNotaFinal() {
+  const overlay = document.getElementById('overlay');
+  const ovp = document.getElementById('overlayPlayer');
+
+  // limpar o player
+  ovp.innerHTML = '';
+  overlay.classList.add('open');
+
+  // container
+  const container = document.createElement('div');
+  container.style.position = 'fixed';
+  container.style.top = '0';
+  container.style.left = '0';
+  container.style.width = '100vw';
+  container.style.height = '100vh';
+  container.style.background = 'rgba(0,0,0,0.9)';
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.alignItems = 'center';
+  container.style.justifyContent = 'center';
+  container.style.color = '#fff';
+  container.style.fontSize = '48px';
+  container.style.textAlign = 'center';
+  container.style.zIndex = '100000';
+
+  const notaElem = document.createElement('div');
+  notaElem.textContent = '0';
+  notaElem.style.fontSize = '120px';
+  notaElem.style.fontWeight = 'bold';
+  notaElem.style.color = '#ffcc00';
+  notaElem.style.textShadow = '0 0 20px #ffcc00';
+
+  const aplausos = new Audio('./aplausos.mp3');
+  aplausos.volume = 0.6;
+
+  container.appendChild(notaElem);
+  document.body.appendChild(container);
+
+  // fogos simulados
+  const canvas = document.createElement('canvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.position = 'absolute';
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.pointerEvents = 'none';
+  container.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function criarParticulas(x, y) {
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        x, y,
+        vx: (Math.random() - 0.5) * 8,
+        vy: (Math.random() - 0.5) * 8,
+        life: 80,
+        color: `hsl(${Math.random() * 360}, 100%, 60%)`
+      });
+    }
+  }
+
+  function animarFogos() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.fillStyle = p.color;
+      ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.05;
+      p.life--;
+    });
+    particles = particles.filter(p => p.life > 0);
+    requestAnimationFrame(animarFogos);
+  }
+
+  animarFogos();
+
+  // contagem de 0 a 100 em 3 segundos
+  let notaAtual = 0;
+  const intervalo = setInterval(() => {
+    notaAtual += 3.33;
+    if (notaAtual >= 100) {
+      notaAtual = 100;
+      clearInterval(intervalo);
+    }
+    notaElem.textContent = Math.round(notaAtual);
+  }, 100);
+
+  // após 3s -> nota final fictícia
+  setTimeout(() => {
+    const notaFinal = Math.floor(70 + Math.random() * 30);
+    criarParticulas(window.innerWidth/2, window.innerHeight/2);
+    notaElem.textContent = `Nota: ${notaFinal}`;
+    aplausos.play();
+  }, 3000);
+
+  // remove tudo após 7s
+  setTimeout(() => {
+    document.body.removeChild(container);
+    fecharVideo();
+  }, 7000);
+}
+
+// chama a nota final quando o vídeo termina
+function onPlayerStateChange(event) {
+  try {
+    if (event.data === YT.PlayerState.ENDED) {
+      mostrarNotaFinal();
+      return;
+    }
+    if (event.data === YT.PlayerState.BUFFERING) {
+      try { event.target.playVideo(); } catch(e) {}
+    }
+  } catch(e) { console.warn("onPlayerStateChange error", e); }
+}
 </script>
 
 </body>
