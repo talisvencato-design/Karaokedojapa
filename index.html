@@ -308,9 +308,17 @@
       else pendingVideoId = videoId;
 
       const playerWrap = overlay.querySelector(".playerWrap");
-      try {
-        playerWrap.requestFullscreen?.() || playerWrap.webkitRequestFullscreen?.();
-      } catch {}
+
+// Garante que fullscreen só é chamado após o player estar pronto
+setTimeout(() => {
+  try {
+    if (playerWrap.requestFullscreen) playerWrap.requestFullscreen();
+    else if (playerWrap.webkitRequestFullscreen) playerWrap.webkitRequestFullscreen();
+    else if (playerWrap.msRequestFullscreen) playerWrap.msRequestFullscreen();
+  } catch (err) {
+    console.warn("Falha ao abrir em tela cheia:", err);
+  }
+}, 300);
     }
 
     function criarPlayer(videoId) {
