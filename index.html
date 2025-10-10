@@ -6,327 +6,125 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     :root {
-      --panel: rgba(30, 30, 30, 0.9);
-      --accent: #ffd700;
-      --muted: #999;
+      --panel: rgba(20, 20, 20, 0.85);
+      --accent: #ffcc00;
+      --muted: #666;
     }
 
     body {
-      position: relative;
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
       color: #fff;
       min-height: 100vh;
-      overflow-x: hidden;
-      text-shadow: 0 0 8px rgba(255,255,255,0.25);
-    }
-
-    /* FUNDO COM MAIS BRILHO E SATURAÇÃO */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
       background: url('./9937771.jpg') no-repeat center center fixed;
       background-size: cover;
-      filter: brightness(1.4) saturate(1.6);
-      z-index: -1;
       animation: moveBackground 25s ease-in-out infinite alternate;
+      overflow-x: hidden;
     }
 
     @keyframes moveBackground {
-      0% { background-position: center top; }
-      50% { background-position: center bottom; }
-      100% { background-position: center top; }
+      0% { background-position: center top; filter: brightness(0.6) saturate(1); }
+      50% { background-position: center bottom; filter: brightness(0.8) saturate(1.2); }
+      100% { background-position: center top; filter: brightness(0.6) saturate(1); }
     }
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
+    header { text-align: center; padding: 20px; }
+    header img { max-width: 480px; width: 90%; height: auto; animation: float 5s ease-in-out infinite alternate; filter: drop-shadow(0 0 10px rgba(255,255,255,0.4)); }
+    @keyframes float { from { transform: translateY(0px); } to { transform: translateY(10px); } }
 
-    header img {
-      max-width: 480px;
-      width: 90%;
-      height: auto;
-      animation: float 5s ease-in-out infinite alternate;
-      filter: drop-shadow(0 0 15px rgba(255,255,255,0.6));
-    }
-
-    @keyframes float {
-      from { transform: translateY(0px); }
-      to { transform: translateY(10px); }
-    }
-
-    .wrap {
-      display: flex;
-      gap: 30px;
-      padding: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
+    .wrap { display: flex; gap: 30px; padding: 20px; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
     .left { width: 280px; text-align: center; }
+    .right { flex: 1; background: var(--panel); padding: 20px; border-radius: 12px; box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.2); text-align: center; min-height: 380px; max-width: 900px; animation: glowBorder 3s ease-in-out infinite alternate; }
+    @keyframes glowBorder { 0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); } 50% { box-shadow: 0 0 30px rgba(255, 255, 100, 0.6), 0 0 60px rgba(255, 204, 0, 0.4); } 100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); } }
 
-    .right {
-      flex: 1;
-      background: var(--panel);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 200, 0, 0.3);
-      text-align: center;
-      min-height: 380px;
-      max-width: 900px;
-      animation: glowBorder 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowBorder {
-      0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 200, 0, 0.2); }
-      50% { box-shadow: 0 0 40px rgba(255, 255, 100, 0.8), 0 0 80px rgba(255, 215, 0, 0.5); }
-      100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 0 20px rgba(255, 200, 0, 0.2); }
-    }
-
-    input#codigo {
-      width: 220px;
-      padding: 14px;
-      font-size: 22px;
-      border-radius: 8px;
-      border: 0;
-      text-align: center;
-      box-shadow: 0 0 6px #333 inset;
-      background: #111;
-      color: #fff;
-    }
-
-    .keypad {
-      display: grid;
-      grid-template-columns: repeat(3, 90px);
-      gap: 12px;
-      margin-top: 18px;
-      justify-content: center;
-    }
-
-    .keypad button {
-      padding: 16px;
-      font-weight: 700;
-      border-radius: 8px;
-      border: 0;
-      font-size: 20px;
-      background: linear-gradient(145deg, #222, #444);
-      color: #fff;
-      cursor: pointer;
-      transition: 0.2s;
-      box-shadow: inset 0 0 6px #000, 0 0 10px rgba(255, 215, 0, 0.2);
-    }
-
-    .keypad button:hover {
-      background: linear-gradient(145deg, #333, #555);
-      box-shadow: 0 0 10px var(--accent);
-      transform: scale(1.05);
-    }
-
+    input#codigo { width: 220px; padding: 14px; font-size: 22px; border-radius: 8px; border: 0; text-align: center; box-shadow: 0 0 6px #333 inset; }
+    .keypad { display: grid; grid-template-columns: repeat(3, 90px); gap: 12px; margin-top: 18px; justify-content: center; }
+    .keypad button { padding: 16px; font-weight: 700; border-radius: 8px; border: 0; background: #333; color: #fff; cursor: pointer; transition: 0.2s; font-size: 20px; }
+    .keypad button:hover { background: #555; }
     .keypad .enter { grid-column: span 3; background: #28a745; }
-    .keypad .enter:hover { background: #2ecc71; }
+    .keypad .enter:hover { background: #218838; }
     .keypad .clear { background: #dc3545; }
-    .keypad .clear:hover { background: #ff4d4d; }
+    .keypad .clear:hover { background: #c82333; }
     .keypad .back { background: #ff8800; }
-    .keypad .back:hover { background: #ffae00; }
+    .keypad .back:hover { background: #e07b00; }
 
-    .thumbnails {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+    .thumbnails { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+    .thumbnails img { width: 240px; border-radius: 10px; border: 3px solid var(--muted); cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s; }
+    .thumbnails img:hover { transform: scale(1.08); border-color: var(--accent); box-shadow: 0 0 12px var(--accent); }
 
-    .thumbnails img {
-      width: 240px;
-      border-radius: 10px;
-      border: 3px solid var(--muted);
-      cursor: pointer;
-      transition: transform .15s, border-color .15s, box-shadow .15s;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-
-    .thumbnails img:hover {
-      transform: scale(1.1);
-      border-color: var(--accent);
-      box-shadow: 0 0 15px var(--accent);
-    }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 9999;
-      background: #000000e6;
-      align-items: center;
-      justify-content: center;
-    }
-
+    #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: #000000e6; align-items: center; justify-content: center; }
     #overlay.open { display: flex; }
+    .playerWrap { width: 100vw !important; height: 100vh !important; position: fixed !important; top: 0; left: 0; display: flex !important; align-items: center !important; justify-content: center !important; }
+    #overlayPlayer { width: 100vw !important; height: 100vh !important; position: relative !important; }
+    #overlayPlayer iframe { width: 100% !important; height: 100% !important; border: 0 !important; display: block !important; }
 
-    #overlay,
-    .playerWrap,
-    #overlayPlayer,
-    #overlayPlayer iframe {
-      width: 100vw !important;
-      height: 100vh !important;
-      position: fixed !important;
-      top: 0; left: 0;
-      margin: 0; padding: 0;
-      border: 0;
-    }
-
-    body, html { height: 100%; width: 100%; margin:0; padding:0; }
+    /* Nota final */
+    #notaOverlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.9); z-index: 999999; justify-content: center; align-items: center; flex-direction: column; }
+    #notaOverlay.show { display: flex; }
+    #notaTexto { font-size: 120px; color: gold; text-shadow: 0 0 30px #fff, 0 0 60px #ff0; animation: pulse 1s infinite alternate; }
+    @keyframes pulse { from { transform: scale(1); opacity: 0.9; } to { transform: scale(1.1); opacity: 1; } }
+    #fireworks { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="./logo.png" alt="Karaokê do Japa" />
-  </header>
+  <header><img src="./logo.png" alt="Karaokê do Japa" /></header>
 
   <main class="wrap">
     <section class="left">
       <p>Digite o código da música:</p>
       <input id="codigo" placeholder="Ex: 6197" />
       <div class="keypad">
-        <button onclick="digitar('1')">1</button>
-        <button onclick="digitar('2')">2</button>
-        <button onclick="digitar('3')">3</button>
-        <button onclick="digitar('4')">4</button>
-        <button onclick="digitar('5')">5</button>
-        <button onclick="digitar('6')">6</button>
-        <button onclick="digitar('7')">7</button>
-        <button onclick="digitar('8')">8</button>
-        <button onclick="digitar('9')">9</button>
-        <button class="back" onclick="backspace()">BACK</button>
-        <button onclick="digitar('0')">0</button>
-        <button class="clear" onclick="clearAll()">C</button>
+        <button onclick="digitar('1')">1</button><button onclick="digitar('2')">2</button><button onclick="digitar('3')">3</button>
+        <button onclick="digitar('4')">4</button><button onclick="digitar('5')">5</button><button onclick="digitar('6')">6</button>
+        <button onclick="digitar('7')">7</button><button onclick="digitar('8')">8</button><button onclick="digitar('9')">9</button>
+        <button class="back" onclick="backspace()">BACK</button><button onclick="digitar('0')">0</button><button class="clear" onclick="clearAll()">C</button>
         <button class="enter" onclick="buscar()">✔ ENTER</button>
       </div>
     </section>
 
-    <section class="right" id="resultado">
-      <p>🔎 Digite um código para começar.</p>
-    </section>
+    <section class="right" id="resultado"><p>🔎 Digite um código para começar.</p></section>
   </main>
 
-  <div id="overlay">
-    <div class="playerWrap">
-      <button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button>
-      <div id="overlayPlayer"></div>
-    </div>
+  <div id="overlay"><div class="playerWrap"><button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button><div id="overlayPlayer"></div></div></div>
+
+  <div id="notaOverlay">
+    <canvas id="fireworks"></canvas>
+    <div class="nota-container"><h1 id="notaTexto">🎤</h1></div>
+    <audio id="aplausos" src="./aplausos.mp3"></audio>
   </div>
 
   <audio id="bgAudio" src="./ambiente.mp3" loop autoplay></audio>
 
   <script src="https://www.youtube.com/iframe_api"></script>
-
   <script>
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
     let musicas = [], player = null, pendingVideoId = null;
     const bgAudio = document.getElementById("bgAudio");
-    const codigo = document.getElementById("codigo");
-    try { bgAudio.volume = 0.15; } catch(e){}
+    try{ bgAudio.volume = 0.15; }catch(e){}
 
-    async function carregarMusicas() {
-      try {
-        const res = await fetch("./karaoke.json");
-        musicas = await res.json();
-      } catch(err) {
-        console.warn("Erro ao carregar karaoke.json", err);
-        musicas = [];
-      }
-    }
-
+    async function carregarMusicas(){ try{ const res = await fetch("./karaoke.json"); musicas = await res.json(); }catch(err){ musicas = []; } }
     function digitar(n){ codigo.value += n; }
     function backspace(){ codigo.value = codigo.value.slice(0,-1); }
     function clearAll(){ codigo.value = ''; }
 
-    async function buscar() {
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML = "";
-      const code = codigo.value.trim();
-      if (!code) { resultado.innerHTML = "<p>❌ Digite um código.</p>"; return; }
-      const item = musicas.find(m => String(m.codigo) === String(code));
-      if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
+    async function buscar(){ const resultado=document.getElementById('resultado'); resultado.innerHTML=""; const code=codigo.value.trim(); if(!code){resultado.innerHTML="<p>❌ Digite um código.</p>";return;} const item=musicas.find(m=>String(m.codigo)===String(code)); if(!item){resultado.innerHTML="<p>❌ Código não encontrado.</p>";return;} const query=`karaoke ${item.artista} ${item.musica}`; const url=`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`; try{ const res=await fetch(url); const data=await res.json(); const items=Array.isArray(data.items)?data.items:[]; const videos=items.filter(i=>i.id&&i.id.videoId); if(videos.length===0){resultado.innerHTML="<p>❌ Nenhum vídeo encontrado.</p>";return;} const preferidos=videos.filter(v=>v.snippet.title.toLowerCase().includes("karaoke")); const escolhidos=[...preferidos.slice(0,3),...videos.filter(v=>!preferidos.includes(v)).slice(0,3-Math.min(preferidos.length,3))]; resultado.innerHTML=`<h2>${item.artista} - ${item.musica}</h2>`; const thumbs=document.createElement("div"); thumbs.className="thumbnails"; escolhidos.forEach(v=>{const img=document.createElement("img"); img.src=v.snippet.thumbnails.medium.url; img.alt=v.snippet.title; img.onclick=()=>abrirVideo(v.id.videoId); thumbs.appendChild(img);}); resultado.appendChild(thumbs);}catch(err){resultado.innerHTML=`<p>❌ Erro: ${err.message}</p>`;}}
 
-      const query = `karaoke ${item.artista} ${item.musica}`;
-      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        if (data.error) {
-          resultado.innerHTML = `<p>❌ Erro na API do YouTube: ${data.error.message}</p>`;
-          return;
-        }
-        const items = Array.isArray(data.items) ? data.items : [];
-        const videos = items.filter(i => i.id && i.id.videoId);
-        if (videos.length === 0) {
-          resultado.innerHTML = "<p>❌ Nenhum vídeo encontrado.</p>";
-          return;
-        }
-        const preferidos = videos.filter(v => v.snippet.title.toLowerCase().includes("karaoke"));
-        const escolhidos = [...preferidos.slice(0,3), ...videos.filter(v => !preferidos.includes(v)).slice(0, 3 - Math.min(preferidos.length,3))];
+    function abrirVideo(videoId){ const overlay=document.getElementById('overlay'); overlay.classList.add('open'); document.body.style.overflow='hidden'; try{bgAudio.pause();}catch(e){} const overlayPlayer=document.getElementById('overlayPlayer'); overlayPlayer.innerHTML=''; if(window.YT&&window.YT.Player) criarPlayer(videoId); else pendingVideoId=videoId; }
 
-        resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2>`;
-        const thumbs = document.createElement("div");
-        thumbs.className = "thumbnails";
-        escolhidos.forEach(v => {
-          const img = document.createElement("img");
-          img.src = v.snippet.thumbnails?.medium?.url || "";
-          img.alt = v.snippet.title || "video";
-          img.onclick = () => abrirVideo(v.id.videoId);
-          thumbs.appendChild(img);
-        });
-        resultado.appendChild(thumbs);
-      } catch(err) {
-        resultado.innerHTML = `<p>❌ Erro na busca: ${err.message}</p>`;
-      }
-    }
+    function criarPlayer(videoId){ if(player&&player.destroy)try{player.destroy();}catch(e){} player=new YT.Player('overlayPlayer',{ videoId, playerVars:{autoplay:1,controls:1,modestbranding:1,rel:0}, events:{onStateChange:onPlayerStateChange}}); }
 
-    function abrirVideo(videoId) {
-      const overlay = document.getElementById('overlay');
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      try { bgAudio.pause(); } catch(e){}
-      const overlayPlayer = document.getElementById('overlayPlayer');
-      if (overlayPlayer) overlayPlayer.innerHTML = '';
-      if (window.YT && window.YT.Player) criarPlayer(videoId);
-      else pendingVideoId = videoId;
-    }
+    function onYouTubeIframeAPIReady(){ if(pendingVideoId){criarPlayer(pendingVideoId); pendingVideoId=null;} }
 
-    function criarPlayer(videoId) {
-      if (player && player.destroy) try { player.destroy(); } catch(e) {}
-      player = new YT.Player('overlayPlayer', {
-        videoId,
-        playerVars: { autoplay: 1, controls: 1, modestbranding: 1, rel: 0, vq: 'hd720' },
-        events: { onReady: e => e.target.playVideo(), onStateChange: onPlayerStateChange }
-      });
-    }
+    function onPlayerStateChange(event){ try{ if(event.data===YT.PlayerState.ENDED){ fecharVideo(); return; } }catch(e){} }
 
-    function onYouTubeIframeAPIReady() {
-      if (pendingVideoId) { criarPlayer(pendingVideoId); pendingVideoId = null; }
-    }
+    function fecharVideo(){ try{if(player&&player.destroy)player.destroy();}catch(e){} const overlay=document.getElementById('overlay'); overlay.classList.remove('open'); document.body.style.overflow=''; try{bgAudio.play();}catch(e){} mostrarNotaFinal(); resetarTela(); }
 
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.ENDED) fecharVideo();
-    }
+    function resetarTela(){ try{codigo.value="";}catch(e){} try{document.getElementById('resultado').innerHTML="<p>🔎 Digite um código para começar.</p>";}catch(e){} }
 
-    function fecharVideo() {
-      try { if (player && player.destroy) player.destroy(); } catch(e){}
-      const overlay = document.getElementById('overlay');
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-      try { bgAudio.play(); } catch(e){}
-      document.getElementById('resultado').innerHTML = "<p>🔎 Digite um código para começar.</p>";
-      codigo.value = "";
-    }
+    function mostrarNotaFinal(){ const overlay=document.getElementById('notaOverlay'); const notaTexto=document.getElementById('notaTexto'); const aplausos=document.getElementById('aplausos'); const nota=Math.floor(75+Math.random()*26); notaTexto.textContent=`🎉 Nota ${nota}!`; overlay.classList.add('show'); aplausos.currentTime=0; aplausos.play(); iniciarFogos(); setTimeout(()=>{overlay.classList.remove('show'); pararFogos();},7000); }
+
+    let fogoCtx,fogoInterval; function iniciarFogos(){ const canvas=document.getElementById('fireworks'); const ctx=canvas.getContext('2d'); fogoCtx=ctx; canvas.width=window.innerWidth; canvas.height=window.innerHeight; const particles=[]; fogoInterval=setInterval(()=>{ctx.fillStyle="rgba(0,0,0,0.2)"; ctx.fillRect(0,0,canvas.width,canvas.height); if(Math.random()<0.05){ for(let i=0;i<100;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height/2,vx:(Math.random()-0.5)*6,vy:(Math.random()-0.5)*6,life:100,color:`hsl(${Math.random()*360},100%,60%)`});}} for(let i=particles.length-1;i>=0;i--){const p=particles[i]; p.x+=p.vx; p.y+=p.vy; p.life--; ctx.beginPath(); ctx.fillStyle=p.color; ctx.arc(p.x,p.y,2,0,2*Math.PI); ctx.fill(); if(p.life<=0)particles.splice(i,1);}},33); }
+    function pararFogos(){ if(fogoInterval)clearInterval(fogoInterval); }
 
     carregarMusicas();
   </script>
