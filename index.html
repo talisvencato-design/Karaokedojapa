@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Karaokê do Japa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <style>
     :root {
       --panel: rgba(20, 20, 20, 0.85);
@@ -11,17 +11,16 @@
       --muted: #666;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden; /* 🔒 Sem scroll em nenhuma tela */
-      background: url('./9937771.jpg') no-repeat center center;
-      background-size: cover;
-      color: #fff;
+    body {
       font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      color: #fff;
+      min-height: 100vh;
+      background: url('./9937771.jpg') no-repeat center center fixed;
+      background-size: cover;
       animation: moveBackground 25s ease-in-out infinite alternate;
+      overflow-x: hidden;
+      transition: background-attachment 0.3s;
     }
 
     @keyframes moveBackground {
@@ -30,89 +29,53 @@
       100% { background-position: center top; filter: brightness(0.6); }
     }
 
-    header {
-      position: absolute;
-      top: 5%;
-      width: 100%;
-      text-align: center;
-    }
-
+    header { text-align: center; padding: 20px; }
     header img {
-      max-width: 360px;
-      width: 70%;
-      height: auto;
-      filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+      max-width: 480px; width: 90%; height: auto;
       animation: float 5s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
     }
 
-    @keyframes float {
-      from { transform: translateY(0); }
-      to { transform: translateY(10px); }
+    @keyframes float { from { transform: translateY(0); } to { transform: translateY(10px); } }
+
+    .wrap {
+      display: flex; gap: 30px; padding: 20px; flex-wrap: wrap;
+      justify-content: center; align-items: flex-start;
     }
 
-    main.wrap {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 1000px;
-      padding: 10px;
-    }
-
-    .left {
-      width: 280px;
-      text-align: center;
-    }
+    .left { width: 280px; text-align: center; }
 
     .right {
-      flex: 1;
-      background: var(--panel);
-      padding: 20px;
-      border-radius: 12px;
+      flex: 1; background: var(--panel);
+      padding: 20px; border-radius: 12px;
       box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
-      text-align: center;
-      min-height: 300px;
-      max-height: 380px;
-      overflow: hidden;
+      text-align: center; min-height: 380px; max-width: 900px;
+      animation: glowBorder 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowBorder {
+      0%,100% { box-shadow: 0 0 10px rgba(255,204,0,0.3); }
+      50% { box-shadow: 0 0 40px rgba(255,255,100,0.6); }
     }
 
     input#codigo {
-      width: 200px;
-      padding: 12px;
-      font-size: 20px;
-      border-radius: 8px;
-      border: none;
-      text-align: center;
+      width: 220px; padding: 14px; font-size: 22px;
+      border-radius: 8px; border: none; text-align: center;
       box-shadow: 0 0 6px #333 inset;
     }
 
     .keypad {
-      display: grid;
-      grid-template-columns: repeat(3, 80px);
-      gap: 10px;
-      margin-top: 14px;
-      justify-content: center;
+      display: grid; grid-template-columns: repeat(3, 90px);
+      gap: 12px; margin-top: 18px; justify-content: center;
     }
 
     .keypad button {
-      padding: 12px;
-      font-weight: 700;
-      border-radius: 8px;
-      border: none;
-      background: #333;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.2s;
-      font-size: 18px;
+      padding: 16px; font-weight: 700; border-radius: 8px;
+      border: none; background: #333; color: #fff;
+      cursor: pointer; transition: 0.2s; font-size: 20px;
     }
 
-    .keypad button:hover { background: #555; }
+    .keypad button:hover, .keypad button:focus { background: #555; outline: none; }
     .keypad .enter { grid-column: span 3; background: #28a745; }
     .keypad .enter:hover { background: #218838; }
     .keypad .clear { background: #dc3545; }
@@ -121,75 +84,53 @@
     .keypad .back:hover { background: #e07b00; }
 
     .thumbnails {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 10px;
+      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;
     }
 
     .thumbnails img {
-      width: 200px;
-      border-radius: 10px;
-      border: 3px solid var(--muted);
-      cursor: pointer;
-      transition: transform .15s, border-color .15s, box-shadow .15s;
+      width: 240px; border-radius: 10px; border: 3px solid var(--muted);
+      cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s;
     }
 
-    .thumbnails img:hover {
-      transform: scale(1.05);
-      border-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
+    .thumbnails img:hover, .thumbnails img:focus {
+      transform: scale(1.08); border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
     }
 
-    /* 🎥 Player em tela cheia simulada (sem scroll) */
+    /* ==== OVERLAY PLAYER ==== */
     #overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: #000;
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
+      display: none; position: fixed; inset: 0;
+      background: #000; z-index: 9999;
+      justify-content: center; align-items: center;
     }
 
     #overlay.open { display: flex; }
 
     #overlayPlayer {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100vw; height: 100vh;
+      display: flex; justify-content: center; align-items: center;
       background: #000;
     }
 
     #overlayPlayer iframe {
-      width: 100vw;
-      height: 100vh;
+      aspect-ratio: 16 / 9;
+      width: 100vw; max-width: calc(100vh * 1.77);
+      height: auto;
       border: none;
       background: #000;
-      object-fit: cover;
     }
 
     #overlay .closeBtn {
-      position: absolute;
-      right: 20px;
-      top: 15px;
-      z-index: 10000;
-      background: #111;
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
+      position: absolute; right: 20px; top: 15px;
+      background: #111; border: 2px solid #fff;
+      color: #fff; padding: 8px 14px; border-radius: 6px;
+      cursor: pointer; font-size: 16px; z-index: 10000;
     }
 
     @media (max-width: 600px) {
-      main.wrap { flex-direction: column; }
-      header img { max-width: 280px; }
+      .wrap { flex-direction: column; align-items: center; padding: 10px; }
+      .left, .right { width: 100%; }
+      header img { max-width: 320px; }
     }
   </style>
 </head>
@@ -229,65 +170,82 @@
     <div id="overlayPlayer"></div>
   </div>
 
-  <audio id="bgAudio" src="./ambiente.mp3" loop autoplay></audio>
+  <audio id="bgAudio" src="./ambiente.mp3" loop preload="auto"></audio>
 
   <script>
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
-    let musicas = [];
+    let musicas = [], carregado = false;
     const bgAudio = document.getElementById("bgAudio");
     bgAudio.volume = 0.15;
 
     async function carregarMusicas() {
-      const res = await fetch("./karaoke.json");
-      musicas = await res.json();
+      try {
+        const res = await fetch("./karaoke.json");
+        musicas = await res.json();
+        carregado = true;
+      } catch {
+        alert("❌ Erro ao carregar lista de músicas.");
+      }
     }
 
-    function digitar(n){ codigo.value += n; }
-    function backspace(){ codigo.value = codigo.value.slice(0,-1); }
-    function clearAll(){ codigo.value = ''; }
+    function getCodigo() { return document.getElementById("codigo"); }
+    function getResultado() { return document.getElementById("resultado"); }
+
+    function digitar(n){ getCodigo().value += n; }
+    function backspace(){ getCodigo().value = getCodigo().value.slice(0,-1); }
+    function clearAll(){ getCodigo().value = ''; }
 
     async function buscar() {
-      const codigoVal = document.getElementById('codigo').value.trim();
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML = "";
+      if (!carregado) { await carregarMusicas(); }
 
-      const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
+      const codigo = getCodigo().value.trim();
+      const resultado = getResultado();
+      resultado.innerHTML = "<p>🔄 Buscando...</p>";
+
+      const item = musicas.find(m => Number(m.codigo) === Number(codigo));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
 
-      const query = `karaoke ${item.artista} ${item.musica}`;
-      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
-      const res = await fetch(url);
-      const data = await res.json();
+      try {
+        const query = `karaoke ${item.artista} ${item.musica}`;
+        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+        const res = await fetch(url);
+        const data = await res.json();
 
-      if (data.error) {
-        resultado.innerHTML = `<p>❌ Erro na API do YouTube: ${data.error.message}</p>`;
-        return;
+        if (data.error) throw new Error(data.error.message);
+
+        const videos = data.items.filter(i => i.id?.videoId);
+        if (!videos.length) {
+          resultado.innerHTML = `<p>⚠️ Nenhum vídeo encontrado para "${item.artista} - ${item.musica}".</p>`;
+          return;
+        }
+
+        const preferidos = videos.filter(v => v.snippet.title.toLowerCase().includes("karaoke"));
+        const escolhidos = [...preferidos.slice(0,3), ...videos.filter(v => !preferidos.includes(v)).slice(0, 3 - preferidos.length)];
+
+        resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2>`;
+        const thumbs = document.createElement("div");
+        thumbs.className = "thumbnails";
+        escolhidos.forEach(v => {
+          const img = document.createElement("img");
+          img.src = v.snippet.thumbnails.medium.url;
+          img.alt = v.snippet.title;
+          img.onclick = () => abrirVideo(v.id.videoId);
+          thumbs.appendChild(img);
+        });
+        resultado.appendChild(thumbs);
+      } catch (err) {
+        resultado.innerHTML = `<p>❌ Erro ao buscar vídeos: ${err.message}</p>`;
       }
-
-      const videos = data.items.filter(i => i.id?.videoId);
-      const preferidos = videos.filter(v => v.snippet.title.toLowerCase().includes("karaoke"));
-      const escolhidos = [...preferidos.slice(0,3), ...videos.filter(v => !preferidos.includes(v)).slice(0, 3 - preferidos.length)];
-
-      resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2>`;
-      const thumbs = document.createElement("div");
-      thumbs.className = "thumbnails";
-      escolhidos.forEach(v => {
-        const img = document.createElement("img");
-        img.src = v.snippet.thumbnails.medium.url;
-        img.alt = v.snippet.title;
-        img.onclick = () => abrirVideo(v.id.videoId);
-        thumbs.appendChild(img);
-      });
-      resultado.appendChild(thumbs);
     }
 
     function abrirVideo(videoId) {
       const overlay = document.getElementById('overlay');
-      const container = document.getElementById('overlayPlayer');
       overlay.classList.add('open');
+      document.body.style.animationPlayState = 'paused';
       bgAudio.pause();
-      container.innerHTML = '';
 
+      const container = document.getElementById('overlayPlayer');
+      container.innerHTML = '';
       const iframe = document.createElement('iframe');
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
       iframe.allow = 'autoplay; fullscreen';
@@ -296,15 +254,17 @@
     }
 
     function fecharVideo() {
-      document.getElementById('overlay').classList.remove('open');
+      const overlay = document.getElementById('overlay');
+      overlay.classList.remove('open');
       document.getElementById('overlayPlayer').innerHTML = '';
+      document.body.style.animationPlayState = 'running';
       bgAudio.play();
       resetarTela();
     }
 
     function resetarTela() {
-      codigo.value = "";
-      resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
+      getCodigo().value = "";
+      getResultado().innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
 
     document.addEventListener("keydown", (e) => {
@@ -314,8 +274,11 @@
           e.preventDefault();
         }
       }
+      if (/^[0-9]$/.test(e.key)) digitar(e.key);
+      if (e.key === "Enter") buscar();
     });
 
+    window.addEventListener('click', () => bgAudio.play(), { once: true });
     carregarMusicas();
   </script>
 </body>
