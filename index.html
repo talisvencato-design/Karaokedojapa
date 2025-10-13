@@ -148,7 +148,11 @@
 
     #overlay.open { display: flex; }
 
+    /* PLAYER CENTRALIZADO */
     #overlay .playerWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
@@ -157,15 +161,12 @@
     }
 
     #overlayPlayer iframe {
-      position: fixed !important;
-      top: 0;
-      left: 0;
-      width: 100% !important;
-      height: 100% !important;
+      position: relative !important;
+      width: 100%;
+      max-width: 854px; /* largura máxima 480p */
+      aspect-ratio: 16/9;
+      height: auto !important;
       border: none;
-      inset: 0;
-      max-width: 100vw;
-      max-height: 100vh;
       background: #000;
     }
 
@@ -303,7 +304,6 @@
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
 
-      // Força fullscreen em Android TV (sem erro se não suportar)
       const elem = document.documentElement;
       if (elem.requestFullscreen) elem.requestFullscreen().catch(()=>{});
     }
@@ -320,7 +320,7 @@
           iv_load_policy: 3,
           fs: 1,
           cc_load_policy: 0,
-          vq: 'large'
+          vq: 'large' // 480p máximo
         },
         events: { onStateChange: onPlayerStateChange }
       });
@@ -331,7 +331,6 @@
     }
 
     function onPlayerStateChange(event) {
-      // Fechar ao finalizar o vídeo (Android TV e navegadores comuns)
       if (event.data === YT.PlayerState.ENDED) {
         setTimeout(fecharVideo, 500);
       }
