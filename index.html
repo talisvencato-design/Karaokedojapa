@@ -196,7 +196,7 @@
     function clearAll(){ getCodigo().value = ''; }
 
     async function buscar() {
-      if (!carregado) { await carregarMusicas(); }
+      if (!carregado) await carregarMusicas();
 
       const codigo = getCodigo().value.trim();
       const resultado = getResultado();
@@ -258,7 +258,7 @@
       overlay.classList.remove('open');
       document.getElementById('overlayPlayer').innerHTML = '';
       document.body.style.animationPlayState = 'running';
-      bgAudio.play();
+      setTimeout(() => bgAudio.play(), 300);
       resetarTela();
     }
 
@@ -268,7 +268,7 @@
     }
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Backspace" || e.key === "Escape") {
+      if (["Backspace", "Escape"].includes(e.key)) {
         if (document.getElementById('overlay').classList.contains('open')) {
           fecharVideo();
           e.preventDefault();
