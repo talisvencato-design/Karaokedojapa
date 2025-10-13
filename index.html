@@ -140,7 +140,7 @@
       display: none;
       position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100vw; height: 100vh;
       z-index: 9999;
       background: #000000e6;
       align-items: center;
@@ -148,8 +148,28 @@
     }
 
     #overlay.open { display: flex; }
-    #overlay .playerWrap { position: relative; width: 100%; height: 100%; }
-    #overlay #overlayPlayer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    #overlay .playerWrap {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+    }
+
+    #overlayPlayer iframe {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+      inset: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+      background: #000;
+    }
+
     #overlay .closeBtn {
       position: absolute;
       right: 20px; top: 15px;
@@ -183,15 +203,9 @@
       .keypad button { font-size: 30px; padding: 28px; }
       .thumbnails img { width: 320px; }
     }
-    html { zoom: 0.93; }
-  
-#overlayPlayer iframe {
-  width: 100vw !important;
-  height: 100vh !important;
-  border: none;
-}
 
-</style>
+    html { zoom: 0.93; }
+  </style>
 </head>
 <body>
   <header>
@@ -238,7 +252,7 @@
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
     let musicas = [], player = null, pendingVideoId = null;
     const bgAudio = document.getElementById("bgAudio");
-bgAudio.volume = 0.15;
+    bgAudio.volume = 0.15;
 
     async function carregarMusicas() {
       const res = await fetch("./karaoke.json");
@@ -291,6 +305,10 @@ bgAudio.volume = 0.15;
       document.getElementById('overlayPlayer').innerHTML = '';
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
+
+      // 👉 Tenta fullscreen automático em Android TV
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) elem.requestFullscreen().catch(()=>{});
     }
 
     function criarPlayer(videoId) {
@@ -303,9 +321,9 @@ bgAudio.volume = 0.15;
           modestbranding: 1,
           rel: 0,
           iv_load_policy: 3,
-          fs: 1, // ✅ agora permite fullscreen
+          fs: 1,
           cc_load_policy: 0,
-          vq: 'large' // força 480p
+          vq: 'large'
         },
         events: { onStateChange: onPlayerStateChange }
       });
@@ -332,6 +350,16 @@ bgAudio.volume = 0.15;
       codigo.value = "";
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
+
+    // 🔙 Suporte a Android TV (botão voltar)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" || e.key === "Escape") {
+        if (document.getElementById('overlay').classList.contains('open')) {
+          fecharVideo();
+          e.preventDefault();
+        }
+      }
+    });
 
     carregarMusicas();
   </script>
