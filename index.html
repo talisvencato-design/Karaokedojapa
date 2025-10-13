@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Karaokê do Japa</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <style>
     :root {
       --panel: rgba(20, 20, 20, 0.85);
@@ -11,7 +11,6 @@
       --muted: #666;
     }
 
-    /* Fundo animado */
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
@@ -24,9 +23,9 @@
     }
 
     @keyframes moveBackground {
-      0% { background-position: center top; filter: brightness(0.6) saturate(1); }
+      0% { background-position: center top; filter: brightness(0.6); }
       50% { background-position: center bottom; filter: brightness(0.8) saturate(1.2); }
-      100% { background-position: center top; filter: brightness(0.6) saturate(1); }
+      100% { background-position: center top; filter: brightness(0.6); }
     }
 
     header {
@@ -43,7 +42,7 @@
     }
 
     @keyframes float {
-      from { transform: translateY(0px); }
+      from { transform: translateY(0); }
       to { transform: translateY(10px); }
     }
 
@@ -63,7 +62,7 @@
       background: var(--panel);
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.4), 0 0 40px rgba(255, 204, 0, 0.2);
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
       text-align: center;
       min-height: 380px;
       max-width: 900px;
@@ -71,9 +70,8 @@
     }
 
     @keyframes glowBorder {
-      0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); }
-      50% { box-shadow: 0 0 30px rgba(255, 255, 100, 0.6), 0 0 60px rgba(255, 204, 0, 0.4); }
-      100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.3), 0 0 20px rgba(255, 204, 0, 0.15); }
+      0%,100% { box-shadow: 0 0 10px rgba(255,204,0,0.3); }
+      50% { box-shadow: 0 0 40px rgba(255,255,100,0.6); }
     }
 
     input#codigo {
@@ -81,7 +79,7 @@
       padding: 14px;
       font-size: 22px;
       border-radius: 8px;
-      border: 0;
+      border: none;
       text-align: center;
       box-shadow: 0 0 6px #333 inset;
     }
@@ -98,7 +96,7 @@
       padding: 16px;
       font-weight: 700;
       border-radius: 8px;
-      border: 0;
+      border: none;
       background: #333;
       color: #fff;
       cursor: pointer;
@@ -136,15 +134,18 @@
       box-shadow: 0 0 12px var(--accent);
     }
 
+    /* ==== OVERLAY PLAYER (fullscreen real) ==== */
     #overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
-      width: 100vw; height: 100vh;
+      width: 100%;
+      height: 100%;
+      background: #000;
       z-index: 9999;
-      background: #000000e6;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
 
     #overlay.open { display: flex; }
@@ -152,27 +153,26 @@
     #overlay .playerWrap {
       position: fixed;
       top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background: #000;
+      overflow: hidden;
     }
 
     #overlayPlayer iframe {
-      position: fixed !important;
+      position: absolute !important;
       top: 0;
       left: 0;
-      width: 100% !important;
-      height: 100% !important;
+      width: 100%;
+      height: 100%;
       border: none;
-      inset: 0;
-      max-width: 100vw;
-      max-height: 100vh;
       background: #000;
     }
 
     #overlay .closeBtn {
       position: absolute;
-      right: 20px; top: 15px;
+      right: 20px;
+      top: 15px;
       z-index: 10000;
       background: #111;
       border: 2px solid #fff;
@@ -196,15 +196,6 @@
       .thumbnails img { width: 240px; }
       header img { max-width: 320px; }
     }
-
-    @media (min-width: 1600px) {
-      header img { max-width: 600px; }
-      input#codigo { font-size: 36px; padding: 25px; }
-      .keypad button { font-size: 30px; padding: 28px; }
-      .thumbnails img { width: 320px; }
-    }
-
-    html { zoom: 0.93; }
   </style>
 </head>
 <body>
@@ -253,6 +244,13 @@
     let musicas = [], player = null, pendingVideoId = null;
     const bgAudio = document.getElementById("bgAudio");
     bgAudio.volume = 0.15;
+
+    const isAndroidTV = /Android TV|AFTT|AFTN|BRAVIA|SMARTTV/i.test(navigator.userAgent);
+    if (isAndroidTV) {
+      document.body.style.fontSize = "110%";
+      document.documentElement.style.zoom = "1";
+      console.log("Android TV detectado.");
+    }
 
     async function carregarMusicas() {
       const res = await fetch("./karaoke.json");
@@ -303,12 +301,16 @@
       document.body.style.overflow = 'hidden';
       bgAudio.pause();
       document.getElementById('overlayPlayer').innerHTML = '';
+
+      // cria o player
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
 
-      // 👉 Tenta fullscreen automático em Android TV
-      const elem = document.documentElement;
-      if (elem.requestFullscreen) elem.requestFullscreen().catch(()=>{});
+      // tenta fullscreen universal
+      const container = document.getElementById('overlay');
+      if (container.requestFullscreen) container.requestFullscreen().catch(()=>{});
+      else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
+      else if (container.msRequestFullscreen) container.msRequestFullscreen();
     }
 
     function criarPlayer(videoId) {
@@ -344,6 +346,9 @@
       document.getElementById('overlayPlayer').innerHTML = '';
       bgAudio.play();
       resetarTela();
+
+      // sair do fullscreen
+      if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
     }
 
     function resetarTela() {
@@ -351,7 +356,7 @@
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
 
-    // 🔙 Suporte a Android TV (botão voltar)
+    // botão “voltar” na Android TV
     document.addEventListener("keydown", (e) => {
       if (e.key === "Backspace" || e.key === "Escape") {
         if (document.getElementById('overlay').classList.contains('open')) {
