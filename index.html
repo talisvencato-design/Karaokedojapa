@@ -141,7 +141,6 @@
       box-shadow: 0 0 12px var(--accent);
     }
 
-    /* Overlay e player fullscreen */
     #overlay {
       display: none;
       position: fixed;
@@ -169,8 +168,8 @@
     }
 
     #overlayPlayer iframe {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       border: 0;
       display: block;
     }
@@ -299,18 +298,28 @@
 
     function abrirVideo(videoId) {
       const overlay = document.getElementById('overlay');
+      const playerWrap = overlay.querySelector(".playerWrap");
+      const overlayPlayer = document.getElementById('overlayPlayer');
+
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
       bgAudio.pause();
-      document.getElementById('overlayPlayer').innerHTML = '';
+      overlayPlayer.innerHTML = '';
 
-      if (window.YT && window.YT.Player) criarPlayer(videoId);
-      else pendingVideoId = videoId;
+      if (window.YT && window.YT.Player) {
+        criarPlayer(videoId);
+      } else {
+        pendingVideoId = videoId;
+      }
 
-      const playerWrap = overlay.querySelector(".playerWrap");
+      // Fullscreen garantido após clique do usuário
       try {
-        playerWrap.requestFullscreen?.() || playerWrap.webkitRequestFullscreen?.();
-      } catch {}
+        if (playerWrap.requestFullscreen) playerWrap.requestFullscreen();
+        else if (playerWrap.webkitRequestFullscreen) playerWrap.webkitRequestFullscreen();
+        else if (playerWrap.msRequestFullscreen) playerWrap.msRequestFullscreen();
+      } catch (e) {
+        console.warn("Falha ao entrar em fullscreen:", e);
+      }
     }
 
     function criarPlayer(videoId) {
@@ -357,6 +366,13 @@
       codigo.value = "";
       document.getElementById('resultado').innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
+
+    // ✅ Som ambiente no primeiro clique
+    document.addEventListener("click", () => {
+      if (bgAudio.paused) {
+        bgAudio.play().catch(err => console.log("Autoplay bloqueado:", err));
+      }
+    }, { once: true });
 
     carregarMusicas();
   </script>
