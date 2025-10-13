@@ -38,6 +38,7 @@
       display: grid; grid-template-columns: repeat(3, 90px);
       gap: 12px; margin-top: 18px; justify-content: center;
     }
+
     .keypad button {
       padding: 16px; font-size: 20px; border-radius: 8px;
       border: none; cursor: pointer; background: #333; color: #fff;
@@ -122,24 +123,30 @@
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
 
-    // 🔊 Tocar música de fundo após primeira interação (Android exige isso)
-    document.addEventListener('click', () => {
+    // 🔊 Tocar música ambiente assim que houver interação ou busca
+    const ativarSom = () => {
       if (bgAudio.paused) bgAudio.play().catch(()=>{});
-    }, { once: true });
+    };
+    document.addEventListener('click', ativarSom, { once: true });
 
     let musicas = [], player, pendingVideoId = null;
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
 
     async function carregarMusicas() {
-      const res = await fetch("./karaoke.json");
-      musicas = await res.json();
+      try {
+        const res = await fetch("./karaoke.json");
+        musicas = await res.json();
+      } catch (e) {
+        console.error("Erro ao carregar karaoke.json:", e);
+      }
     }
 
-    function digitar(n){ codigo.value += n; }
+    function digitar(n){ codigo.value += n; ativarSom(); }
     function backspace(){ codigo.value = codigo.value.slice(0,-1); }
     function clearAll(){ codigo.value = ''; }
 
     async function buscar() {
+      ativarSom();
       const codigoVal = document.getElementById('codigo').value.trim();
       const resultado = document.getElementById('resultado');
       resultado.innerHTML = "";
@@ -149,19 +156,25 @@
 
       const query = `karaoke ${item.artista} ${item.musica}`;
       const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
-      const res = await fetch(url);
-      const data = await res.json();
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const videos = (data.items || []).filter(i => i.id?.videoId);
+        if (!videos.length) { resultado.innerHTML = "<p>❌ Nenhum vídeo encontrado.</p>"; return; }
 
-      const videos = data.items.filter(i => i.id?.videoId);
-      resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
-      const thumbs = resultado.querySelector('.thumbnails');
-      videos.slice(0,3).forEach(v => {
-        const img = document.createElement("img");
-        img.src = v.snippet.thumbnails.medium.url;
-        img.alt = v.snippet.title;
-        img.onclick = () => abrirVideo(v.id.videoId);
-        thumbs.appendChild(img);
-      });
+        resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
+        const thumbs = resultado.querySelector('.thumbnails');
+        videos.slice(0,3).forEach(v => {
+          const img = document.createElement("img");
+          img.src = v.snippet.thumbnails.medium.url;
+          img.alt = v.snippet.title;
+          img.onclick = () => abrirVideo(v.id.videoId);
+          thumbs.appendChild(img);
+        });
+      } catch (err) {
+        resultado.innerHTML = "<p>❌ Erro ao buscar vídeo.</p>";
+        console.error(err);
+      }
     }
 
     function abrirVideo(videoId) {
@@ -170,8 +183,11 @@
       bgAudio.pause();
       document.getElementById('overlayPlayer').innerHTML = '';
 
-      if (window.YT && window.YT.Player) criarPlayer(videoId);
-      else pendingVideoId = videoId;
+      // Delay garante que o DOM esteja pronto antes do player
+      setTimeout(() => {
+        if (window.YT && window.YT.Player) criarPlayer(videoId);
+        else pendingVideoId = videoId;
+      }, 300);
     }
 
     function criarPlayer(videoId) {
@@ -181,7 +197,11 @@
         videoId,
         playerVars: { autoplay: 1, controls: 1, rel: 0, fs: 1 },
         events: { 
-          onReady: () => entrarFullscreen(),
+          onReady: () => { 
+            // entra em fullscreen com retry
+            setTimeout(entrarFullscreen, 800);
+            setTimeout(entrarFullscreen, 2000);
+          },
           onStateChange: onPlayerStateChange 
         }
       });
@@ -190,12 +210,14 @@
     function entrarFullscreen() {
       const iframe = document.querySelector('#overlay iframe');
       const overlay = document.getElementById('overlay');
-
-      // tenta fullscreen no iframe primeiro, depois no container
-      (iframe?.requestFullscreen?.() ||
-       overlay.requestFullscreen?.() ||
-       overlay.webkitRequestFullscreen?.() ||
-       overlay.msRequestFullscreen?.());
+      try {
+        if (iframe && iframe.requestFullscreen) iframe.requestFullscreen();
+        else if (overlay.requestFullscreen) overlay.requestFullscreen();
+        else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
+        else if (overlay.msRequestFullscreen) overlay.msRequestFullscreen();
+      } catch(e) {
+        console.warn("Fullscreen não suportado:", e);
+      }
     }
 
     function onYouTubeIframeAPIReady() {
