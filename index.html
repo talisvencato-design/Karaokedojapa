@@ -134,7 +134,7 @@
       box-shadow: 0 0 12px var(--accent);
     }
 
-    /* ==== OVERLAY PLAYER (fullscreen real) ==== */
+    /* ==== OVERLAY PLAYER ==== */
     #overlay {
       display: none;
       position: fixed;
@@ -159,12 +159,26 @@
       overflow: hidden;
     }
 
+    /* ✅ Centralização e proporção 16:9 perfeitas */
+    #overlayPlayer {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
     #overlayPlayer iframe {
-      position: absolute !important;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 proporção */
+      max-height: 100vh;
+      max-width: 177.78vh; /* 16:9 inverso */
       border: none;
       background: #000;
     }
@@ -245,13 +259,6 @@
     const bgAudio = document.getElementById("bgAudio");
     bgAudio.volume = 0.15;
 
-    const isAndroidTV = /Android TV|AFTT|AFTN|BRAVIA|SMARTTV/i.test(navigator.userAgent);
-    if (isAndroidTV) {
-      document.body.style.fontSize = "110%";
-      document.documentElement.style.zoom = "1";
-      console.log("Android TV detectado.");
-    }
-
     async function carregarMusicas() {
       const res = await fetch("./karaoke.json");
       musicas = await res.json();
@@ -302,7 +309,6 @@
       bgAudio.pause();
       document.getElementById('overlayPlayer').innerHTML = '';
 
-      // cria o player
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
 
@@ -325,7 +331,7 @@
           iv_load_policy: 3,
           fs: 1,
           cc_load_policy: 0,
-          vq: 'large'
+          vq: 'hd720' // qualidade melhor
         },
         events: { onStateChange: onPlayerStateChange }
       });
@@ -346,8 +352,6 @@
       document.getElementById('overlayPlayer').innerHTML = '';
       bgAudio.play();
       resetarTela();
-
-      // sair do fullscreen
       if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
     }
 
@@ -356,7 +360,7 @@
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
 
-    // botão “voltar” na Android TV
+    // botão “voltar” ou ESC na TV
     document.addEventListener("keydown", (e) => {
       if (e.key === "Backspace" || e.key === "Escape") {
         if (document.getElementById('overlay').classList.contains('open')) {
