@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Karaokê do Japa</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <style>
     :root {
       --panel: rgba(20, 20, 20, 0.85);
@@ -11,16 +11,17 @@
       --muted: #666;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    html, body {
       margin: 0;
-      color: #fff;
-      min-height: 100vh;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* 🔒 Sem scroll em nenhuma tela */
       background: url('./9937771.jpg') no-repeat center center;
       background-size: cover;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
       animation: moveBackground 25s ease-in-out infinite alternate;
-      overflow-x: hidden;
-      transition: background-attachment 0.3s;
     }
 
     @keyframes moveBackground {
@@ -29,50 +30,86 @@
       100% { background-position: center top; filter: brightness(0.6); }
     }
 
-    header { text-align: center; padding: 20px; }
+    header {
+      position: absolute;
+      top: 5%;
+      width: 100%;
+      text-align: center;
+    }
+
     header img {
-      max-width: 480px; width: 90%; height: auto;
-      animation: float 5s ease-in-out infinite alternate;
+      max-width: 360px;
+      width: 70%;
+      height: auto;
       filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+      animation: float 5s ease-in-out infinite alternate;
     }
 
-    @keyframes float { from { transform: translateY(0); } to { transform: translateY(10px); } }
-
-    .wrap {
-      display: flex; gap: 30px; padding: 20px; flex-wrap: wrap;
-      justify-content: center; align-items: flex-start;
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(10px); }
     }
 
-    .left { width: 280px; text-align: center; }
+    main.wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1000px;
+      padding: 10px;
+    }
+
+    .left {
+      width: 280px;
+      text-align: center;
+    }
 
     .right {
-      flex: 1; background: var(--panel);
-      padding: 20px; border-radius: 12px;
+      flex: 1;
+      background: var(--panel);
+      padding: 20px;
+      border-radius: 12px;
       box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
-      text-align: center; min-height: 380px; max-width: 900px;
-      animation: glowBorder 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowBorder {
-      0%,100% { box-shadow: 0 0 10px rgba(255,204,0,0.3); }
-      50% { box-shadow: 0 0 40px rgba(255,255,100,0.6); }
+      text-align: center;
+      min-height: 300px;
+      max-height: 380px;
+      overflow: hidden;
     }
 
     input#codigo {
-      width: 220px; padding: 14px; font-size: 22px;
-      border-radius: 8px; border: none; text-align: center;
+      width: 200px;
+      padding: 12px;
+      font-size: 20px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
       box-shadow: 0 0 6px #333 inset;
     }
 
     .keypad {
-      display: grid; grid-template-columns: repeat(3, 90px);
-      gap: 12px; margin-top: 18px; justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      margin-top: 14px;
+      justify-content: center;
     }
 
     .keypad button {
-      padding: 16px; font-weight: 700; border-radius: 8px;
-      border: none; background: #333; color: #fff;
-      cursor: pointer; transition: 0.2s; font-size: 20px;
+      padding: 12px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 18px;
     }
 
     .keypad button:hover { background: #555; }
@@ -84,53 +121,75 @@
     .keypad .back:hover { background: #e07b00; }
 
     .thumbnails {
-      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 10px;
     }
 
     .thumbnails img {
-      width: 240px; border-radius: 10px; border: 3px solid var(--muted);
-      cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s;
+      width: 200px;
+      border-radius: 10px;
+      border: 3px solid var(--muted);
+      cursor: pointer;
+      transition: transform .15s, border-color .15s, box-shadow .15s;
     }
 
     .thumbnails img:hover {
-      transform: scale(1.08); border-color: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
+      transform: scale(1.05);
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
     }
 
-    /* ==== OVERLAY PLAYER (simula fullscreen estável) ==== */
+    /* 🎥 Player em tela cheia simulada (sem scroll) */
     #overlay {
-      display: none; position: fixed; inset: 0;
-      background: #000; z-index: 9999;
-      justify-content: center; align-items: center;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
     #overlay.open { display: flex; }
 
     #overlayPlayer {
-      width: 100vw; height: 100vh;
-      display: flex; justify-content: center; align-items: center;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #000;
     }
 
     #overlayPlayer iframe {
-      aspect-ratio: 16 / 9;
-      width: 100vw; max-width: 100vh * 1.77;
-      height: auto;
+      width: 100vw;
+      height: 100vh;
       border: none;
       background: #000;
+      object-fit: cover;
     }
 
     #overlay .closeBtn {
-      position: absolute; right: 20px; top: 15px;
-      background: #111; border: 2px solid #fff;
-      color: #fff; padding: 8px 14px; border-radius: 6px;
-      cursor: pointer; font-size: 16px; z-index: 10000;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      z-index: 10000;
+      background: #111;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
     }
 
     @media (max-width: 600px) {
-      .wrap { flex-direction: column; align-items: center; padding: 10px; }
-      .left, .right { width: 100%; }
-      header img { max-width: 320px; }
+      main.wrap { flex-direction: column; }
+      header img { max-width: 280px; }
     }
   </style>
 </head>
@@ -174,7 +233,7 @@
 
   <script>
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
-    let musicas = [], player = null;
+    let musicas = [];
     const bgAudio = document.getElementById("bgAudio");
     bgAudio.volume = 0.15;
 
@@ -188,11 +247,11 @@
     function clearAll(){ codigo.value = ''; }
 
     async function buscar() {
-      const codigo = document.getElementById('codigo').value.trim();
+      const codigoVal = document.getElementById('codigo').value.trim();
       const resultado = document.getElementById('resultado');
       resultado.innerHTML = "";
 
-      const item = musicas.find(m => Number(m.codigo) === Number(codigo));
+      const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
 
       const query = `karaoke ${item.artista} ${item.musica}`;
@@ -223,12 +282,12 @@
     }
 
     function abrirVideo(videoId) {
-      document.getElementById('overlay').classList.add('open');
-      document.body.style.backgroundAttachment = 'scroll'; // melhora performance Android
-      bgAudio.pause();
-
+      const overlay = document.getElementById('overlay');
       const container = document.getElementById('overlayPlayer');
+      overlay.classList.add('open');
+      bgAudio.pause();
       container.innerHTML = '';
+
       const iframe = document.createElement('iframe');
       iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
       iframe.allow = 'autoplay; fullscreen';
@@ -238,7 +297,6 @@
 
     function fecharVideo() {
       document.getElementById('overlay').classList.remove('open');
-      document.body.style.backgroundAttachment = 'fixed';
       document.getElementById('overlayPlayer').innerHTML = '';
       bgAudio.play();
       resetarTela();
