@@ -150,35 +150,19 @@
 
     #overlay.open { display: flex; }
 
-    #overlay .playerWrap {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
-    }
-
-    /* ✅ Centralização e proporção 16:9 perfeitas */
     #overlayPlayer {
-      position: fixed;
-      top: 50%;
-      left: 50%;
+      position: relative;
       width: 100vw;
       height: 100vh;
-      transform: translate(-50%, -50%);
-      background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      background: #000;
     }
 
     #overlayPlayer iframe {
-      width: 100vw;
-      height: 56.25vw; /* 16:9 proporção */
-      max-height: 100vh;
-      max-width: 177.78vh; /* 16:9 inverso */
+      width: 100%;
+      height: 100%;
       border: none;
       background: #000;
     }
@@ -195,13 +179,6 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
-    }
-
-    @media (max-width: 1024px) {
-      header img { max-width: 400px; }
-      input#codigo { width: 80%; font-size: 26px; padding: 18px; }
-      .keypad button { font-size: 28px; padding: 20px; }
-      .thumbnails img { width: 280px; }
     }
 
     @media (max-width: 600px) {
@@ -244,10 +221,8 @@
   </main>
 
   <div id="overlay">
-    <div class="playerWrap">
-      <button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button>
-      <div id="overlayPlayer"></div>
-    </div>
+    <button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button>
+    <div id="overlayPlayer"></div>
   </div>
 
   <audio id="bgAudio" src="./ambiente.mp3" loop autoplay></audio>
@@ -311,12 +286,6 @@
 
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
-
-      // tenta fullscreen universal
-      const container = document.getElementById('overlay');
-      if (container.requestFullscreen) container.requestFullscreen().catch(()=>{});
-      else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-      else if (container.msRequestFullscreen) container.msRequestFullscreen();
     }
 
     function criarPlayer(videoId) {
@@ -328,13 +297,23 @@
           controls: 1,
           modestbranding: 1,
           rel: 0,
-          iv_load_policy: 3,
           fs: 1,
-          cc_load_policy: 0,
-          vq: 'hd720' // qualidade melhor
+          playsinline: 1,
+          vq: 'hd720'
         },
-        events: { onStateChange: onPlayerStateChange }
+        events: { onReady: onPlayerReady, onStateChange: onPlayerStateChange }
       });
+    }
+
+    function onPlayerReady(event) {
+      const iframe = event.target.getIframe();
+      iframe.setAttribute('allow', 'autoplay; fullscreen');
+      iframe.setAttribute('allowfullscreen', '');
+      try { event.target.playVideo(); } catch(e){}
+
+      // tenta fullscreen direto no iframe (Android)
+      if (iframe.requestFullscreen) iframe.requestFullscreen().catch(()=>{});
+      else if (iframe.webkitEnterFullscreen) iframe.webkitEnterFullscreen();
     }
 
     function onYouTubeIframeAPIReady() {
@@ -360,7 +339,6 @@
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
     }
 
-    // botão “voltar” ou ESC na TV
     document.addEventListener("keydown", (e) => {
       if (e.key === "Backspace" || e.key === "Escape") {
         if (document.getElementById('overlay').classList.contains('open')) {
