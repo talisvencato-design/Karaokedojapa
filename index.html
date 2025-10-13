@@ -148,7 +148,7 @@
 
     #overlay.open { display: flex; }
 
-    /* PLAYER CENTRALIZADO */
+    /* PLAYER CENTRALIZADO E COMPATÍVEL COM ANDROID */
     #overlay .playerWrap {
       display: flex;
       align-items: center;
@@ -158,16 +158,18 @@
       width: 100vw;
       height: 100vh;
       background: #000;
+      overflow: hidden;
     }
 
     #overlayPlayer iframe {
       position: relative !important;
-      width: 100%;
-      max-width: 854px; /* largura máxima 480p */
+      width: 90vw;
+      max-width: 854px; /* 480p */
       aspect-ratio: 16/9;
       height: auto !important;
       border: none;
       background: #000;
+      max-height: 90vh;
     }
 
     #overlay .closeBtn {
@@ -301,11 +303,13 @@
       document.body.style.overflow = 'hidden';
       bgAudio.pause();
       document.getElementById('overlayPlayer').innerHTML = '';
+      
       if (window.YT && window.YT.Player) criarPlayer(videoId);
       else pendingVideoId = videoId;
 
-      const elem = document.documentElement;
-      if (elem.requestFullscreen) elem.requestFullscreen().catch(()=>{});
+      // sem fullscreen forçado, apenas centraliza
+      const playerWrap = document.querySelector('#overlay .playerWrap');
+      playerWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function criarPlayer(videoId) {
@@ -320,7 +324,7 @@
           iv_load_policy: 3,
           fs: 1,
           cc_load_policy: 0,
-          vq: 'large' // 480p máximo
+          vq: 'large' // 480p
         },
         events: { onStateChange: onPlayerStateChange }
       });
