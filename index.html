@@ -278,60 +278,79 @@
       resultado.appendChild(thumbs);
     }
 
+    // 🔧 Refeito para Android fullscreen + autoplay
     function abrirVideo(videoId) {
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
-      bgAudio.pause();
-      document.getElementById('overlayPlayer').innerHTML = '';
+      try { bgAudio.pause(); } catch(e){}
 
-      if (window.YT && window.YT.Player) criarPlayer(videoId);
-      else pendingVideoId = videoId;
-    }
+      const container = document.getElementById('overlayPlayer');
+      container.innerHTML = '';
 
-    function criarPlayer(videoId) {
-      if (player && player.destroy) try { player.destroy(); } catch(e){}
-      player = new YT.Player('overlayPlayer', {
-        videoId,
-        playerVars: {
-          autoplay: 1,
-          controls: 1,
-          modestbranding: 1,
-          rel: 0,
-          fs: 1,
-          playsinline: 1,
-          vq: 'hd720'
-        },
-        events: { onReady: onPlayerReady, onStateChange: onPlayerStateChange }
-      });
-    }
-
-    function onPlayerReady(event) {
-      const iframe = event.target.getIframe();
-      iframe.setAttribute('allow', 'autoplay; fullscreen');
+      const iframe = document.createElement('iframe');
+      iframe.id = 'ytEmbedFrame';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1`;
+      iframe.allow = 'autoplay; fullscreen';
       iframe.setAttribute('allowfullscreen', '');
-      try { event.target.playVideo(); } catch(e){}
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.border = '0';
+      container.appendChild(iframe);
 
-      // tenta fullscreen direto no iframe (Android)
+      // tenta fullscreen imediatamente (clicado pelo usuário)
       if (iframe.requestFullscreen) iframe.requestFullscreen().catch(()=>{});
-      else if (iframe.webkitEnterFullscreen) iframe.webkitEnterFullscreen();
+      else if (iframe.webkitEnterFullscreen) try { iframe.webkitEnterFullscreen(); } catch(e){}
+
+      if (window.YT && window.YT.Player) {
+        if (player && player.destroy) try { player.destroy(); } catch(e){}
+        player = new YT.Player(iframe, { events: { onReady: onPlayerReady, onStateChange: onPlayerStateChange } });
+      } else pendingVideoId = videoId;
     }
 
     function onYouTubeIframeAPIReady() {
-      if (pendingVideoId) { criarPlayer(pendingVideoId); pendingVideoId = null; }
+      const existing = document.getElementById('ytEmbedFrame');
+      if (existing) {
+        if (player && player.destroy) try { player.destroy(); } catch(e){}
+        player = new YT.Player(existing, { events: { onReady: onPlayerReady, onStateChange: onPlayerStateChange } });
+        pendingVideoId = null;
+      } else if (pendingVideoId) {
+        player = new YT.Player('overlayPlayer', {
+          videoId: pendingVideoId,
+          playerVars: { autoplay: 1, playsinline: 1 },
+          events: { onReady: onPlayerReady, onStateChange: onPlayerStateChange }
+        });
+        pendingVideoId = null;
+      }
+    }
+
+    function onPlayerReady(event) {
+      try { event.target.playVideo(); } catch(e){}
+      const iframe = event.target.getIframe ? event.target.getIframe() : document.getElementById('ytEmbedFrame');
+      if (iframe) {
+        iframe.setAttribute('allow', 'autoplay; fullscreen');
+        iframe.setAttribute('allowfullscreen', '');
+      }
     }
 
     function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.ENDED) fecharVideo();
+      if (event.data === (window.YT ? YT.PlayerState.ENDED : 0)) fecharVideo();
     }
 
     function fecharVideo() {
       if (player && player.destroy) try { player.destroy(); } catch(e){}
+      player = null; pendingVideoId = null;
+
       document.getElementById('overlay').classList.remove('open');
       document.body.style.overflow = '';
       document.getElementById('overlayPlayer').innerHTML = '';
-      bgAudio.play();
+
+      try { bgAudio.play(); } catch(e){}
+      try {
+        if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+      } catch(e){}
+
       resetarTela();
-      if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
     }
 
     function resetarTela() {
