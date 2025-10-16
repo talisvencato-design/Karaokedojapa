@@ -163,18 +163,17 @@
     }
 
     function abrirVideo(videoId) {
-      const appUrl = `youtube://www.youtube.com/watch?v=${videoId}`;
+      const appUrl = `vnd.youtube:${videoId}`;
       const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
-      const a = document.createElement('a');
-      a.href = appUrl;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      setTimeout(() => {
-        window.open(webUrl, '_system' in window ? '_system' : '_blank');
-      }, 800);
+      try {
+        window.location.href = appUrl;
+        setTimeout(() => {
+          window.open(webUrl, '_blank');
+        }, 1000);
+      } catch (e) {
+        window.open(webUrl, '_blank');
+      }
     }
 
     carregarMusicas();
