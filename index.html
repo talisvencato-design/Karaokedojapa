@@ -209,14 +209,14 @@
     }
 
     /**
-     * MECANISMO FINAL (ALTERADO): Tenta abrir o vídeo no App nativo do YouTube 
-     * usando o schema 'vnd.youtube' e window.location.href. 
-     * Isso aumenta a chance de que o botão "Voltar" do Android retorne 
-     * corretamente para esta aba e acione a Page Visibility API.
+     * MECANISMO FINAL (ALTERADO NOVAMENTE): Tenta usar um link temporário com 
+     * target='_self' (mesma janela) para aumentar a chance de que o Android volte 
+     * para a aba do navegador corretamente, acionando a Page Visibility API, 
+     * em vez de fechar o navegador.
      */
     function abrirVideoNoApp(videoId) {
-      // Usa o schema vnd.youtube para forçar a abertura no App
-      const urlApp = `vnd.youtube:${videoId}`; 
+      // URL revertida para o formato HTTP padrão
+      const urlApp = `https://www.youtube.com/watch?v=${videoId}`; 
       
       // 1. Pausa a música de fundo
       bgAudio.pause();
@@ -236,8 +236,14 @@
       // 3. Adiciona o listener para o evento de mudança de visibilidade
       document.addEventListener('visibilitychange', handleVisibilityChange);
 
-      // 4. Abre o link na mesma janela. O sistema operacional irá tentar abrir no App do YouTube.
-      window.location.href = urlApp; 
+      // 4. Cria e clica em um elemento <a> temporário.
+      const a = document.createElement('a');
+      a.href = urlApp;
+      a.target = '_self'; // Tenta abrir na mesma janela
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a); 
       
       // Lembrete: O usuário deve usar o botão "Voltar" do sistema (Android/TV Box) para fechar o vídeo.
     }
