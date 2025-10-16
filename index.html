@@ -16,26 +16,27 @@
       background-size: cover;
       overflow-x: hidden;
       min-height: 100vh;
-      display: flex; /* Adicionado para melhor layout de tela cheia */
-      flex-direction: column; /* Adicionado para melhor layout de tela cheia */
+      display: flex; 
+      flex-direction: column; 
     }
 
     header { text-align: center; padding: 20px; }
     header img { max-width: 480px; width: 90%; height: auto; }
 
     main.wrap {
-      flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+      flex: 1; 
       display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
       gap: 30px; padding: 20px;
     }
 
-    .left { width: 280px; text-align: center; flex-shrink: 0; } /* Garante que o teclado não encolha muito */
+    .left { width: 280px; text-align: center; flex-shrink: 0; }
     .right {
       flex: 1; background: rgba(0,0,0,0.7); border-radius: 12px;
       padding: 20px; text-align: center; min-height: 380px; max-width: 900px;
-      min-width: 300px; /* Garante um tamanho mínimo para o painel de resultados */
+      min-width: 300px; 
     }
 
+    /* Alterado para melhor compatibilidade em dispositivos touch */
     input#codigo {
       width: 220px; padding: 14px; font-size: 22px;
       border-radius: 8px; border: none; text-align: center;
@@ -69,41 +70,30 @@
     }
 
     /* -------------------------------------- */
-    /* REMOÇÃO DO OVERLAY (Será removido do HTML/JS também) */
-    /* -------------------------------------- */
-    /* O código abaixo é mantido apenas como comentário para indicar que foi removido */
-    /*
-    #overlay { display: none; ... }
-    #overlay.open { display: flex; }
-    #overlay iframe { ... }
-    .closeBtn { ... }
-    */
-
-    /* -------------------------------------- */
     /* MEDIA QUERY PARA TELAS VERTICAIS (SMARTPHONE) */
     /* -------------------------------------- */
     @media (max-width: 768px) {
       main.wrap {
-        flex-direction: column; /* Empilha os elementos */
+        flex-direction: column; 
         align-items: center;
         gap: 20px;
       }
       header img { max-width: 100%; }
 
-      .left { width: 100%; max-width: 300px; } /* Centraliza o teclado em telas menores */
+      .left { width: 100%; max-width: 300px; } 
       .right {
         width: 95%; max-width: none; min-height: 200px;
-        order: -1; /* Move o resultado para cima do teclado em telas pequenas */
+        order: -1; 
       }
       .keypad {
-        grid-template-columns: repeat(3, 1fr); /* Botões maiores */
+        grid-template-columns: repeat(3, 1fr); 
         width: 100%;
-        max-width: 300px; /* Limita a largura do teclado */
+        max-width: 300px; 
         margin: 18px auto 0;
       }
       .keypad button { padding: 12px; font-size: 18px; }
       input#codigo { width: 100%; max-width: 220px; }
-      .thumbnails img { width: 100%; max-width: 180px; } /* Reduz o tamanho das thumbnails */
+      .thumbnails img { width: 100%; max-width: 180px; } 
     }
 
   </style>
@@ -114,7 +104,7 @@
   <main class="wrap">
     <section class="left">
       <p>Digite o código da música:</p>
-      <input id="codigo" readonly placeholder="Ex: 6197" />
+      <input id="codigo" placeholder="Ex: 6197" type="tel" inputmode="none" />
       <div class="keypad">
         <button onclick="digitar('1')">1</button>
         <button onclick="digitar('2')">2</button>
@@ -161,7 +151,10 @@
       }
     }
 
-    function digitar(n){ codigo.value += n; ativarSom(); }
+    function digitar(n){ 
+      codigo.value += n; 
+      ativarSom(); 
+    }
     function backspace(){ codigo.value = codigo.value.slice(0,-1); }
     function clearAll(){ codigo.value = ''; }
 
@@ -188,7 +181,7 @@
           const img = document.createElement("img");
           img.src = v.snippet.thumbnails.medium.url;
           img.alt = v.snippet.title;
-          // MODIFICAÇÃO: Chama a nova função para abrir no app do YouTube
+          // ALTERAÇÃO: Chama a função para abrir o vídeo no App do YouTube
           img.onclick = () => abrirVideoNoApp(v.id.videoId);
           thumbs.appendChild(img);
         });
@@ -199,25 +192,21 @@
     }
 
     /**
-     * NOVA FUNÇÃO: Abre o vídeo diretamente no aplicativo do YouTube (ou no navegador, se o app não estiver presente).
-     * Usa o formato de URL mais compatível para iniciar o app.
+     * FUNÇÃO CORRIGIDA: Abre o vídeo diretamente no aplicativo do YouTube.
      */
     function abrirVideoNoApp(videoId) {
-      // Formato para abrir no app do YouTube, compatível com a maioria dos dispositivos (Android/iOS/TV Box)
+      // Usa o formato de URL universal para acionar o app do YouTube
       const urlApp = `https://www.youtube.com/watch?v=${videoId}`;
       
-      // Abre em uma nova janela/aba. O sistema operacional/navegador tentará
-      // redirecionar para o aplicativo do YouTube se ele estiver instalado.
+      // Pausa a música de fundo
+      bgAudio.pause();
+
+      // Abre a URL em uma nova aba, permitindo que o sistema redirecione para o app
       window.open(urlApp, '_blank');
       
-      // Pausa a música de fundo enquanto o vídeo do YouTube é iniciado
-      bgAudio.pause();
-      
-      // Como o vídeo é aberto em um app externo, não precisamos de uma função fecharVideo()
-      // O usuário terá que voltar manualmente para o navegador.
+      // Nota: Não é possível detectar quando o usuário fecha o app e volta ao navegador.
+      // A música de fundo permanecerá pausada até que uma nova interação ocorra.
     }
-
-    // As funções relacionadas ao Iframe Player (criarPlayer, fecharVideo, onYouTubeIframeAPIReady, etc.) foram removidas.
 
     carregarMusicas();
   </script>
