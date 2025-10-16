@@ -49,8 +49,12 @@
     .keypad button {
       padding: 16px; font-size: 20px; border-radius: 8px;
       border: none; cursor: pointer; background: #333; color: #fff;
+      transition: background 0.1s;
     }
-    .keypad .enter { grid-column: span 3; background: #28a745; }
+    .keypad button:active { /* Feedback tátil */
+      background: #555;
+    }
+    .keypad .enter { background: #28a745; }
     .keypad .clear { background: #dc3545; }
     .keypad .back { background: #ff8800; }
 
@@ -142,10 +146,11 @@
     document.addEventListener('click', ativarSom, { once: true });
 
     let musicas = [];
-    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
+    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88"; // SUBSTITUA PELA SUA CHAVE REAL
 
     async function carregarMusicas() {
       try {
+        // Assume que o arquivo karaoke.json está no mesmo diretório
         const res = await fetch("./karaoke.json");
         musicas = await res.json();
       } catch (e) {
@@ -156,29 +161,26 @@
     function digitar(n){ 
       codigo.value += n; 
       ativarSom(); 
-      // CORREÇÃO 2: Força o foco após cada clique, crucial para Android/TV Box
-      codigo.focus(); 
+      codigo.focus(); // Força o foco para compatibilidade em Android
     }
     
     function backspace(){ 
       codigo.value = codigo.value.slice(0,-1); 
-      codigo.focus(); // Mantém o foco
+      codigo.focus(); 
     }
     
     function clearAll(){ 
       codigo.value = ''; 
-      codigo.focus(); // Mantém o foco
+      codigo.focus(); 
     }
 
     async function buscar() {
       ativarSom();
-      // O código já está referenciado como 'codigo'
       const codigoVal = codigo.value.trim(); 
       const resultado = document.getElementById('resultado');
       resultado.innerHTML = "";
       
-      // Remove o foco do campo para garantir que o teclado não volte a aparecer
-      codigo.blur(); 
+      codigo.blur(); // Remove o foco antes de buscar
 
       const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
@@ -189,7 +191,7 @@
         const res = await fetch(url);
         const data = await res.json();
         const videos = (data.items || []).filter(i => i.id?.videoId);
-        if (!videos.length) { resultado.innerHTML = "<p>❌ Nenhum vídeo encontrado.</p>"; return; }
+        if (!videos.length) { resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`; return; }
 
         resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
         const thumbs = resultado.querySelector('.thumbnails');
@@ -206,10 +208,35 @@
       }
     }
 
+    /**
+     * MECANISMO FINAL: Abre o vídeo no App nativo do YouTube (que decide a qualidade)
+     * e usa a Page Visibility API para detectar o retorno à página e retomar a música.
+     */
     function abrirVideoNoApp(videoId) {
       const urlApp = `https://www.youtube.com/watch?v=${videoId}`;
+      
+      // 1. Pausa a música de fundo
       bgAudio.pause();
+      
+      // 2. Cria o manipulador do evento de visibilidade
+      const handleVisibilityChange = () => {
+        // Verifica se a página está visível (o usuário retornou para a aba)
+        if (document.visibilityState === 'visible') {
+          // O usuário retornou. Retoma a música.
+          bgAudio.play().catch(()=>{});
+
+          // Remove o listener para que ele só seja acionado uma vez
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+        }
+      };
+
+      // 3. Adiciona o listener para o evento de mudança de visibilidade
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+
+      // 4. Abre o link. O sistema operacional irá tentar abrir no App do YouTube.
       window.open(urlApp, '_blank');
+      
+      // Lembrete: O usuário deve usar o botão "Voltar" do sistema (Android/TV Box) para fechar o vídeo.
     }
 
     carregarMusicas();
