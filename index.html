@@ -61,24 +61,16 @@
       transform: scale(1.08); border-color: #ffcc00;
     }
 
-    #overlay {
-      display: none; position: fixed; inset: 0;
-      background: #000; z-index: 9999;
-      justify-content: center; align-items: center;
-    }
-    #overlay.open { display: flex; }
-
-    #overlay iframe {
-      width: 100vw; height: 100vh; border: none;
-      background: #000;
+    @media (orientation: portrait) {
+      .wrap { flex-direction: column; align-items: center; }
+      .left, .right { width: 100%; max-width: 600px; }
+      .thumbnails img { width: 180px; }
     }
 
-    .closeBtn {
-      position: absolute; top: 15px; right: 20px;
-      background: rgba(0,0,0,0.6);
-      border: 2px solid #fff; color: #fff;
-      padding: 8px 14px; border-radius: 6px;
-      cursor: pointer; z-index: 10000;
+    @media (orientation: landscape) {
+      .wrap { flex-direction: row; justify-content: center; align-items: flex-start; }
+      .left { width: 300px; }
+      .right { max-width: 900px; }
     }
   </style>
 </head>
@@ -111,25 +103,18 @@
     </section>
   </main>
 
-  <div id="overlay">
-    <button class="closeBtn" onclick="fecharVideo()">✕ Fechar</button>
-    <div id="overlayPlayer"></div>
-  </div>
-
   <audio id="bgAudio" src="./ambiente.mp3" loop></audio>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
 
-    // 🔊 Tocar música ambiente assim que houver interação ou busca
     const ativarSom = () => {
       if (bgAudio.paused) bgAudio.play().catch(()=>{});
     };
     document.addEventListener('click', ativarSom, { once: true });
 
-    let musicas = [], player, pendingVideoId = null;
+    let musicas = [];
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
 
     async function carregarMusicas() {
@@ -178,62 +163,18 @@
     }
 
     function abrirVideo(videoId) {
-      const overlay = document.getElementById('overlay');
-      overlay.classList.add('open');
-      bgAudio.pause();
-      document.getElementById('overlayPlayer').innerHTML = '';
+      const appUrl = `youtube://www.youtube.com/watch?v=${videoId}`;
+      const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
-      // Delay garante que o DOM esteja pronto antes do player
+      const a = document.createElement('a');
+      a.href = appUrl;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
       setTimeout(() => {
-        if (window.YT && window.YT.Player) criarPlayer(videoId);
-        else pendingVideoId = videoId;
-      }, 300);
-    }
-
-    function criarPlayer(videoId) {
-      if (player && player.destroy) try { player.destroy(); } catch(e){}
-
-      player = new YT.Player('overlayPlayer', {
-        videoId,
-        playerVars: { autoplay: 1, controls: 1, rel: 0, fs: 1 },
-        events: { 
-          onReady: () => { 
-            // entra em fullscreen com retry
-            setTimeout(entrarFullscreen, 800);
-            setTimeout(entrarFullscreen, 2000);
-          },
-          onStateChange: onPlayerStateChange 
-        }
-      });
-    }
-
-    function entrarFullscreen() {
-      const iframe = document.querySelector('#overlay iframe');
-      const overlay = document.getElementById('overlay');
-      try {
-        if (iframe && iframe.requestFullscreen) iframe.requestFullscreen();
-        else if (overlay.requestFullscreen) overlay.requestFullscreen();
-        else if (overlay.webkitRequestFullscreen) overlay.webkitRequestFullscreen();
-        else if (overlay.msRequestFullscreen) overlay.msRequestFullscreen();
-      } catch(e) {
-        console.warn("Fullscreen não suportado:", e);
-      }
-    }
-
-    function onYouTubeIframeAPIReady() {
-      if (pendingVideoId) { criarPlayer(pendingVideoId); pendingVideoId = null; }
-    }
-
-    function onPlayerStateChange(e) {
-      if (e.data === YT.PlayerState.ENDED) fecharVideo();
-    }
-
-    function fecharVideo() {
-      if (player && player.destroy) try { player.destroy(); } catch(e){}
-      document.getElementById('overlay').classList.remove('open');
-      document.exitFullscreen?.();
-      bgAudio.play();
-      document.getElementById('overlayPlayer').innerHTML = '';
+        window.open(webUrl, '_system' in window ? '_system' : '_blank');
+      }, 800);
     }
 
     carregarMusicas();
