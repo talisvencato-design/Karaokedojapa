@@ -5,6 +5,9 @@
   <title>Karaokê do Japa</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
+    /* -------------------------------------- */
+    /* ESTILOS BASE E RESPONSIVIDADE HORIZONTAL (TV/DESKTOP) */
+    /* -------------------------------------- */
     body {
       margin: 0;
       color: #fff;
@@ -13,20 +16,24 @@
       background-size: cover;
       overflow-x: hidden;
       min-height: 100vh;
+      display: flex; /* Adicionado para melhor layout de tela cheia */
+      flex-direction: column; /* Adicionado para melhor layout de tela cheia */
     }
 
     header { text-align: center; padding: 20px; }
     header img { max-width: 480px; width: 90%; height: auto; }
 
-    .wrap {
+    main.wrap {
+      flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
       display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
       gap: 30px; padding: 20px;
     }
 
-    .left { width: 280px; text-align: center; }
+    .left { width: 280px; text-align: center; flex-shrink: 0; } /* Garante que o teclado não encolha muito */
     .right {
       flex: 1; background: rgba(0,0,0,0.7); border-radius: 12px;
       padding: 20px; text-align: center; min-height: 380px; max-width: 900px;
+      min-width: 300px; /* Garante um tamanho mínimo para o painel de resultados */
     }
 
     input#codigo {
@@ -61,17 +68,44 @@
       transform: scale(1.08); border-color: #ffcc00;
     }
 
-    @media (orientation: portrait) {
-      .wrap { flex-direction: column; align-items: center; }
-      .left, .right { width: 100%; max-width: 600px; }
-      .thumbnails img { width: 180px; }
+    /* -------------------------------------- */
+    /* REMOÇÃO DO OVERLAY (Será removido do HTML/JS também) */
+    /* -------------------------------------- */
+    /* O código abaixo é mantido apenas como comentário para indicar que foi removido */
+    /*
+    #overlay { display: none; ... }
+    #overlay.open { display: flex; }
+    #overlay iframe { ... }
+    .closeBtn { ... }
+    */
+
+    /* -------------------------------------- */
+    /* MEDIA QUERY PARA TELAS VERTICAIS (SMARTPHONE) */
+    /* -------------------------------------- */
+    @media (max-width: 768px) {
+      main.wrap {
+        flex-direction: column; /* Empilha os elementos */
+        align-items: center;
+        gap: 20px;
+      }
+      header img { max-width: 100%; }
+
+      .left { width: 100%; max-width: 300px; } /* Centraliza o teclado em telas menores */
+      .right {
+        width: 95%; max-width: none; min-height: 200px;
+        order: -1; /* Move o resultado para cima do teclado em telas pequenas */
+      }
+      .keypad {
+        grid-template-columns: repeat(3, 1fr); /* Botões maiores */
+        width: 100%;
+        max-width: 300px; /* Limita a largura do teclado */
+        margin: 18px auto 0;
+      }
+      .keypad button { padding: 12px; font-size: 18px; }
+      input#codigo { width: 100%; max-width: 220px; }
+      .thumbnails img { width: 100%; max-width: 180px; } /* Reduz o tamanho das thumbnails */
     }
 
-    @media (orientation: landscape) {
-      .wrap { flex-direction: row; justify-content: center; align-items: flex-start; }
-      .left { width: 300px; }
-      .right { max-width: 900px; }
-    }
   </style>
 </head>
 <body>
@@ -109,6 +143,7 @@
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
 
+    // 🔊 Tocar música ambiente assim que houver interação ou busca
     const ativarSom = () => {
       if (bgAudio.paused) bgAudio.play().catch(()=>{});
     };
@@ -153,7 +188,8 @@
           const img = document.createElement("img");
           img.src = v.snippet.thumbnails.medium.url;
           img.alt = v.snippet.title;
-          img.onclick = () => abrirVideo(v.id.videoId);
+          // MODIFICAÇÃO: Chama a nova função para abrir no app do YouTube
+          img.onclick = () => abrirVideoNoApp(v.id.videoId);
           thumbs.appendChild(img);
         });
       } catch (err) {
@@ -162,21 +198,26 @@
       }
     }
 
-    function abrirVideo(videoId) {
-      const intentUrl = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;end`;
-      const webUrl = `https://www.youtube.com/watch?v=${videoId}`;
-
-      const resultado = document.getElementById('resultado');
-      resultado.innerHTML += `
-        <div style="margin-top:20px;">
-          <a href="${intentUrl}" style="background:#ff0000;color:#fff;padding:12px 22px;border-radius:8px;font-size:20px;text-decoration:none;display:inline-block;">
-            ▶️ Abrir no YouTube App
-          </a><br/>
-          <a href="${webUrl}" target="_blank" style="color:#0ff;font-size:16px;text-decoration:none;">
-            🌐 Abrir no navegador
-          </a>
-        </div>`;
+    /**
+     * NOVA FUNÇÃO: Abre o vídeo diretamente no aplicativo do YouTube (ou no navegador, se o app não estiver presente).
+     * Usa o formato de URL mais compatível para iniciar o app.
+     */
+    function abrirVideoNoApp(videoId) {
+      // Formato para abrir no app do YouTube, compatível com a maioria dos dispositivos (Android/iOS/TV Box)
+      const urlApp = `https://www.youtube.com/watch?v=${videoId}`;
+      
+      // Abre em uma nova janela/aba. O sistema operacional/navegador tentará
+      // redirecionar para o aplicativo do YouTube se ele estiver instalado.
+      window.open(urlApp, '_blank');
+      
+      // Pausa a música de fundo enquanto o vídeo do YouTube é iniciado
+      bgAudio.pause();
+      
+      // Como o vídeo é aberto em um app externo, não precisamos de uma função fecharVideo()
+      // O usuário terá que voltar manualmente para o navegador.
     }
+
+    // As funções relacionadas ao Iframe Player (criarPlayer, fecharVideo, onYouTubeIframeAPIReady, etc.) foram removidas.
 
     carregarMusicas();
   </script>
