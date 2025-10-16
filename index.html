@@ -36,7 +36,6 @@
       min-width: 300px; 
     }
 
-    /* Alterado para melhor compatibilidade em dispositivos touch */
     input#codigo {
       width: 220px; padding: 14px; font-size: 22px;
       border-radius: 8px; border: none; text-align: center;
@@ -132,6 +131,9 @@
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
+    
+    // REFERÊNCIA AO CAMPO DE CÓDIGO
+    const codigo = document.getElementById('codigo');
 
     // 🔊 Tocar música ambiente assim que houver interação ou busca
     const ativarSom = () => {
@@ -154,15 +156,29 @@
     function digitar(n){ 
       codigo.value += n; 
       ativarSom(); 
+      // CORREÇÃO 2: Força o foco após cada clique, crucial para Android/TV Box
+      codigo.focus(); 
     }
-    function backspace(){ codigo.value = codigo.value.slice(0,-1); }
-    function clearAll(){ codigo.value = ''; }
+    
+    function backspace(){ 
+      codigo.value = codigo.value.slice(0,-1); 
+      codigo.focus(); // Mantém o foco
+    }
+    
+    function clearAll(){ 
+      codigo.value = ''; 
+      codigo.focus(); // Mantém o foco
+    }
 
     async function buscar() {
       ativarSom();
-      const codigoVal = document.getElementById('codigo').value.trim();
+      // O código já está referenciado como 'codigo'
+      const codigoVal = codigo.value.trim(); 
       const resultado = document.getElementById('resultado');
       resultado.innerHTML = "";
+      
+      // Remove o foco do campo para garantir que o teclado não volte a aparecer
+      codigo.blur(); 
 
       const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
@@ -181,7 +197,6 @@
           const img = document.createElement("img");
           img.src = v.snippet.thumbnails.medium.url;
           img.alt = v.snippet.title;
-          // ALTERAÇÃO: Chama a função para abrir o vídeo no App do YouTube
           img.onclick = () => abrirVideoNoApp(v.id.videoId);
           thumbs.appendChild(img);
         });
@@ -191,24 +206,18 @@
       }
     }
 
-    /**
-     * FUNÇÃO CORRIGIDA: Abre o vídeo diretamente no aplicativo do YouTube.
-     */
     function abrirVideoNoApp(videoId) {
-      // Usa o formato de URL universal para acionar o app do YouTube
       const urlApp = `https://www.youtube.com/watch?v=${videoId}`;
-      
-      // Pausa a música de fundo
       bgAudio.pause();
-
-      // Abre a URL em uma nova aba, permitindo que o sistema redirecione para o app
       window.open(urlApp, '_blank');
-      
-      // Nota: Não é possível detectar quando o usuário fecha o app e volta ao navegador.
-      // A música de fundo permanecerá pausada até que uma nova interação ocorra.
     }
 
     carregarMusicas();
+    
+    // Garante que o campo de código tenha foco quando a página carregar
+    window.onload = () => {
+      codigo.focus();
+    };
   </script>
 </body>
 </html>
