@@ -209,18 +209,19 @@
     }
 
     /**
-     * MECANISMO FINAL (ALTERADO NOVAMENTE): Tenta usar um link temporário com 
-     * target='_self' (mesma janela) para aumentar a chance de que o Android volte 
-     * para a aba do navegador corretamente, acionando a Page Visibility API, 
-     * em vez de fechar o navegador.
+     * MECANISMO FINAL (ALTERADO): Tenta usar o esquema de URI 'vnd.youtube' para 
+     * forçar a abertura no App do YouTube. Usa 'https' com target='_blank' como fallback.
      */
     function abrirVideoNoApp(videoId) {
-      // URL revertida para o formato HTTP padrão
-      const urlApp = `https://www.youtube.com/watch?v=${videoId}`; 
-      
       // 1. Pausa a música de fundo
       bgAudio.pause();
       
+      // Esquema de URI específico do aplicativo YouTube
+      const urlAppScheme = `vnd.youtube:${videoId}`;
+      
+      // URL HTTP padrão (fallback)
+      const urlHttpFallback = `https://www.youtube.com/watch?v=${videoId}`; 
+
       // 2. Cria o manipulador do evento de visibilidade
       const handleVisibilityChange = () => {
         // Verifica se a página está visível (o usuário retornou para a aba)
@@ -238,13 +239,28 @@
 
       // 4. Cria e clica em um elemento <a> temporário.
       const a = document.createElement('a');
-      a.href = urlApp;
-      a.target = '_self'; // Tenta abrir na mesma janela
       a.style.display = 'none';
       document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a); 
+
+      // TENTA ABRIR O APP DIRETAMENTE
+      a.href = urlAppScheme;
+      a.target = '_self'; // Tenta abrir na mesma janela, pois deep links geralmente funcionam melhor no self
+
+      try {
+          a.click();
+      } catch (e) {
+          console.error("Tentativa de Deep Link falhou, usando fallback.", e);
+          // FALLBACK: Tenta o link HTTP normal em uma nova aba
+          a.href = urlHttpFallback;
+          a.target = '_blank';
+          a.click();
+      }
       
+      // Limpa o elemento <a> após um breve timeout (necessário para alguns browsers)
+      setTimeout(() => {
+          if(document.body.contains(a)) document.body.removeChild(a);
+      }, 50);
+
       // Lembrete: O usuário deve usar o botão "Voltar" do sistema (Android/TV Box) para fechar o vídeo.
     }
 
