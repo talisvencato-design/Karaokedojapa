@@ -161,17 +161,17 @@
     function digitar(n){ 
       codigo.value += n; 
       ativarSom(); 
-      codigo.focus(); // Força o foco para compatibilidade em Android
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
     }
     
     function backspace(){ 
       codigo.value = codigo.value.slice(0,-1); 
-      codigo.focus(); 
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
     }
     
     function clearAll(){ 
       codigo.value = ''; 
-      codigo.focus(); 
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
     }
 
     async function buscar() {
@@ -252,7 +252,7 @@
     
     // Garante que o campo de código tenha foco quando a página carregar
     window.onload = () => {
-      codigo.focus();
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
     };
   </script>
 </body>
