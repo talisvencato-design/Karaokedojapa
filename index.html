@@ -128,20 +128,21 @@
 
     function abrirVideoNoApp(videoId) {
       bgAudio.pause();
-      const urlIntent = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;end`;
-      const urlFallback = `https://www.youtube.com/watch?v=${videoId}`;
+
+      const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      const intentUrl = `intent:${videoUrl}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=${encodeURIComponent(videoUrl)};end`;
+
+      try {
+        window.location.href = intentUrl;
+      } catch (e) {
+        window.open(videoUrl, '_system');
+      }
 
       document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
           bgAudio.play().catch(()=>{});
         }
       }, { once: true });
-
-      try {
-        window.location.href = urlIntent;
-      } catch {
-        window.open(urlFallback, '_blank');
-      }
     }
 
     carregarMusicas();
