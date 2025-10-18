@@ -5,6 +5,9 @@
   <title>Karaokê do Japa</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
+    /* -------------------------------------- */
+    /* ESTILOS BASE E RESPONSIVIDADE HORIZONTAL (TV/DESKTOP) */
+    /* -------------------------------------- */
     body {
       margin: 0;
       color: #fff;
@@ -13,26 +16,24 @@
       background-size: cover;
       overflow-x: hidden;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display: flex; 
+      flex-direction: column; 
     }
 
     header { text-align: center; padding: 20px; }
     header img { max-width: 480px; width: 90%; height: auto; }
 
     main.wrap {
-      flex: 1;
-      display: flex; flex-wrap: wrap;
-      justify-content: center; align-items: flex-start;
+      flex: 1; 
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
       gap: 30px; padding: 20px;
     }
 
     .left { width: 280px; text-align: center; flex-shrink: 0; }
     .right {
-      flex: 1; background: rgba(0,0,0,0.7);
-      border-radius: 12px; padding: 20px;
-      text-align: center; min-height: 380px;
-      max-width: 900px; min-width: 300px;
+      flex: 1; background: rgba(0,0,0,0.7); border-radius: 12px;
+      padding: 20px; text-align: center; min-height: 380px; max-width: 900px;
+      min-width: 300px; 
     }
 
     input#codigo {
@@ -47,11 +48,12 @@
 
     .keypad button {
       padding: 16px; font-size: 20px; border-radius: 8px;
-      border: none; cursor: pointer;
-      background: #333; color: #fff;
+      border: none; cursor: pointer; background: #333; color: #fff;
       transition: background 0.1s;
     }
-    .keypad button:active { background: #555; }
+    .keypad button:active { /* Feedback tátil */
+      background: #555;
+    }
     .keypad .enter { background: #28a745; }
     .keypad .clear { background: #dc3545; }
     .keypad .back { background: #ff8800; }
@@ -70,16 +72,33 @@
       transform: scale(1.08); border-color: #ffcc00;
     }
 
+    /* -------------------------------------- */
+    /* MEDIA QUERY PARA TELAS VERTICAIS (SMARTPHONE) */
+    /* -------------------------------------- */
     @media (max-width: 768px) {
       main.wrap {
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
         gap: 20px;
       }
-      .left { width: 100%; max-width: 300px; }
-      .right { width: 95%; min-height: 200px; order: -1; }
-      .thumbnails img { width: 100%; max-width: 180px; }
+      header img { max-width: 100%; }
+
+      .left { width: 100%; max-width: 300px; } 
+      .right {
+        width: 95%; max-width: none; min-height: 200px;
+        order: -1; 
+      }
+      .keypad {
+        grid-template-columns: repeat(3, 1fr); 
+        width: 100%;
+        max-width: 300px; 
+        margin: 18px auto 0;
+      }
+      .keypad button { padding: 12px; font-size: 18px; }
+      input#codigo { width: 100%; max-width: 220px; }
+      .thumbnails img { width: 100%; max-width: 180px; } 
     }
+
   </style>
 </head>
 <body>
@@ -116,15 +135,22 @@
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
-
+    
+    // REFERÊNCIA AO CAMPO DE CÓDIGO
     const codigo = document.getElementById('codigo');
-    document.addEventListener('click', () => { if (bgAudio.paused) bgAudio.play().catch(()=>{}); }, { once: true });
+
+    // 🔊 Tocar música ambiente assim que houver interação ou busca
+    const ativarSom = () => {
+      if (bgAudio.paused) bgAudio.play().catch(()=>{});
+    };
+    document.addEventListener('click', ativarSom, { once: true });
 
     let musicas = [];
-    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
+    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88"; // SUBSTITUA PELA SUA CHAVE REAL
 
     async function carregarMusicas() {
       try {
+        // Assume que o arquivo karaoke.json está no mesmo diretório
         const res = await fetch("./karaoke.json");
         musicas = await res.json();
       } catch (e) {
@@ -132,14 +158,29 @@
       }
     }
 
-    function digitar(n){ codigo.value += n; }
-    function backspace(){ codigo.value = codigo.value.slice(0,-1); }
-    function clearAll(){ codigo.value = ''; }
+    function digitar(n){ 
+      codigo.value += n; 
+      ativarSom(); 
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
+    }
+    
+    function backspace(){ 
+      codigo.value = codigo.value.slice(0,-1); 
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
+    }
+    
+    function clearAll(){ 
+      codigo.value = ''; 
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
+    }
 
     async function buscar() {
-      const codigoVal = codigo.value.trim();
+      ativarSom();
+      const codigoVal = codigo.value.trim(); 
       const resultado = document.getElementById('resultado');
       resultado.innerHTML = "";
+      
+      codigo.blur(); // Remove o foco antes de buscar
 
       const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
@@ -150,10 +191,7 @@
         const res = await fetch(url);
         const data = await res.json();
         const videos = (data.items || []).filter(i => i.id?.videoId);
-        if (!videos.length) {
-          resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`;
-          return;
-        }
+        if (!videos.length) { resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`; return; }
 
         resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
         const thumbs = resultado.querySelector('.thumbnails');
@@ -170,43 +208,68 @@
       }
     }
 
-    // ======== NOVA FUNÇÃO ADAPTADA PARA SMARTTUBENEXT ========
+    /**
+     * MECANISMO FINAL (ALTERADO): Tenta usar o esquema de URI 'vnd.youtube' para 
+     * forçar a abertura no App do YouTube. Usa 'https' com target='_blank' como fallback.
+     */
     function abrirVideoNoApp(videoId) {
+      // 1. Pausa a música de fundo
       bgAudio.pause();
+      
+      // Esquema de URI específico do aplicativo YouTube
+      const urlAppScheme = `vnd.youtube:${videoId}`;
+      
+      // URL HTTP padrão (fallback)
+      const urlHttpFallback = `https://www.youtube.com/watch?v=${videoId}`; 
 
-      // 1️⃣ Primeiro tenta abrir com SmartTubeNext (via Intent Android)
-      const urlIntentSmartTube = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.liskovsoft.smarttubetv;end`;
+      // 2. Cria o manipulador do evento de visibilidade
+      const handleVisibilityChange = () => {
+        // Verifica se a página está visível (o usuário retornou para a aba)
+        if (document.visibilityState === 'visible') {
+          // O usuário retornou. Retoma a música.
+          bgAudio.play().catch(()=>{});
 
-      // 2️⃣ Fallbacks
-      const urlAppFallback = `vnd.youtube:${videoId}`;
-      const urlHttpFallback = `https://www.youtube.com/watch?v=${videoId}&autoplay=1`;
+          // Remove o listener para que ele só seja acionado uma vez
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+        }
+      };
 
+      // 3. Adiciona o listener para o evento de mudança de visibilidade
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+
+      // 4. Cria e clica em um elemento <a> temporário.
       const a = document.createElement('a');
       a.style.display = 'none';
       document.body.appendChild(a);
 
+      // TENTA ABRIR O APP DIRETAMENTE
+      a.href = urlAppScheme;
+      a.target = '_self'; // Tenta abrir na mesma janela, pois deep links geralmente funcionam melhor no self
+
       try {
-        a.href = urlIntentSmartTube;
-        a.click();
-      } catch (e1) {
-        console.warn("SmartTubeNext não respondeu, tentando YouTube app...");
-        try {
-          a.href = urlAppFallback;
           a.click();
-        } catch (e2) {
-          console.warn("App YouTube falhou, abrindo navegador...");
+      } catch (e) {
+          console.error("Tentativa de Deep Link falhou, usando fallback.", e);
+          // FALLBACK: Tenta o link HTTP normal em uma nova aba
           a.href = urlHttpFallback;
           a.target = '_blank';
           a.click();
-        }
       }
-
+      
+      // Limpa o elemento <a> após um breve timeout (necessário para alguns browsers)
       setTimeout(() => {
-        if (document.body.contains(a)) document.body.removeChild(a);
-      }, 150);
+          if(document.body.contains(a)) document.body.removeChild(a);
+      }, 50);
+
+      // Lembrete: O usuário deve usar o botão "Voltar" do sistema (Android/TV Box) para fechar o vídeo.
     }
 
     carregarMusicas();
+    
+    // Garante que o campo de código tenha foco quando a página carregar
+    window.onload = () => {
+      // codigo.focus(); // REMOVIDO para impedir teclado virtual
+    };
   </script>
 </body>
 </html>
