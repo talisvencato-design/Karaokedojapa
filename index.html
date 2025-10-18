@@ -5,9 +5,6 @@
   <title>Karaokê do Japa</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    /* -------------------------------------- */
-    /* ESTILOS BASE E RESPONSIVIDADE HORIZONTAL (TV/DESKTOP) */
-    /* -------------------------------------- */
     body {
       margin: 0;
       color: #fff;
@@ -16,15 +13,15 @@
       background-size: cover;
       overflow-x: hidden;
       min-height: 100vh;
-      display: flex; 
-      flex-direction: column; 
+      display: flex;
+      flex-direction: column;
     }
 
     header { text-align: center; padding: 20px; }
     header img { max-width: 480px; width: 90%; height: auto; }
 
     main.wrap {
-      flex: 1; 
+      flex: 1;
       display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
       gap: 30px; padding: 20px;
     }
@@ -33,7 +30,7 @@
     .right {
       flex: 1; background: rgba(0,0,0,0.7); border-radius: 12px;
       padding: 20px; text-align: center; min-height: 380px; max-width: 900px;
-      min-width: 300px; 
+      min-width: 300px;
     }
 
     input#codigo {
@@ -51,9 +48,7 @@
       border: none; cursor: pointer; background: #333; color: #fff;
       transition: background 0.1s;
     }
-    .keypad button:active { /* Feedback tátil */
-      background: #555;
-    }
+    .keypad button:active { background: #555; }
     .keypad .enter { background: #28a745; }
     .keypad .clear { background: #dc3545; }
     .keypad .back { background: #ff8800; }
@@ -72,33 +67,59 @@
       transform: scale(1.08); border-color: #ffcc00;
     }
 
-    /* -------------------------------------- */
-    /* MEDIA QUERY PARA TELAS VERTICAIS (SMARTPHONE) */
-    /* -------------------------------------- */
+    /* WebViewer */
+    #webviewer {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none; justify-content: center; align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    #webviewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #closeBtn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #dc3545;
+      color: white;
+      border: none;
+      font-size: 22px;
+      border-radius: 50%;
+      width: 45px; height: 45px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+    #closeBtn:hover { background: #b52a36; }
+
     @media (max-width: 768px) {
       main.wrap {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         gap: 20px;
       }
       header img { max-width: 100%; }
-
-      .left { width: 100%; max-width: 300px; } 
+      .left { width: 100%; max-width: 300px; }
       .right {
         width: 95%; max-width: none; min-height: 200px;
-        order: -1; 
+        order: -1;
       }
       .keypad {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
         width: 100%;
-        max-width: 300px; 
+        max-width: 300px;
         margin: 18px auto 0;
       }
       .keypad button { padding: 12px; font-size: 18px; }
       input#codigo { width: 100%; max-width: 220px; }
-      .thumbnails img { width: 100%; max-width: 180px; } 
+      .thumbnails img { width: 100%; max-width: 180px; }
     }
-
   </style>
 </head>
 <body>
@@ -130,27 +151,31 @@
     </section>
   </main>
 
+  <div id="webviewer">
+    <button id="closeBtn" onclick="fecharWebViewer()">✕</button>
+    <iframe id="youtubeFrame" allowfullscreen></iframe>
+  </div>
+
   <audio id="bgAudio" src="./ambiente.mp3" loop></audio>
 
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
-    
-    // REFERÊNCIA AO CAMPO DE CÓDIGO
-    const codigo = document.getElementById('codigo');
 
-    // 🔊 Tocar música ambiente assim que houver interação ou busca
-    const ativarSom = () => {
+    const codigo = document.getElementById('codigo');
+    const viewer = document.getElementById('webviewer');
+    const frame = document.getElementById('youtubeFrame');
+    const resultado = document.getElementById('resultado');
+
+    document.addEventListener('click', () => {
       if (bgAudio.paused) bgAudio.play().catch(()=>{});
-    };
-    document.addEventListener('click', ativarSom, { once: true });
+    }, { once: true });
 
     let musicas = [];
-    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88"; // SUBSTITUA PELA SUA CHAVE REAL
+    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
 
     async function carregarMusicas() {
       try {
-        // Assume que o arquivo karaoke.json está no mesmo diretório
         const res = await fetch("./karaoke.json");
         musicas = await res.json();
       } catch (e) {
@@ -158,29 +183,14 @@
       }
     }
 
-    function digitar(n){ 
-      codigo.value += n; 
-      ativarSom(); 
-      // codigo.focus(); // REMOVIDO para impedir teclado virtual
-    }
-    
-    function backspace(){ 
-      codigo.value = codigo.value.slice(0,-1); 
-      // codigo.focus(); // REMOVIDO para impedir teclado virtual
-    }
-    
-    function clearAll(){ 
-      codigo.value = ''; 
-      // codigo.focus(); // REMOVIDO para impedir teclado virtual
-    }
+    function digitar(n){ codigo.value += n; }
+    function backspace(){ codigo.value = codigo.value.slice(0,-1); }
+    function clearAll(){ codigo.value = ''; }
 
     async function buscar() {
-      ativarSom();
-      const codigoVal = codigo.value.trim(); 
-      const resultado = document.getElementById('resultado');
+      const codigoVal = codigo.value.trim();
       resultado.innerHTML = "";
-      
-      codigo.blur(); // Remove o foco antes de buscar
+      codigo.blur();
 
       const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
@@ -191,7 +201,10 @@
         const res = await fetch(url);
         const data = await res.json();
         const videos = (data.items || []).filter(i => i.id?.videoId);
-        if (!videos.length) { resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`; return; }
+        if (!videos.length) {
+          resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`;
+          return;
+        }
 
         resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
         const thumbs = resultado.querySelector('.thumbnails');
@@ -199,7 +212,7 @@
           const img = document.createElement("img");
           img.src = v.snippet.thumbnails.medium.url;
           img.alt = v.snippet.title;
-          img.onclick = () => abrirVideoNoApp(v.id.videoId);
+          img.onclick = () => abrirVideoNoWebViewer(v.id.videoId);
           thumbs.appendChild(img);
         });
       } catch (err) {
@@ -208,68 +221,41 @@
       }
     }
 
-    /**
-     * MECANISMO FINAL (ALTERADO): Tenta usar o esquema de URI 'vnd.youtube' para 
-     * forçar a abertura no App do YouTube. Usa 'https' com target='_blank' como fallback.
-     */
-    function abrirVideoNoApp(videoId) {
-      // 1. Pausa a música de fundo
+    function abrirVideoNoWebViewer(videoId) {
       bgAudio.pause();
-      
-      // Esquema de URI específico do aplicativo YouTube
-      const urlAppScheme = `vnd.youtube:${videoId}`;
-      
-      // URL HTTP padrão (fallback)
-      const urlHttpFallback = `https://www.youtube.com/watch?v=${videoId}`; 
+      const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1`;
+      frame.src = embedUrl;
+      viewer.style.display = "flex";
 
-      // 2. Cria o manipulador do evento de visibilidade
-      const handleVisibilityChange = () => {
-        // Verifica se a página está visível (o usuário retornou para a aba)
-        if (document.visibilityState === 'visible') {
-          // O usuário retornou. Retoma a música.
-          bgAudio.play().catch(()=>{});
-
-          // Remove o listener para que ele só seja acionado uma vez
-          document.removeEventListener('visibilitychange', handleVisibilityChange);
-        }
+      // Detectar término do vídeo via API do YouTube
+      window.onYouTubeIframeAPIReady = function() {
+        new YT.Player('youtubeFrame', {
+          events: {
+            'onStateChange': function(e) {
+              if (e.data === YT.PlayerState.ENDED) fecharWebViewer();
+            }
+          }
+        });
       };
 
-      // 3. Adiciona o listener para o evento de mudança de visibilidade
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-
-      // 4. Cria e clica em um elemento <a> temporário.
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      document.body.appendChild(a);
-
-      // TENTA ABRIR O APP DIRETAMENTE
-      a.href = urlAppScheme;
-      a.target = '_self'; // Tenta abrir na mesma janela, pois deep links geralmente funcionam melhor no self
-
-      try {
-          a.click();
-      } catch (e) {
-          console.error("Tentativa de Deep Link falhou, usando fallback.", e);
-          // FALLBACK: Tenta o link HTTP normal em uma nova aba
-          a.href = urlHttpFallback;
-          a.target = '_blank';
-          a.click();
+      // Carrega a API JS do YouTube se não estiver carregada
+      if (!document.getElementById('ytapi')) {
+        const tag = document.createElement('script');
+        tag.id = 'ytapi';
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
       }
-      
-      // Limpa o elemento <a> após um breve timeout (necessário para alguns browsers)
-      setTimeout(() => {
-          if(document.body.contains(a)) document.body.removeChild(a);
-      }, 50);
+    }
 
-      // Lembrete: O usuário deve usar o botão "Voltar" do sistema (Android/TV Box) para fechar o vídeo.
+    function fecharWebViewer() {
+      viewer.style.display = "none";
+      frame.src = "";
+      resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
+      codigo.value = "";
+      bgAudio.play().catch(()=>{});
     }
 
     carregarMusicas();
-    
-    // Garante que o campo de código tenha foco quando a página carregar
-    window.onload = () => {
-      // codigo.focus(); // REMOVIDO para impedir teclado virtual
-    };
   </script>
 </body>
 </html>
