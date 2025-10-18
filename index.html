@@ -129,13 +129,13 @@
     function abrirVideoNoApp(videoId) {
       bgAudio.pause();
 
+      // Deep link simples compatível com YouTube TV antigo (6.x)
       const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-      const intentUrl = `intent:${videoUrl}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=${encodeURIComponent(videoUrl)};end`;
 
       try {
-        window.location.href = intentUrl;
+        window.location.href = videoUrl;
       } catch (e) {
-        window.open(videoUrl, '_system');
+        window.open(videoUrl, '_blank');
       }
 
       document.addEventListener('visibilitychange', () => {
