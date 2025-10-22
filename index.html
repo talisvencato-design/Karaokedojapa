@@ -42,7 +42,7 @@
       border: none; cursor: pointer; background: #333; color: #fff;
       transition: background 0.1s;
     }
-    .keypad button:active { background: #555; }
+    .keypad button:active, .keypad button:focus { background: #555; outline: 2px solid #ffcc00; }
     .keypad .enter { background: #28a745; }
     .keypad .clear { background: #dc3545; }
     .keypad .back { background: #ff8800; }
@@ -55,8 +55,8 @@
       border: 3px solid #666; cursor: pointer;
       transition: transform .15s;
     }
-    .thumbnails img:hover {
-      transform: scale(1.08); border-color: #ffcc00;
+    .thumbnails img:hover, .thumbnails img:focus {
+      transform: scale(1.08); border-color: #ffcc00; outline: none;
     }
     #webviewer {
       position: fixed;
@@ -86,7 +86,6 @@
     }
     #closeBtn:hover { background: #b52a36; }
 
-    /* Estilos Adicionados para o Placar e Fogos */
     #score-display {
         position: absolute;
         top: 0;
@@ -112,62 +111,15 @@
         color: #fff;
         margin-top: 20px;
     }
-    /* Animação de Fogos de Artifício */
-    .fireworks {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 10002;
-      display: none;
-    }
-    .firework {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      opacity: 0;
-      /* Animação simples de expansão e desaparecimento */
-      animation: explode 1s ease-out forwards;
-    }
-    /* Posições e cores variadas para os fogos */
+    .fireworks { position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 10002; display: none; }
+    .firework { position: absolute; width: 10px; height: 10px; border-radius: 50%; opacity: 0; animation: explode 1s ease-out forwards; }
     .firework.a { background-color: #f00; left: 20%; top: 80%; }
     .firework.b { background-color: #0f0; left: 50%; top: 50%; animation-delay: 0.5s; }
     .firework.c { background-color: #00f; left: 80%; top: 70%; animation-delay: 1s; }
     .firework.d { background-color: #ff0; left: 35%; top: 60%; animation-delay: 1.5s; }
     .firework.e { background-color: #f0f; left: 65%; top: 90%; animation-delay: 2s; }
 
-    @keyframes explode {
-      0% { transform: scale(0); opacity: 1; }
-      100% { transform: scale(40); opacity: 0; }
-    }
-    /* Fim dos Estilos Adicionados */
-
-    @media (max-width: 768px) {
-      main.wrap {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
-      header img { max-width: 100%; }
-      .left { width: 100%; max-width: 300px; }
-      .right {
-        width: 95%; max-width: none; min-height: 200px;
-        order: -1;
-      }
-      .keypad {
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-        max-width: 300px;
-        margin: 18px auto 0;
-      }
-      .keypad button { padding: 12px; font-size: 18px; }
-      input#codigo { width: 100%; max-width: 220px; }
-      .thumbnails img { width: 100%; max-width: 180px; }
-      /* Responsividade dos estilos adicionados */
-      #score-text { font-size: 20vw; }
-      #score-label { font-size: 6vw; }
-    }
+    @keyframes explode { 0% { transform: scale(0); opacity: 1; } 100% { transform: scale(40); opacity: 0; } }
   </style>
 </head>
 <body>
@@ -207,22 +159,20 @@
         <div class="firework d"></div>
         <div class="firework e"></div>
       </div>
-      <div id="score-label">NOTA</div>
+      <div id="score-label">SUA NOTA:</div>
       <div id="score-text">0</div>
     </div>
-    </div>
+  </div>
   <audio id="bgAudio" src="./ambiente.mp3" loop></audio>
   <audio id="applauseAudio" src="./aplausos.mp3" preload="auto"></audio>
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
-    // Variáveis Adicionadas para a Pontuação
     const applauseAudio = document.getElementById('applauseAudio');
     applauseAudio.volume = 0.8;
     const scoreDisplay = document.getElementById('score-display');
     const scoreText = document.getElementById('score-text');
     const fireworksContainer = document.getElementById('fireworks-container');
-    // Fim das Variáveis Adicionadas
     const codigo = document.getElementById('codigo');
     const viewer = document.getElementById('webviewer');
     const frame = document.getElementById('youtubeFrame');
@@ -271,6 +221,7 @@
           img.onclick = () => abrirVideoNoWebViewer(v.id.videoId);
           thumbs.appendChild(img);
         });
+        habilitarNavegacaoThumbnails();
       } catch (err) {
         resultado.innerHTML = "<p>❌ Erro ao buscar vídeo.</p>";
         console.error(err);
@@ -284,13 +235,11 @@
       setTimeout(() => { frame.src = embedUrl; }, 100);
       frame.setAttribute("allow", "autoplay; fullscreen; encrypted-media");
       viewer.style.display = "flex";
-      // Garante que o placar de pontuação esteja oculto ao iniciar o vídeo
       scoreDisplay.style.display = "none";
 
       window.onYouTubeIframeAPIReady = function() {
         new YT.Player('youtubeFrame', {
           events: {
-            // Chama a função de pontuação quando o vídeo termina
             'onStateChange': function(e) {
               if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
             }
@@ -305,50 +254,90 @@
       }
     }
 
-    // Função Adicionada para Mostrar a Pontuação e Animações
     function mostrarPontuacao() {
-      frame.src = ""; // Para o vídeo
+      frame.src = "";
       scoreDisplay.style.display = "flex";
       scoreText.textContent = "0";
-      applauseAudio.currentTime = 0; // Reinicia o som
+      applauseAudio.currentTime = 0;
       applauseAudio.play().catch(()=>{});
-
-      // 1. Randomização da Pontuação (2 segundos)
       let randomizationInterval = setInterval(() => {
-        // Random de 0 a 100 para a randomização
         scoreText.textContent = Math.floor(Math.random() * 101);
       }, 50);
-
-      // 2. Apresentação da Nota Final
       setTimeout(() => {
         clearInterval(randomizationInterval);
-        // Gera a nota final entre 75 e 100
         const finalScore = Math.floor(Math.random() * (100 - 75 + 1)) + 75;
         scoreText.textContent = finalScore;
-        fireworksContainer.style.display = "block"; // Mostra os fogos
-
-        // 3. Fechar e Retornar ao Menu (após 5 segundos de apresentação)
-        setTimeout(() => {
-          fecharWebViewer();
-        }, 5000); // 5 segundos de apresentação
-      }, 2000); // 2 segundos de randomização
+        fireworksContainer.style.display = "block";
+        setTimeout(() => { fecharWebViewer(); }, 5000);
+      }, 2000);
     }
-    // Fim da Função Adicionada
 
     function fecharWebViewer() {
       viewer.style.display = "none";
       frame.src = "";
-      // Esconde elementos de pontuação e para o som (Adicionado)
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
       applauseAudio.pause();
-      // Fim da lógica de esconder
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
       codigo.value = "";
       bgAudio.play().catch(()=>{});
     }
 
     carregarMusicas();
+
+    // === SUPORTE AO CONTROLE REMOTO E TECLADO (FIRE OS) ===
+    document.addEventListener('keydown', (e) => {
+      const botoes = Array.from(document.querySelectorAll('.keypad button'));
+      const thumbs = Array.from(document.querySelectorAll('.thumbnails img'));
+      const foco = document.activeElement;
+      const emKeypad = botoes.includes(foco);
+      const emThumbs = thumbs.includes(foco);
+
+      switch (e.key) {
+        case 'ArrowUp':
+          if (emKeypad && botoes.indexOf(foco) - 3 >= 0)
+            botoes[botoes.indexOf(foco) - 3].focus();
+          else if (emThumbs && thumbs.indexOf(foco) - 3 >= 0)
+            thumbs[thumbs.indexOf(foco) - 3].focus();
+          break;
+        case 'ArrowDown':
+          if (emKeypad && botoes.indexOf(foco) + 3 < botoes.length)
+            botoes[botoes.indexOf(foco) + 3].focus();
+          else if (emThumbs && thumbs.indexOf(foco) + 3 < thumbs.length)
+            thumbs[thumbs.indexOf(foco) + 3].focus();
+          break;
+        case 'ArrowLeft':
+          if (emKeypad && botoes.indexOf(foco) > 0)
+            botoes[botoes.indexOf(foco) - 1].focus();
+          else if (emThumbs && thumbs.indexOf(foco) > 0)
+            thumbs[thumbs.indexOf(foco) - 1].focus();
+          break;
+        case 'ArrowRight':
+          if (emKeypad && botoes.indexOf(foco) < botoes.length - 1)
+            botoes[botoes.indexOf(foco) + 1].focus();
+          else if (emThumbs && thumbs.indexOf(foco) < thumbs.length - 1)
+            thumbs[thumbs.indexOf(foco) + 1].focus();
+          break;
+        case 'Enter':
+          if (foco && foco.tagName === 'BUTTON') foco.click();
+          if (foco && foco.tagName === 'IMG') foco.click();
+          break;
+        default:
+          if (/^[0-9]$/.test(e.key)) digitar(e.key);
+          break;
+      }
+    });
+
+    window.addEventListener('load', () => {
+      const botoes = document.querySelectorAll('.keypad button');
+      if (botoes.length) botoes[0].focus();
+    });
+
+    function habilitarNavegacaoThumbnails() {
+      const thumbs = document.querySelectorAll('.thumbnails img');
+      thumbs.forEach(img => img.setAttribute('tabindex', '0'));
+      if (thumbs.length) thumbs[0].focus();
+    }
   </script>
 </body>
 </html>
