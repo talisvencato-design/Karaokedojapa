@@ -5,12 +5,11 @@
   <title>Karaokê do Japa</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    /* ======== ESTILO BASE ======== */
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100dvh; /* altura real visível */
+      height: 100dvh; /* altura visível real */
       overflow: hidden; /* sem rolagem */
       color: #fff;
       font-family: Arial, sans-serif;
@@ -115,7 +114,6 @@
       border-color: #ffcc00;
     }
 
-    /* ======== VISUALIZADOR DE VÍDEO ======== */
     #webviewer {
       position: fixed;
       top: 0; left: 0;
@@ -152,7 +150,6 @@
 
     #closeBtn:hover { background: #b52a36; }
 
-    /* ======== PLACAR E FOGOS ======== */
     #score-display {
       position: absolute;
       top: 0; left: 0;
@@ -209,7 +206,6 @@
       100% { transform: scale(40); opacity: 0; }
     }
 
-    /* ======== RESPONSIVIDADE ======== */
     @media (max-width: 768px) {
       main.wrap {
         flex-direction: column;
@@ -270,7 +266,6 @@
     </section>
   </main>
 
-  <!-- VISUALIZADOR DE VÍDEO -->
   <div id="webviewer">
     <button id="closeBtn" onclick="fecharWebViewer()">✕</button>
     <iframe id="youtubeFrame" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
@@ -360,7 +355,6 @@
       const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1`;
       frame.src = "";
       setTimeout(() => { frame.src = embedUrl; }, 100);
-      frame.setAttribute("allow", "autoplay; fullscreen; encrypted-media");
       viewer.style.display = "flex";
       scoreDisplay.style.display = "none";
 
@@ -411,6 +405,13 @@
       codigo.value = "";
       bgAudio.play().catch(()=>{});
     }
+
+    // 🔄 Recarrega automaticamente quando o usuário retorna à tela inicial
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible" && viewer.style.display === "none") {
+        location.reload();
+      }
+    });
 
     carregarMusicas();
   </script>
