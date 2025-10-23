@@ -66,11 +66,6 @@
       z-index: 9999;
       flex-direction: column;
     }
-    #webviewer iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
     #closeBtn {
       position: absolute;
       top: 15px;
@@ -182,7 +177,7 @@
 
   <div id="webviewer">
     <button id="closeBtn" onclick="fecharWebViewer()">✕</button>
-    <iframe id="youtubeFrame" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+    <div id="youtubeFrame"></div>
 
     <div id="score-display">
       <div id="fireworks-container" class="fireworks">
@@ -210,7 +205,6 @@
     const fireworksContainer = document.getElementById('fireworks-container');
     const codigo = document.getElementById('codigo');
     const viewer = document.getElementById('webviewer');
-    const frame = document.getElementById('youtubeFrame');
     const resultado = document.getElementById('resultado');
 
     document.addEventListener('click', () => {
@@ -265,7 +259,7 @@
       }
     }
 
-    // === CORREÇÃO DO PLAYER ===
+    // PLAYER CORRIGIDO
     let ytPlayer = null;
 
     function abrirVideoNoWebViewer(videoId) {
@@ -298,12 +292,12 @@
         videoId: videoId,
         playerVars: { autoplay: 1, controls: 1, rel: 0, modestbranding: 1 },
         events: {
-          'onStateChange': e => { if (e.data === YT.PlayerState.ENDED) mostrarPontuacao(); }
+          'onStateChange': e => {
+            if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
+          }
         }
       });
     }
-
-    // === FIM DA CORREÇÃO ===
 
     function mostrarPontuacao() {
       try { if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo(); } catch(e){}
@@ -329,7 +323,6 @@
       fireworksContainer.style.display = "none";
       applauseAudio.pause(); applauseAudio.currentTime = 0;
       if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
-      frame.src = "";
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
       codigo.value = "";
       bgAudio.play().catch(()=>{});
