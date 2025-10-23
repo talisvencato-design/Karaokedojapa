@@ -9,8 +9,8 @@
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100dvh; /* altura visível real */
-      overflow: hidden; /* sem rolagem */
+      height: 100dvh;
+      overflow: hidden;
       color: #fff;
       font-family: Arial, sans-serif;
       background: url('./9937771.jpg') no-repeat center center fixed;
@@ -289,7 +289,6 @@
   <script>
     const bgAudio = document.getElementById('bgAudio');
     bgAudio.volume = 0.15;
-
     const applauseAudio = document.getElementById('applauseAudio');
     applauseAudio.volume = 0.8;
 
@@ -306,6 +305,7 @@
     }, { once: true });
 
     let musicas = [];
+    let player;
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
 
     async function carregarMusicas() {
@@ -352,26 +352,32 @@
 
     function abrirVideoNoWebViewer(videoId) {
       bgAudio.pause();
-      const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1`;
-      frame.src = "";
-      setTimeout(() => { frame.src = embedUrl; }, 100);
       viewer.style.display = "flex";
       scoreDisplay.style.display = "none";
+      frame.src = "";
 
-      window.onYouTubeIframeAPIReady = function() {
-        new YT.Player('youtubeFrame', {
-          events: {
-            'onStateChange': function(e) {
-              if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
-            }
-          }
-        });
-      };
-      if (!document.getElementById('ytapi')) {
+      const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1&controls=1`;
+      setTimeout(() => { frame.src = embedUrl; }, 100);
+
+      if (window.YT && window.YT.Player) {
+        iniciarPlayer();
+      } else if (!document.getElementById('ytapi')) {
         const tag = document.createElement('script');
         tag.id = 'ytapi';
         tag.src = "https://www.youtube.com/iframe_api";
         document.body.appendChild(tag);
+      }
+      window.onYouTubeIframeAPIReady = iniciarPlayer;
+
+      function iniciarPlayer() {
+        if (player) player.destroy();
+        player = new YT.Player('youtubeFrame', {
+          events: {
+            'onStateChange': e => {
+              if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
+            }
+          }
+        });
       }
     }
 
@@ -391,11 +397,12 @@
         const finalScore = Math.floor(Math.random() * (100 - 75 + 1)) + 75;
         scoreText.textContent = finalScore;
         fireworksContainer.style.display = "block";
-        setTimeout(() => { fecharWebViewer(); }, 5000);
+        setTimeout(fecharWebViewer, 5000);
       }, 2000);
     }
 
     function fecharWebViewer() {
+      if (player) player.destroy();
       viewer.style.display = "none";
       frame.src = "";
       scoreDisplay.style.display = "none";
@@ -405,13 +412,6 @@
       codigo.value = "";
       bgAudio.play().catch(()=>{});
     }
-
-    // 🔄 Recarrega automaticamente quando o usuário retorna à tela inicial
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible" && viewer.style.display === "none") {
-        location.reload();
-      }
-    });
 
     carregarMusicas();
   </script>
