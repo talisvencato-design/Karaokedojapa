@@ -1,170 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karaokê</title>
+  <meta charset="utf-8" />
+  <title>Karaokê do Japa</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body {
       margin: 0;
-      background: radial-gradient(circle at center, #000000, #1a1a1a);
       color: #fff;
-      font-family: "Poppins", sans-serif;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    h1 {
-      margin-top: 20px;
-      font-size: 2.4em;
-      letter-spacing: 2px;
-    }
-
-    #codigo {
-      width: 200px;
-      padding: 10px;
-      font-size: 1.2em;
-      text-align: center;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-      margin-top: 10px;
-    }
-
-    .keypad {
-      display: grid;
-      grid-template-columns: repeat(3, 70px);
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .keypad button {
-      font-size: 1.5em;
-      padding: 10px;
-      border-radius: 10px;
-      border: none;
-      background-color: #444;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .keypad button:hover {
-      background-color: #666;
-      transform: scale(1.05);
-    }
-
-    #resultado {
-      margin-top: 20px;
-      font-size: 1.2em;
-      min-height: 50px;
-    }
-
-    #webviewer {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      z-index: 10;
+      font-family: Arial, sans-serif;
+      background: url('./9937771.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
-
-    #youtubeFrame {
-      width: 90%;
-      height: 80%;
+    header { text-align: center; padding: 20px; }
+    header img { max-width: 480px; width: 90%; height: auto; }
+    main.wrap {
+      flex: 1;
+      display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;
+      gap: 30px; padding: 20px;
+    }
+    .left { width: 280px; text-align: center; flex-shrink: 0; }
+    .right {
+      flex: 1; background: rgba(0,0,0,0.7); border-radius: 12px;
+      padding: 20px; text-align: center; min-height: 380px; max-width: 900px;
+      min-width: 300px;
+    }
+    input#codigo {
+      width: 220px; padding: 14px; font-size: 22px;
+      border-radius: 8px; border: none; text-align: center;
+    }
+    .keypad {
+      display: grid; grid-template-columns: repeat(3, 90px);
+      gap: 12px; margin-top: 18px; justify-content: center;
+    }
+    .keypad button {
+      padding: 16px; font-size: 20px; border-radius: 8px;
+      border: none; cursor: pointer; background: #333; color: #fff;
+      transition: background 0.1s;
+    }
+    .keypad button:active { background: #555; }
+    .keypad .enter { background: #28a745; }
+    .keypad .clear { background: #dc3545; }
+    .keypad .back { background: #ff8800; }
+    .thumbnails {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 20px; margin-top: 20px;
+    }
+    .thumbnails img {
+      width: 240px; border-radius: 10px;
+      border: 3px solid #666; cursor: pointer;
+      transition: transform .15s;
+    }
+    .thumbnails img:hover {
+      transform: scale(1.08); border-color: #ffcc00;
+    }
+    #webviewer {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none; justify-content: center; align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    #webviewer iframe {
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 12px;
     }
-
-    #fechar {
+    #closeBtn {
       position: absolute;
-      top: 10px;
+      top: 15px;
       right: 20px;
-      font-size: 1.5em;
-      cursor: pointer;
+      background: #dc3545;
       color: white;
-      background: none;
       border: none;
+      font-size: 22px;
+      border-radius: 50%;
+      width: 45px; height: 45px;
+      cursor: pointer;
+      z-index: 10000;
     }
+    #closeBtn:hover { background: #b52a36; }
 
     #score-display {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      z-index: 20;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-size: 3em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10001;
+        text-align: center;
+    }
+    #score-text {
+        font-size: 15vw;
+        font-weight: bold;
+        color: #ffcc00;
+        text-shadow: 0 0 20px #ff0000, 0 0 10px #ff0000;
+    }
+    #score-label {
+        font-size: 4vw;
+        color: #fff;
+        margin-top: 20px;
     }
 
-    #fireworks-container {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 25;
+    .fireworks {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
+      z-index: 10002;
+      display: none;
+    }
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0;
+      animation: explode 1s ease-out forwards;
+    }
+    .firework.a { background-color: #f00; left: 20%; top: 80%; }
+    .firework.b { background-color: #0f0; left: 50%; top: 50%; animation-delay: 0.5s; }
+    .firework.c { background-color: #00f; left: 80%; top: 70%; animation-delay: 1s; }
+    .firework.d { background-color: #ff0; left: 35%; top: 60%; animation-delay: 1.5s; }
+    .firework.e { background-color: #f0f; left: 65%; top: 90%; animation-delay: 2s; }
+
+    @keyframes explode {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(40); opacity: 0; }
     }
 
-    .thumbnails img {
-      width: 200px;
-      border-radius: 10px;
-      margin: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .thumbnails img:hover {
-      transform: scale(1.05);
+    @media (max-width: 768px) {
+      main.wrap { flex-direction: column; align-items: center; gap: 20px; }
+      header img { max-width: 100%; }
+      .left { width: 100%; max-width: 300px; }
+      .right { width: 95%; max-width: none; min-height: 200px; order: -1; }
+      .keypad { grid-template-columns: repeat(3, 1fr); width: 100%; max-width: 300px; margin: 18px auto 0; }
+      .keypad button { padding: 12px; font-size: 18px; }
+      input#codigo { width: 100%; max-width: 220px; }
+      .thumbnails img { width: 100%; max-width: 180px; }
+      #score-text { font-size: 20vw; }
+      #score-label { font-size: 6vw; }
     }
   </style>
 </head>
 <body>
-  <h1>🎤 Karaokê</h1>
-  <input id="codigo" placeholder="Código" readonly />
-
-  <div class="keypad">
-    <button onclick="digitar('1')">1</button>
-    <button onclick="digitar('2')">2</button>
-    <button onclick="digitar('3')">3</button>
-    <button onclick="digitar('4')">4</button>
-    <button onclick="digitar('5')">5</button>
-    <button onclick="digitar('6')">6</button>
-    <button onclick="digitar('7')">7</button>
-    <button onclick="digitar('8')">8</button>
-    <button onclick="digitar('9')">9</button>
-    <button onclick="clearAll()">C</button>
-    <button onclick="digitar('0')">0</button>
-    <button onclick="backspace()">⌫</button>
-  </div>
-
-  <div style="margin-top:20px">
-    <button onclick="buscar()" style="padding:10px 20px;font-size:1.2em;border-radius:10px;border:none;cursor:pointer;background:#00aaff;color:#fff;">Buscar</button>
-  </div>
-
-  <div id="resultado">🔎 Digite um código para começar.</div>
+  <header><img src="./logo.png" alt="Karaokê do Japa" /></header>
+  <main class="wrap">
+    <section class="left">
+      <p>Digite o código da música:</p>
+      <input id="codigo" placeholder="Ex: 6197" type="tel" inputmode="none" />
+      <div class="keypad">
+        <button onclick="digitar('1')">1</button>
+        <button onclick="digitar('2')">2</button>
+        <button onclick="digitar('3')">3</button>
+        <button onclick="digitar('4')">4</button>
+        <button onclick="digitar('5')">5</button>
+        <button onclick="digitar('6')">6</button>
+        <button onclick="digitar('7')">7</button>
+        <button onclick="digitar('8')">8</button>
+        <button onclick="digitar('9')">9</button>
+        <button class="back" onclick="backspace()">BACK</button>
+        <button onclick="digitar('0')">0</button>
+        <button class="clear" onclick="clearAll()">C</button>
+        <button class="enter" onclick="buscar()">✔ ENTER</button>
+      </div>
+    </section>
+    <section class="right" id="resultado">
+      <p>🔎 Digite um código para começar.</p>
+    </section>
+  </main>
 
   <div id="webviewer">
-    <button id="fechar" onclick="fecharWebViewer()">✖</button>
-    <iframe id="youtubeFrame" allow="autoplay; encrypted-media"></iframe>
+    <button id="closeBtn" onclick="fecharWebViewer()">✕</button>
+    <iframe id="youtubeFrame" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+
+    <div id="score-display">
+      <div id="fireworks-container" class="fireworks">
+        <div class="firework a"></div>
+        <div class="firework b"></div>
+        <div class="firework c"></div>
+        <div class="firework d"></div>
+        <div class="firework e"></div>
+      </div>
+      <div id="score-label">SUA NOTA:</div>
+      <div id="score-text">0</div>
+    </div>
   </div>
 
-  <div id="score-display">
-    <div>⭐ Nota: <span id="score-text">0</span></div>
-  </div>
-
-  <div id="fireworks-container"></div>
-
-  <audio id="bgAudio" src="sons/fundo.mp3" loop></audio>
-  <audio id="applauseAudio" src="sons/aplausos.mp3"></audio>
+  <audio id="bgAudio" src="./ambiente.mp3" loop></audio>
+  <audio id="applauseAudio" src="./aplausos.mp3" preload="auto"></audio>
 
   <script>
     const bgAudio = document.getElementById('bgAudio');
@@ -203,8 +237,10 @@
       codigo.blur();
       const item = musicas.find(m => Number(m.codigo) === Number(codigoVal));
       if (!item) { resultado.innerHTML = "<p>❌ Código não encontrado.</p>"; return; }
+
       const query = `karaoke ${item.artista} ${item.musica}`;
       const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(query)}&key=${API_KEY}`;
+
       try {
         const res = await fetch(url);
         const data = await res.json();
@@ -213,6 +249,7 @@
           resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><p>❌ Nenhum vídeo encontrado.</p>`;
           return;
         }
+
         resultado.innerHTML = `<h2>${item.artista} - ${item.musica}</h2><div class='thumbnails'></div>`;
         const thumbs = resultado.querySelector('.thumbnails');
         videos.slice(0,3).forEach(v => {
@@ -228,48 +265,8 @@
       }
     }
 
+    // === CORREÇÃO DO PLAYER ===
     let ytPlayer = null;
-    let pendingVideoId = null;
-
-    function loadYouTubeAPIOnce() {
-      if (!document.getElementById('ytapi')) {
-        const tag = document.createElement('script');
-        tag.id = 'ytapi';
-        tag.src = "https://www.youtube.com/iframe_api";
-        document.body.appendChild(tag);
-      }
-    }
-
-    window.onYouTubeIframeAPIReady = function() {
-      if (pendingVideoId) {
-        createPlayer(pendingVideoId);
-        pendingVideoId = null;
-      }
-    };
-
-    function createPlayer(initialVideoId) {
-      if (ytPlayer && typeof ytPlayer.destroy === 'function') {
-        try { ytPlayer.destroy(); } catch(e){ console.warn(e); }
-        ytPlayer = null;
-      }
-
-      ytPlayer = new YT.Player('youtubeFrame', {
-        videoId: initialVideoId,
-        playerVars: {
-          autoplay: 1,
-          controls: 1,
-          rel: 0,
-          modestbranding: 1
-        },
-        events: {
-          'onStateChange': function(e) {
-            if (e.data === YT.PlayerState.ENDED) {
-              mostrarPontuacao();
-            }
-          }
-        }
-      });
-    }
 
     function abrirVideoNoWebViewer(videoId) {
       bgAudio.pause();
@@ -277,40 +274,48 @@
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
 
-      loadYouTubeAPIOnce();
+      if (!document.getElementById('ytapi')) {
+        const tag = document.createElement('script');
+        tag.id = 'ytapi';
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.body.appendChild(tag);
+      }
 
-      if (window.YT && typeof YT.Player === 'function') {
-        if (ytPlayer) {
-          try {
-            ytPlayer.loadVideoById({videoId: videoId, startSeconds: 0});
-          } catch (e) {
-            console.warn("Erro ao trocar vídeo, recriando player:", e);
-            createPlayer(videoId);
-          }
-        } else {
-          createPlayer(videoId);
-        }
+      if (window.YT && YT.Player) {
+        criarOuCarregarVideo(videoId);
       } else {
-        pendingVideoId = videoId;
+        window.onYouTubeIframeAPIReady = () => criarOuCarregarVideo(videoId);
       }
     }
 
-    function mostrarPontuacao() {
-      try {
-        if (ytPlayer && typeof ytPlayer.stopVideo === 'function') ytPlayer.stopVideo();
-      } catch(e){ console.warn(e); }
+    function criarOuCarregarVideo(videoId) {
+      if (ytPlayer) {
+        try { ytPlayer.destroy(); } catch(e){}
+        ytPlayer = null;
+      }
 
+      ytPlayer = new YT.Player('youtubeFrame', {
+        videoId: videoId,
+        playerVars: { autoplay: 1, controls: 1, rel: 0, modestbranding: 1 },
+        events: {
+          'onStateChange': e => { if (e.data === YT.PlayerState.ENDED) mostrarPontuacao(); }
+        }
+      });
+    }
+
+    // === FIM DA CORREÇÃO ===
+
+    function mostrarPontuacao() {
+      try { if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo(); } catch(e){}
       scoreDisplay.style.display = "flex";
       scoreText.textContent = "0";
       applauseAudio.currentTime = 0;
       applauseAudio.play().catch(()=>{});
 
-      let randomizationInterval = setInterval(() => {
-        scoreText.textContent = Math.floor(Math.random() * 101);
-      }, 50);
+      let randomInterval = setInterval(() => { scoreText.textContent = Math.floor(Math.random() * 101); }, 50);
 
       setTimeout(() => {
-        clearInterval(randomizationInterval);
+        clearInterval(randomInterval);
         const finalScore = Math.floor(Math.random() * (100 - 75 + 1)) + 75;
         scoreText.textContent = finalScore;
         fireworksContainer.style.display = "block";
@@ -322,15 +327,9 @@
       viewer.style.display = "none";
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
-      try { applauseAudio.pause(); applauseAudio.currentTime = 0; } catch(e){}
-
-      if (ytPlayer && typeof ytPlayer.destroy === 'function') {
-        try { ytPlayer.destroy(); } catch(e){ console.warn(e); }
-        ytPlayer = null;
-      } else {
-        try { frame.src = ""; } catch(e){}
-      }
-
+      applauseAudio.pause(); applauseAudio.currentTime = 0;
+      if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
+      frame.src = "";
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
       codigo.value = "";
       bgAudio.play().catch(()=>{});
