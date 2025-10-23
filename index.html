@@ -81,6 +81,7 @@
     }
     #closeBtn:hover { background: #b52a36; }
 
+    /* Estilização do score/pontuação */
     #score-display {
         position: absolute;
         top: 0;
@@ -107,6 +108,7 @@
         margin-top: 20px;
     }
 
+    /* Estilização dos fogos de artifício */
     .fireworks {
       position: absolute;
       width: 100%;
@@ -212,8 +214,7 @@
     }, { once: true });
 
     let musicas = [];
-    // ATENÇÃO: É altamente recomendável que você use um proxy ou backend para esconder esta chave!
-    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
+    const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88"; // ATENÇÃO: Chave exposta
 
     async function carregarMusicas() {
       try {
@@ -260,10 +261,12 @@
       }
     }
 
-    // NOVA FUNÇÃO PARA ENTRAR EM TELA CHEIA
+    // FUNÇÃO PARA ENTRAR EM TELA CHEIA (INCLUINDO PREFIXOS)
     function requestFullscreen(element) {
       if (element.requestFullscreen) {
-        element.requestFullscreen();
+        element.requestFullscreen().catch(err => {
+          console.error("Erro ao tentar Fullscreen:", err);
+        });
       } else if (element.mozRequestFullScreen) { /* Firefox */
         element.mozRequestFullScreen();
       } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
@@ -273,7 +276,6 @@
       }
     }
 
-    // PLAYER CORRIGIDO
     let ytPlayer = null;
 
     function abrirVideoNoWebViewer(videoId) {
@@ -281,9 +283,8 @@
       viewer.style.display = "flex";
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
-
-      // APLICAÇÃO DA TELA CHEIA: Chamamos a função para o webviewer
-      requestFullscreen(viewer);
+      
+      // A chamada requestFullscreen agora está no 'onReady' do player para maior compatibilidade.
 
       if (!document.getElementById('ytapi')) {
         const tag = document.createElement('script');
@@ -303,12 +304,25 @@
       if (ytPlayer) {
         try { ytPlayer.destroy(); } catch(e){}
         ytPlayer = null;
+        // Limpar o container antes de recriar
+        document.getElementById('youtubeFrame').innerHTML = ''; 
       }
 
       ytPlayer = new YT.Player('youtubeFrame', {
         videoId: videoId,
-        playerVars: { autoplay: 1, controls: 1, rel: 0, modestbranding: 1 },
+        playerVars: { 
+          autoplay: 1, 
+          controls: 1, 
+          rel: 0, 
+          modestbranding: 1 
+        },
+        host: 'https://www.youtube.com', 
         events: {
+          // *** NOVA LÓGICA: CHAMAR FULLSCREEN QUANDO O PLAYER ESTIVER PRONTO ***
+          'onReady': (e) => {
+            // Tenta colocar o container do player em tela cheia (Fullscreen)
+            requestFullscreen(viewer);
+          },
           'onStateChange': e => {
             if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
           }
@@ -323,6 +337,7 @@
       applauseAudio.currentTime = 0;
       applauseAudio.play().catch(()=>{});
 
+      // LÓGICA DE PONTUAÇÃO (mantida)
       let randomInterval = setInterval(() => { scoreText.textContent = Math.floor(Math.random() * 101); }, 50);
 
       setTimeout(() => {
@@ -337,7 +352,7 @@
     function fecharWebViewer() {
       // LÓGICA PARA SAIR DA TELA CHEIA
       if (document.exitFullscreen) {
-        document.exitFullscreen();
+        document.exitFullscreen().catch(()=>{});
       } else if (document.mozCancelFullScreen) { /* Firefox */
         document.mozCancelFullScreen();
       } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
@@ -352,6 +367,7 @@
       fireworksContainer.style.display = "none";
       applauseAudio.pause(); applauseAudio.currentTime = 0;
       if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
+      document.getElementById('youtubeFrame').innerHTML = ''; // Limpa o iframe restante
       resultado.innerHTML = "<p>🔎 Digite um código para começar.</p>";
       codigo.value = "";
       bgAudio.play().catch(()=>{});
