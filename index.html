@@ -11,15 +11,15 @@
       font-family: Arial, sans-serif;
       background: url('./9937771.jpg') no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden; /* impede qualquer scroll */
-      height: 100vh; /* ocupa toda a altura da tela */
+      overflow: hidden; /* impede scroll */
+      height: 100vh; /* ocupa 100% da tela */
       display: flex;
       flex-direction: column;
     }
 
     header {
       text-align: center;
-      padding: 10px 0; /* padding reduzido para caber em tela única */
+      padding: 10px 0;
       flex-shrink: 0;
     }
     header img { max-width: 480px; width: 90%; height: auto; }
@@ -57,7 +57,12 @@
       transition: background 0.1s;
     }
     .keypad button:active { background: #555; }
-    .keypad .enter { background: #28a745; }
+    .keypad .enter { 
+      background: #28a745;
+      grid-column: span 3; /* ocupa as 3 colunas da grade */
+      font-size: 24px;
+      padding: 20px;
+    }
     .keypad .clear { background: #dc3545; }
     .keypad .back { background: #ff8800; }
 
