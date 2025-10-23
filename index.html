@@ -212,6 +212,7 @@
     }, { once: true });
 
     let musicas = [];
+    // ATENÇÃO: É altamente recomendável que você use um proxy ou backend para esconder esta chave!
     const API_KEY = "AIzaSyABdd6X4cKzMHR8JVWdw0jlLoFY4UDRQ88";
 
     async function carregarMusicas() {
@@ -259,6 +260,19 @@
       }
     }
 
+    // NOVA FUNÇÃO PARA ENTRAR EM TELA CHEIA
+    function requestFullscreen(element) {
+      if (element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) { /* Firefox */
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) { /* IE/Edge */
+        element.msRequestFullscreen();
+      }
+    }
+
     // PLAYER CORRIGIDO
     let ytPlayer = null;
 
@@ -267,6 +281,9 @@
       viewer.style.display = "flex";
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
+
+      // APLICAÇÃO DA TELA CHEIA: Chamamos a função para o webviewer
+      requestFullscreen(viewer);
 
       if (!document.getElementById('ytapi')) {
         const tag = document.createElement('script');
@@ -282,33 +299,22 @@
       }
     }
 
-   function criarOuCarregarVideo(videoId) {
-  if (ytPlayer) {
-    try { ytPlayer.destroy(); } catch(e){}
-    ytPlayer = null;
-  }
-
-  ytPlayer = new YT.Player('youtubeFrame', {
-    videoId: videoId,
-    playerVars: { autoplay: 1, controls: 1, rel: 0, modestbranding: 1 },
-    events: {
-      'onReady': e => {
-        const iframe = e.target.getIframe();
-        if (iframe.requestFullscreen) {
-          iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-          iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-          iframe.msRequestFullscreen();
-        }
-        e.target.playVideo();
-      },
-      'onStateChange': e => {
-        if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
+    function criarOuCarregarVideo(videoId) {
+      if (ytPlayer) {
+        try { ytPlayer.destroy(); } catch(e){}
+        ytPlayer = null;
       }
+
+      ytPlayer = new YT.Player('youtubeFrame', {
+        videoId: videoId,
+        playerVars: { autoplay: 1, controls: 1, rel: 0, modestbranding: 1 },
+        events: {
+          'onStateChange': e => {
+            if (e.data === YT.PlayerState.ENDED) mostrarPontuacao();
+          }
+        }
+      });
     }
-  });
-}
 
     function mostrarPontuacao() {
       try { if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo(); } catch(e){}
@@ -329,6 +335,18 @@
     }
 
     function fecharWebViewer() {
+      // LÓGICA PARA SAIR DA TELA CHEIA
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { /* Firefox */
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE/Edge */
+        document.msExitFullscreen();
+      }
+      // FIM DA LÓGICA DE TELA CHEIA
+
       viewer.style.display = "none";
       scoreDisplay.style.display = "none";
       fireworksContainer.style.display = "none";
