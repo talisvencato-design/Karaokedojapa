@@ -13,7 +13,7 @@
       background: url('./9937771.jpg') no-repeat center center fixed;
       background-size: cover;
       overflow: hidden;
-      height: 100vh; /* 🔧 Altura exata da tela */
+      height: 100vh;
       display: flex;
       flex-direction: column;
     }
@@ -32,19 +32,19 @@
       flex: 1;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;   /* 🔧 Centraliza horizontalmente */
-      align-items: center;       /* 🔧 Centraliza verticalmente */
+      justify-content: center;
+      align-items: center;
       gap: 30px;
       padding: 10px;
     }
 
     .left {
-      width: 280px;
+      width: 260px; /* 🔽 ligeiramente reduzido para equilíbrio */
       text-align: center;
       flex-shrink: 0;
       background: rgba(0,0,0,0.5);
       border-radius: 12px;
-      padding: 20px;
+      padding: 18px;
     }
 
     .right {
@@ -59,25 +59,26 @@
     }
 
     input#codigo {
-      width: 220px;
-      padding: 14px;
-      font-size: 22px;
+      width: 200px;
+      padding: 12px;
+      font-size: 20px;
       border-radius: 8px;
       border: none;
       text-align: center;
     }
 
+    /* 🔧 Teclado reduzido */
     .keypad {
       display: grid;
-      grid-template-columns: repeat(3, 90px);
-      gap: 12px;
-      margin-top: 18px;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      margin-top: 15px;
       justify-content: center;
     }
 
     .keypad button {
-      padding: 16px;
-      font-size: 20px;
+      padding: 12px;
+      font-size: 18px;
       border-radius: 8px;
       border: none;
       cursor: pointer;
@@ -90,8 +91,8 @@
     .keypad .enter {
       background: #28a745;
       grid-column: 1 / -1;
-      font-size: 22px;
-      padding: 18px;
+      font-size: 20px;
+      padding: 14px;
     }
     .keypad .back { background: #ff8800; }
     .keypad .clear { background: #dc3545; }
